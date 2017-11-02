@@ -1,0 +1,54 @@
+.ehome-login {
+    height: 100vh;
+    &-form {
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+.ehome-loginform {
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 364px;
+    height: 341px;
+    z-index: 1000;
+    padding: 0 41px 41px 41px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .08);
+    form {
+        button {
+            width: 100%;
+        }
+        p {
+            color: rgb(204, 204, 204);
+            text-align: center;
+            margin-top: 16px;
+            span {
+                &:first-child {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+    &-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 154px;
+        line-height: 40px;
+        cursor: pointer;
+        p {
+            display: flex;
+            align-content: center;
+            height: 40px;
+            span {
+                vertical-align: text-bottom;
+                font-size: 16px;
+                text-transform: uppercase;
+                display: inline-block;
+            }
+        }
+    }
+}
