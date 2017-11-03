@@ -16,7 +16,7 @@ class Header extends (PureComponent || Component) {
   render() {
     // 获取到当前哈希值
     try {
-      const HASH = location.hash.match(/\w+-{1}\w+$/)[0];
+      const HASH = location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0];
       const { menu, history } = this.props;
       return (
         <div className={`${prefixCls}-header`}>
