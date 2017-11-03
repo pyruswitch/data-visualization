@@ -2,17 +2,10 @@ import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { isIE } from "utils";
-import Home from 'routes/home';
-import NotFound from 'routes/404';
-import Login from 'routes/login';
 import Support from 'routes/support';
-import themes from 'themes';
+import Home from 'routes/home';
 
-// 根据域名匹配主题
-if (themes[window.location.host])
-  themes[window.location.host];
-else
-  themes['default'];
+import 'styles/index.less';
 
 const App = () => {
   if (isIE(10, 'lt'))
@@ -26,9 +19,7 @@ const App = () => {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/login" component={Login} />
-            <Route component={NotFound} />
+            <Route path="/" component={Home} />
           </Switch>
         </div>
       </Router>
