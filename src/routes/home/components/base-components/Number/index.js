@@ -63,7 +63,7 @@ class NumberCom extends React.Component {
     return (
       <div className={prefixCls} >
         <ul ref='numberList'>
-          <li className={classNames('symbol', { hideMoney: type === 'number' })}>
+          <li className={classNames('symbol', 'money', { hideMoney: type === 'number' })}>
             <img src={Money} />
           </li>
           {
@@ -75,7 +75,7 @@ class NumberCom extends React.Component {
               );
             })
           }
-          <li className={classNames('symbol', { hideUnit })} >
+          <li className={classNames('symbol', 'unit', { hideUnit })} >
             <img src={Unit} />
           </li>
         </ul>

@@ -9,10 +9,9 @@
         overflow: hidden;
         >li {
             display: inline-block;
-            margin: 0 2px;
+            margin: 0 1px;
             >div {
-                height: 100%;
-                width: 100%;
+                height: 100%; // width: 85%;
                 background-size: 100% 100%;
                 background-image: url('./svg/bg.svg');
                 background-repeat: no-repeat;
@@ -20,8 +19,8 @@
                     position: relative;
                     display: block;
                     margin: 0 auto;
-                    width: 70%;
-                    height: 70%;
+                    width: 60%;
+                    height: 60%;
                 }
             }
         }
@@ -34,6 +33,19 @@
             width: 15px;
             img {
                 top: 100%;
+                width: 50%;
+            }
+        }
+        li.money {
+            margin-right: 4px;
+            img {
+                width: 100%;
+            }
+        }
+        li.unit {
+            margin-left: 4px;
+            img {
+                width: 200%;
             }
         }
         li.numerals {
