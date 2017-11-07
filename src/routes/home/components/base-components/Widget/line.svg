@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg preserveAspectRatio="none" width="285px" height="1px" viewBox="0 0 285 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>样式模块_标题_线</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="61.9303385%" x2="98.1310607%" y2="61.9303405%" id="linearGradient-1">
+            <stop stop-color="#03FFFF" offset="0%"></stop>
+            <stop stop-color="#143C71" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="样式模块_标题_线">
+            <g id="样式模块_标题">
+                <rect id="Rectangle-3" fill="url(#linearGradient-1)" x="186" y="0" width="99" height="1"></rect>
+                <rect id="Rectangle-3" fill="url(#linearGradient-1)" transform="translate(50.000000, 0.500000) scale(-1, 1) translate(-50.000000, -0.500000) " x="0" y="0" width="100" height="1"></rect>
+                <rect id="Rectangle-5" fill="#03FFFF" x="100" y="0" width="86" height="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
