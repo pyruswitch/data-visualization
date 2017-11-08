@@ -61,7 +61,7 @@ const createDonutChart = ({ innerHTML, colors = ['#E92C81', '#36B3C3', '#B3B6B7'
 export default ({ showLabel, colors, inner, innerHTML, ...rest }) => {
   const chartProps = Object.assign({}, {
     height: height * 2 - 24,
-    width: 500,
+    width: 600,
     forceFit: true,
     plotCfg: { margin: [0, 0, 0, 0] }
   }, rest);
