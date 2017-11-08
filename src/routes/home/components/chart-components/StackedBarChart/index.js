@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import createG2 from 'g2-react';
 import G2, { Stat } from 'g2';
 import config from 'routes/home/config';
-const { height, labels, title, line } = config;
+const { height, labels, title, line, legend } = config;
 
 const StackedBarChart = createG2(chart => {
   var Stat = G2.Stat;
@@ -23,16 +23,7 @@ const StackedBarChart = createG2(chart => {
     labels,
     line
   });
-  chart.legend({
-    title: null,
-    unChecked: '#CCC',
-    wordSpaceing: 2,
-    itemWrap: false,
-    word: {
-      fill: '#999',
-      fontSize: 8
-    }
-  });
+  chart.legend(legend);
   chart.col('value', {
     // type: 'log'
   });
