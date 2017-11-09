@@ -2,9 +2,8 @@
 .eh-visualization-box {
     position: relative;
     display: inline-block;
-    width: 6.875vw;
-    background-image: url("./bg.svg");
-    background-size: 100% 98%;
+    width: 9.5vw; // background-image: url("./bg.svg");
+    background-size: 100% 100%;
     &::before {
         padding-bottom: 45%;
         content: '';
@@ -19,15 +18,18 @@
         text-align: center;
         >span {
             color: #7D98EA;
+            font-weight: bold;
             display: inline-block;
             width: 100%;
-            font-size: @font-size-16;
+            font-size: @font-size-24;
             &:first-of-type {
-                transform: scale(0.75);
-                margin-bottom: 2px;
+                // transform: scale(0.75);
+                font-size: @font-size-16;
+                margin-bottom: 10px;
             }
             &:last-of-type {
-                color: #03FFFF;
+                // color: #03FFFF;
+                color: rgba(3, 255, 255, 0.60);
             }
             >sub {
                 margin-left: 4px;

@@ -10,7 +10,7 @@ export default {
   margin,
   // title默认样式
   title: {
-    fontSize: '8',
+    fontSize: '10',
     textAlign: 'center',
     fill,
   },
@@ -20,7 +20,7 @@ export default {
     label: {
       textAlign: 'center',
       fill,
-      fontSize: '8',
+      fontSize: '10',
     }
   },
   // 图例默认样式
@@ -31,7 +31,7 @@ export default {
     itemWrap: false,
     word: {
       fill: '#999',
-      fontSize: 8
+      fontSize: 10
     }
   },
   // 设置坐标轴线的样式

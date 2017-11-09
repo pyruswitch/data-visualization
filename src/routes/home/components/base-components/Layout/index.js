@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RGL, { WidthProvider } from 'react-grid-layout';
 
 const ReactGridLayout = WidthProvider(RGL);
-const H = (window.innerHeight - 48 * 2 - 24 * 7) / 7;
+const H = (window.innerHeight - 12 * 2 - 24 * 7) / 7;
 
 const Layout = ({ conf }) => {
   const CONF = conf.slice();

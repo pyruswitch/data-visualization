@@ -38,11 +38,9 @@ const createDonutChart = ({ innerHTML, colors = ['#E92C81', '#36B3C3', '#B3B6B7'
           text-align: center;
           display: inline-block;
           font-size: 12px;
-          -webkit-transform: scale(0.64);
-          transform: scale(0.64);
           position: relative;
           white-space:nowrap;
-          width: 120%;
+          width: 130%;
           left: -12%;
           color:${point.color}"
         >${text} ${percent}</p>`;
