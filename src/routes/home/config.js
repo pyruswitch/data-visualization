@@ -31,8 +31,9 @@ export default {
     itemWrap: false,
     word: {
       fill: '#999',
-      fontSize: 10
-    }
+      fontSize: 9
+    },
+    spacingY: 4
   },
   // 设置坐标轴线的样式
   line: {

@@ -25,7 +25,6 @@ class CompletedTasks extends Component {
     return (
       <Widget className="completed-tasks" title='已完成'>
         <DonutChart
-          showLabel={false}
           data={this.state.data}
           inner={0.8}
           colors={['#2f2778', '#924ae1']}

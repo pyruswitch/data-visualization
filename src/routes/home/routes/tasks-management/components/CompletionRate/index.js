@@ -12,7 +12,6 @@ class CompletionRate extends Component {
     return (
       <Widget className="completion-rate" title='任务总完成率'>
         <DonutChart
-          showLabel={false}
           data={this.state.data}
           inner={0.8}
           colors={['#2f2778', '#924ae1']}

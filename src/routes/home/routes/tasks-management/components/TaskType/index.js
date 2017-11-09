@@ -19,12 +19,10 @@ class TaskType extends Component {
     return (
       <Widget className="task-type" title='任务类型分布'>
         <DonutChart
-          showLabel={true}
           data={this.state.data}
-          inner={0.8}
-          /* colors={['#2f2778', '#924ae1']} */
-          innerHTML={`<div className="donut-chart-html"><span>83%</span><span>响应率</span></div>`}
-          plotCfg={{ margin: [0, 0, 0, 0] }}
+        /* inner={0.8} */
+        /* innerHTML={`<div className="donut-chart-html"><span>83%</span><span>响应率</span></div>`} */
+        /* plotCfg={{ margin: [0, 150, 0, 0] }} */
         />
       </Widget>
     );

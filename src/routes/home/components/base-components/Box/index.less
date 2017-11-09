@@ -2,18 +2,7 @@
 .eh-visualization-box {
     position: relative;
     display: inline-block;
-    width: 9.5vw; // background-image: url("./bg.svg");
-    background-size: 100% 100%;
-    &::before {
-        padding-bottom: 45%;
-        content: '';
-        width: 4px;
-        display: inline-block;
-    }
     >div {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         width: 100%;
         text-align: center;
         >span {
@@ -23,12 +12,10 @@
             width: 100%;
             font-size: @font-size-24;
             &:first-of-type {
-                // transform: scale(0.75);
                 font-size: @font-size-16;
                 margin-bottom: 10px;
             }
             &:last-of-type {
-                // color: #03FFFF;
                 color: rgba(3, 255, 255, 0.60);
             }
             >sub {

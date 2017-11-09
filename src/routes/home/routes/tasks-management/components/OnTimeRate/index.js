@@ -12,7 +12,6 @@ class OnTimeRate extends Component {
     return (
       <Widget className="on-time-rate" title='响应及时率'>
         <DonutChart
-          showLabel={false}
           data={this.state.data}
           inner={0.8}
           colors={['#2f2778', '#924ae1']}

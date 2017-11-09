@@ -14,7 +14,7 @@ const StackedAreaGraph = createG2(chart => {
 
 export default (props) => {
   const chartProps = Object.assign({}, {
-    height: BASEHIGHT * 4 - 24,
+    height: BASEHIGHT * 4,
     width: 500,
     forceFit: true,
     plotCfg: { margin: [50, 150, 150, 80] }
