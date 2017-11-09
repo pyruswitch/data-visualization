@@ -11,16 +11,11 @@
             display: inline-block;
             margin: 0 2px;
             >div {
-                height: 100%; // width: 85%;
-                background-size: 100% 100%;
-                background-image: url('./svg/bg.svg');
-                background-repeat: no-repeat;
+                height: 100%;
                 img {
                     position: relative;
                     display: block;
                     margin: 0 auto;
-                    width: 60%;
-                    height: 60%;
                 }
             }
         }
@@ -31,15 +26,10 @@
         li.symbol {
             height: 100%;
             width: 15px;
+            position: relative;
             img {
-                top: 100%;
-                width: 50%;
-            }
-        }
-        li.money {
-            margin-right: 4px;
-            img {
-                width: 100%;
+                position: absolute;
+                bottom: 0;
             }
         }
         li.unit {
@@ -50,8 +40,13 @@
             height: 100%;
             width: 7%;
             >div {
+                background-size: 100% 100%;
+                background-image: url('./svg/bg.svg');
+                background-repeat: no-repeat;
                 img {
                     top: 50%;
+                    width: 60%;
+                    height: 60%;
                     transform: translateY(-50%);
                 }
             }

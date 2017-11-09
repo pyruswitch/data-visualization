@@ -63,14 +63,18 @@ class NumberCom extends React.Component {
     return (
       <div className={prefixCls} >
         <ul ref='numberList'>
-          <li className={classNames('symbol', 'money', { hideMoney: type === 'number' })}>
-            <img src={Money} />
+          <li className={classNames('symbol', { hideMoney: type === 'number' })}>
+            <div><img src={Money} /></div>
           </li>
           {
             digitalArr.map(({ svg, type }, index) => {
               return (
                 <li className={type} key={index}>
-                  {type === 'symbol' ? <img src={svg} /> : numberList}
+                  {
+                    type === 'symbol' ?
+                      <div> <img src={svg} /></div> :
+                      numberList
+                  }
                 </li>
               );
             })
