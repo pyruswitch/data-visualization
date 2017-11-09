@@ -13,14 +13,14 @@ import {
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 2, h: 2 }, <OrderType />],
-  [{ x: 2, y: 1, w: 3, h: 2 }, <TotalSpending />],
-  [{ x: 0, y: 3, w: 2, h: 2 }, <ConsumptionAmountStatistics />],
-  [{ x: 2, y: 3, w: 3, h: 2 }, <TotalNumberOfOrders />],
-  [{ x: 6, y: 1, w: 2, h: 4 }, <LastestOrder />],
-  [{ x: 0, y: 5, w: 2, h: 2 }, <ConsumptionOrderStatistics />],
-  [{ x: 2, y: 5, w: 3, h: 2 }, <ConsumptionDistribution />],
-  [{ x: 6, y: 5, w: 2, h: 2 }, <PaymentMethod />]
+  [{ x: 0, y: 3, w: 7, h: 7 }, <OrderType />],
+  [{ x: 7, y: 3, w: 10, h: 7 }, <TotalSpending />],
+  [{ x: 0, y: 10, w: 7, h: 7 }, <ConsumptionAmountStatistics />],
+  [{ x: 7, y: 10, w: 10, h: 7 }, <TotalNumberOfOrders />],
+  [{ x: 17, y: 3, w: 7, h: 14 }, <LastestOrder />],
+  [{ x: 0, y: 17, w: 7, h: 7 }, <ConsumptionOrderStatistics />],
+  [{ x: 7, y: 17, w: 10, h: 7 }, <ConsumptionDistribution />],
+  [{ x: 17, y: 17, w: 7, h: 7 }, <PaymentMethod />]
 ];
 
 const OrderFlow = () => (

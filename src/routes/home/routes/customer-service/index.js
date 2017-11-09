@@ -12,13 +12,13 @@ import {
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 2, h: 2 }, <TaskTypesDistribution />],
-  [{ x: 2, y: 1, w: 3, h: 4 }, <TotalNumberOfTasks />],
-  [{ x: 0, y: 3, w: 2, h: 2 }, <ModulesActivation />],
-  [{ x: 6, y: 1, w: 2, h: 4 }, <LatestTasks />],
-  [{ x: 0, y: 5, w: 1, h: 2 }, <CompletedTasks />],
-  [{ x: 1, y: 5, w: 3, h: 2 }, <AverageResponseTime />],
-  [{ x: 5, y: 5, w: 3, h: 2 }, <TasksDistribution />]
+  [{ x: 0, y: 3, w: 7, h: 7 }, <TaskTypesDistribution />],
+  [{ x: 7, y: 3, w: 10, h: 14 }, <TotalNumberOfTasks />],
+  [{ x: 0, y: 10, w: 7, h: 7 }, <ModulesActivation />],
+  [{ x: 17, y: 3, w: 7, h: 14 }, <LatestTasks />],
+  [{ x: 0, y: 17, w: 7, h: 7 }, <CompletedTasks />],
+  [{ x: 7, y: 17, w: 10, h: 7 }, <AverageResponseTime />],
+  [{ x: 17, y: 17, w: 7, h: 7 }, <TasksDistribution />]
 ];
 
 const CustomerService = () => (

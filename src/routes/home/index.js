@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from './components/base-components/Header';
 import Route from 'react-router-dom/Route';
-import { TasksManagement, IntelligentAccessControl, ParkEnergyConsumption, CustomerService, ParkInvestment, OrderFlow, IntelligentParking } from './routes';
+import { GridDemo, TasksManagement, IntelligentAccessControl, ParkEnergyConsumption, CustomerService, ParkInvestment, OrderFlow, IntelligentParking } from './routes';
 import { Helmet } from 'react-helmet';
 import './index.less';
 
@@ -26,6 +26,7 @@ class StaticElementsLayout extends React.PureComponent {
               { path: 'tasks-management', value: '任务管理' }
             ]}
           />
+          {/* <GridDemo /> */}
           <Route exact path='/park-energy-consumption' component={ParkEnergyConsumption} />
           <Route exact path='/intelligent-access-control' component={IntelligentAccessControl} />
           <Route exact path='/park-investment' component={ParkInvestment} />

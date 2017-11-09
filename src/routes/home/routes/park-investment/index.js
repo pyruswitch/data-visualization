@@ -13,14 +13,14 @@ import {
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 2, h: 2 }, <NumberOfCompaniesSettled />],
-  [{ x: 2, y: 1, w: 3, h: 2 }, <TotalAssets />],
-  [{ x: 0, y: 3, w: 2, h: 2 }, <AnnualRentalIncome />],
-  [{ x: 2, y: 3, w: 3, h: 2 }, <RentArea />],
-  [{ x: 6, y: 1, w: 2, h: 4 }, <BusinessRoster />],
-  [{ x: 0, y: 5, w: 2, h: 2 }, <Investment />],
-  [{ x: 2, y: 5, w: 3, h: 2 }, <OccupancyRate />],
-  [{ x: 6, y: 5, w: 2, h: 2 }, <IndustryAnalysis />]
+  [{ x: 0, y: 3, w: 7, h: 7 }, <NumberOfCompaniesSettled />],
+  [{ x: 7, y: 3, w: 10, h: 7 }, <TotalAssets />],
+  [{ x: 0, y: 10, w: 7, h: 7 }, <AnnualRentalIncome />],
+  [{ x: 7, y: 10, w: 10, h: 7 }, <RentArea />],
+  [{ x: 17, y: 3, w: 7, h: 14 }, <BusinessRoster />],
+  [{ x: 0, y: 17, w: 7, h: 7 }, <Investment />],
+  [{ x: 7, y: 17, w: 10, h: 7 }, <OccupancyRate />],
+  [{ x: 17, y: 17, w: 7, h: 7 }, <IndustryAnalysis />]
 ];
 
 const ParkInvestment = () => (

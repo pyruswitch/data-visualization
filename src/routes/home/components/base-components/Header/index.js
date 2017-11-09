@@ -42,8 +42,8 @@ class Header extends (PureComponent || Component) {
         </div>
       );
     } catch (error) {
-      this.props.history.push('/customer-service');
-      return (<div>加载中...</div>);
+      // this.props.history.push('/customer-service');
+      return (<div></div>);
     }
   }
 }

@@ -13,14 +13,14 @@ import {
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 2, h: 2 }, <TaskType />],
-  [{ x: 2, y: 1, w: 2, h: 2 }, <InspectionTask />],
-  [{ x: 0, y: 3, w: 2, h: 2 }, <CompletionRate />],
-  [{ x: 2, y: 3, w: 2, h: 2 }, <VerificationTask />],
-  [{ x: 4, y: 1, w: 3, h: 3 }, <LatestInspectionTasks />],
-  [{ x: 0, y: 5, w: 2, h: 2 }, <OnTimeRate />],
-  [{ x: 2, y: 5, w: 2, h: 2 }, <Quality />],
-  [{ x: 4, y: 4, w: 3, h: 3 }, <LatestVerficationTasks />]
+  [{ x: 0, y: 3, w: 7, h: 7 }, <TaskType />],
+  [{ x: 7, y: 3, w: 7, h: 7 }, <InspectionTask />],
+  [{ x: 0, y: 10, w: 7, h: 7 }, <CompletionRate />],
+  [{ x: 7, y: 10, w: 7, h: 7 }, <VerificationTask />],
+  [{ x: 14, y: 3, w: 10, h: 10 }, <LatestInspectionTasks />],
+  [{ x: 0, y: 17, w: 7, h: 7 }, <OnTimeRate />],
+  [{ x: 7, y: 17, w: 7, h: 7 }, <Quality />],
+  [{ x: 14, y: 13, w: 10, h: 11 }, <LatestVerficationTasks />]
 ];
 
 const TasksManagement = () => (

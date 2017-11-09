@@ -9,10 +9,10 @@ import {
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 2, h: 2 }, <TotalNumberOfUsers />],
-  [{ x: 2, y: 1, w: 2, h: 2 }, <TotalNumberOfVisitors />],
-  [{ x: 0, y: 3, w: 4, h: 4 }, <TrafficStatistics />],
-  [{ x: 6, y: 1, w: 3, h: 6 }, <TrafficMonitoring />]
+  [{ x: 0, y: 3, w: 7, h: 7 }, <TotalNumberOfUsers />],
+  [{ x: 7, y: 3, w: 7, h: 7 }, <TotalNumberOfVisitors />],
+  [{ x: 0, y: 10, w: 14, h: 14 }, <TrafficStatistics />],
+  [{ x: 14, y: 3, w: 10, h: 21 }, <TrafficMonitoring />]
 ];
 
 const IntelligentAccessControl = () => (

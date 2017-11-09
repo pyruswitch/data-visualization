@@ -4,11 +4,11 @@ import { Electricity, PowerAnalysis, Total, Water, WaterAnalysis } from './compo
 import './index.less';
 
 const LAYOUTCONF = [
-  [{ x: 0, y: 1, w: 3, h: 2 }, <Total />],
-  [{ x: 0, y: 3, w: 3, h: 2 }, <Water />],
-  [{ x: 0, y: 5, w: 3, h: 2 }, <Electricity />],
-  [{ x: 4, y: 1, w: 4, h: 3 }, <WaterAnalysis />],
-  [{ x: 4, y: 4, w: 4, h: 3 }, <PowerAnalysis />]
+  [{ x: 0, y: 3, w: 10, h: 7 }, <Total />],
+  [{ x: 0, y: 10, w: 10, h: 7 }, <Water />],
+  [{ x: 0, y: 17, w: 10, h: 7 }, <Electricity />],
+  [{ x: 10, y: 3, w: 14, h: 10 }, <WaterAnalysis />],
+  [{ x: 10, y: 13, w: 14, h: 11 }, <PowerAnalysis />]
 ];
 
 const ParkEnergyConsumption = () => (

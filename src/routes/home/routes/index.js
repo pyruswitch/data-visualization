@@ -5,6 +5,7 @@ import IntelligentParking from './intelligent-parking';
 import IntelligentAccessControl from './intelligent-access-control';
 import ParkEnergyConsumption from './park-energy-consumption';
 import TasksManagement from './tasks-management';
+import GridDemo from './grid-demo';
 
 export {
   CustomerService,
@@ -13,5 +14,6 @@ export {
   IntelligentParking,
   IntelligentAccessControl,
   ParkEnergyConsumption,
-  TasksManagement
+  TasksManagement,
+  GridDemo
 };
