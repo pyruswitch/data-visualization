@@ -16,10 +16,11 @@ const callApi = ({ api = '', type = 'POST', data = {}, success = noop, error = n
         error(err);
       } else {
         // http res code is 200
-        if (res.body.errorCode === 200) {
+        if (res.statusCode === 200) {
           // normal
           const stringifiedBigNumber = res.text.replace(/([^\\])":(\d{15,})/g, '$1":"$2"');
           const body = JSON.parse(stringifiedBigNumber);
+
           success(body.response);
         } else {
           if (error) {

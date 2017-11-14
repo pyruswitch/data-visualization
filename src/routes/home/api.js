@@ -21,13 +21,13 @@ const apiMaps = {
   /***************************** 园区招商 *****************************/
   // 总资产 没有接口
   // 企业名册
-  Companyespon: '/datav/Companyespon',
+  companyespon: '/datav/Companyespon',
   // 企业入驻情况 - 今年签约数和今年到期数为0
   settledenter: '/datav/settledenter',
   // 招商引资 - 数据为0
-  InviteBusiness: '/datav/InviteBusiness',
+  inviteBusiness: '/datav/InviteBusiness',
   // 行业分析
-  Companytype: '/datav/Companytype',
+  companytype: '/datav/Companytype',
   // 入住率 - 没有问题
   occupancyrate: '/datav/occupancyrate',
   // 单位租金 - 数据为0
@@ -59,7 +59,7 @@ const apiMaps = {
 const callApi = ({ api, success, error }) => callApiBk({
   api: apiMaps[api],
   method: 'GET',
-  data: { ns: 1000000 },
+  data: { ns: 999992 },
   success: (response) => {
     success(response);
   }

@@ -7,34 +7,34 @@ class AnnualRentalIncome extends Component {
     super(props);
     this.state = {
       // 年租金
-      rentalamount: 252960000,
+      rentalamount: 0,
       // 单位租金
-      unitrental: 120,
+      unitrental: 0,
       // 在租面积
-      leasedarea: 210800
+      leasedarea: 0
     };
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'rentalamount',
-  //     success: ({ value }) => {
-  //       this.setState({ rentalamount: Number(value) });
-  //     }
-  //   });
-  //   callApi({
-  //     api: 'unitrental',
-  //     success: ({ value }) => {
-  //       this.setState({ unitrental: Number(value) });
-  //     }
-  //   });
-  //   callApi({
-  //     api: 'leasedarea',
-  //     success: ({ value }) => {
-  //       this.setState({ leasedarea: Number(value) });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'rentalamount',
+      success: ({ value }) => {
+        this.setState({ rentalamount: Number(value) });
+      }
+    });
+    callApi({
+      api: 'unitrental',
+      success: ({ value }) => {
+        this.setState({ unitrental: Number(value) });
+      }
+    });
+    callApi({
+      api: 'leasedarea',
+      success: ({ value }) => {
+        this.setState({ leasedarea: Number(value) });
+      }
+    });
+  }
 
   render() {
     const { leasedarea, unitrental, rentalamount } = this.state;

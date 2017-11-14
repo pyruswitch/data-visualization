@@ -16,7 +16,7 @@ const Box = ({ title, number, unit }) => {
 
 Box.propTypes = {
   title: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   unit: PropTypes.string
 };
 

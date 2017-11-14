@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Box, Number, Widget } from 'routes/home/components';
+import callApi from 'routes/home/api';
 
 class TotalAssets extends Component {
   constructor(props) {
@@ -8,10 +9,11 @@ class TotalAssets extends Component {
       value: 2031221300
     };
   }
+
   // componentDidMount() {
-  //   // window.setInterval(() => {
-  //   //     this.setState({ value: this.state.value + 20 });
-  //   // }, 4999);
+  //   window.setInterval(() => {
+  //       this.setState({ value: this.state.value + 20 });
+  //   }, 4999);
   // }
 
   render() {

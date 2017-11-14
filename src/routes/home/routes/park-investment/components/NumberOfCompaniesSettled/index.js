@@ -6,20 +6,17 @@ import callApi from 'routes/home/api';
 class NumberOfCompaniesSettled extends Component {
   constructor(props) {
     super(props);
-    this.state = { expiration: 11, numberOfContracts: 31, total: 196 };
+    this.state = { expiration: 0, numberOfContracts: 0, total: 0 };
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'settledenter',
-  //     success: (response) => {
-  //       // 后台接口不靠谱，防止意外报错
-  //       try {
-  //         this.setState({ expiration: response[2].value, numberOfContracts: response[1].value, total: response[0].value });
-  //       } catch (error) { }
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'settledenter',
+      success: (response) => {
+          this.setState({ expiration: response[2].value, numberOfContracts: response[1].value, total: response[0].value });
+      }
+    });
+  }
 
   render() {
     const { expiration, numberOfContracts, total } = this.state;
