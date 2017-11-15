@@ -53,7 +53,29 @@ const apiMaps = {
   // 代办任务
   pengdingtask: '/datav/pengdingtask',
   // 任务状态分布
-  taskstatus: '/datav/taskstatus'
+  taskstatus: '/datav/taskstatus',
+  // 品质核查任务列表
+  qualityinspetask:'/datav/qualityinspetask',
+
+  /***************************** 任务管理 *****************************/
+  // 物业巡检任务列表
+  equipmentinspetask:'/datav/equipmentinspetask',
+  // 今日巡检任务：（总数、代办数、已办、已过期数、任务完成质量板块-完成率、
+  // 暂无及时响应率需要产品重新定义）
+  todayequipment:'/datav/todayequipment',
+  // 今日核查任务：（总数、代办数、已办、已过期数、整改率、延误率、任务完成质量板块-完成率、
+  // 暂无及时响应率需要产品重新定义）
+  todayquality:'/datav/todayquality',
+  // 任务类型分布：（物业巡检任务数、品质核查任务数、总完成率）
+  inspectiontasktype:'/datav/inspectiontasktype',
+
+  /***************************** 园区能耗 *****************************/
+  // 水、电、总能耗
+  totalenergy:'/datav/totalenergy',
+  // 每月楼栋水能耗分布
+  buildmonthwatermeter:'/datav/buildmonthwatermeter',
+  // 每月楼栋电能耗分布
+  buildmonthelectr:'/datav/buildmonthelectr'
 };
 
 const callApi = ({ api, success, error }) => callApiBk({

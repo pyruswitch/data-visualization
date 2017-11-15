@@ -6,14 +6,19 @@ class TaskType extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        { name: '已到期', value: 56.33 },
-        { name: '合同期', value: 24.03 },
-        { name: '申请入驻', value: 10.38 },
-        { name: '商务沟通', value: 4.77 }
-      ]
+      data:[]
     };
   }
+
+  componentDidMount() {
+    callApi({
+      api:'inspectiontasktype',
+      success:(response)=>{
+        this.setState({data:response});
+      }
+    });
+  }
+
 
   render() {
     return (
@@ -30,3 +35,10 @@ class TaskType extends Component {
 }
 
 export default TaskType;
+
+// [
+//   { name: '已到期', value: 56.33 },
+//   { name: '合同期', value: 24.03 },
+//   { name: '申请入驻', value: 10.38 },
+//   { name: '商务沟通', value: 4.77 }
+// ]
