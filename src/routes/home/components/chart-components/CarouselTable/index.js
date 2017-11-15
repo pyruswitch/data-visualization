@@ -3,22 +3,15 @@ import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 import './index.less';
-const injectStyle = (style) => {
-  const styleElement = document.createElement('style');
-  let styleSheet = null;
-  document.head.appendChild(styleElement);
-  styleSheet = styleElement.sheet;
-  styleSheet.insertRule(style, styleSheet.cssRules.length);
-};
-
 
 class CarouselTable extends Component {
   constructor(params) {
     super(params);
+    this.alreadyUpdate=false;
+    this.state={Tbody:styled.tbody``}
   }
 
   getTbody = () => {
-    console.log('------getTbody')
     try {
       const { data } = this.props;
       const el = this.tbody.querySelector('tr');
@@ -32,26 +25,24 @@ class CarouselTable extends Component {
             transform: translateY(-${height * data.length}px);
           }
       `;
-      if (height * data.length > tableHeight)
-        return styled.tbody``
-      else
-        return `animation: ${frames} ${data.length}s infinite linear;`
+      // 避免update死循环
+      this.alreadyUpdate=true;
+      if (Number(height) * data.length > tableHeight)
+       this.setState({Tbody: styled.tbody`animation: ${frames} ${data.length}s infinite linear;`})
     } catch (error) {
-      return styled.tbody``
+      // do nothing
+      console.log(error)
     }
   }
 
-  componentWillMount() {
-    this.Tbody = this.getTbody();
-  }
-
   componentDidUpdate(prevProps, prevState) {
-    this.Tbody = this.getTbody();
+      if(this.alreadyUpdate===false)
+        this.Tbody = this.getTbody();
   }
 
   render() {
     const { columns, data } = this.props;
-    const Tbody = this.Tbody;
+    const Tbody = this.state.Tbody;
     return (
       <div
         ref={table => { this.table = table; }}
