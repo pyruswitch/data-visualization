@@ -8,14 +8,14 @@ class TotalNumberOfOrders extends Component {
     this.state = { data: 0 };
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'ordercount',
-  //     success: (response) => {
-  //       this.setState({ data: response });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'ordercount',
+      success: (response) => {
+        this.setState({ data: response });
+      }
+    });
+  }
 
 
   render() {
@@ -24,7 +24,7 @@ class TotalNumberOfOrders extends Component {
         <div>
           <Number
             type='number'
-            value={4545}
+            value={this.state.data}
             hideUnit={false}
           />
         </div>

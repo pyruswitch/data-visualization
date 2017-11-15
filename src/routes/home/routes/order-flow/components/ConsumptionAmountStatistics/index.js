@@ -5,31 +5,18 @@ import callApi from 'routes/home/api';
 class ConsumptionAmountStatistics extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        ["01", 11319.06],
-        ["02", 34848.08],
-        ["03", 26375.48],
-        ["04", 4191.55],
-        ["05", 55931.86],
-        ["06", 85385.38],
-        ["07", 4331.57],
-        ["08", 21672.1],
-        ["09", 52132.83],
-        ["10", 4891.5]
-      ].map((value, index) => ({ name: value[0], value: value[1] }))
-    };
+    this.state = { data:[]};
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'monthamount',
-  //     success: (response) => {
-  //       const data = response.map((value, index) => ({ name: value[0], value: value[1] }));
-  //       this.setState({ data });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'monthamount',
+      success: (response) => {
+        const data = response.map((value, index) => ({ name: value[0], value: value[1] }));
+        this.setState({ data });
+      }
+    });
+  }
 
   render() {
     return (
@@ -50,4 +37,16 @@ class ConsumptionAmountStatistics extends Component {
 }
 
 export default ConsumptionAmountStatistics;
-// {"errorCode": "200", "errorDescription": "OK", "response": [["01", 11319.06], ["02", 34848.08], ["03", 26375.48], ["04", 4191.55], ["05", 55931.86], ["06", 85385.38], ["07", 4331.57], ["08", 21672.1], ["09", 52132.83], ["10", 4891.5]]}
+
+// [
+//   ["01", 11319.06],
+//   ["02", 34848.08],
+//   ["03", 26375.48],
+//   ["04", 4191.55],
+//   ["05", 55931.86],
+//   ["06", 85385.38],
+//   ["07", 4331.57],
+//   ["08", 21672.1],
+//   ["09", 52132.83],
+//   ["10", 4891.5]
+// ].map((value, index) => ({ name: value[0], value: value[1] }))

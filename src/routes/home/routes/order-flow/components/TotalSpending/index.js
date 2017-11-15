@@ -8,14 +8,14 @@ class TotalSpending extends Component {
     this.state = { data: 0 };
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'orderamount',
-  //     success: (response) => {
-  //       this.setState({ data: response });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'orderamount',
+      success: (response) => {
+        this.setState({ data: response });
+      }
+    });
+  }
 
   render() {
     return (
@@ -24,7 +24,7 @@ class TotalSpending extends Component {
           <Number
             type='money'
             hideUnit={true}
-            value={301079.41}
+            value={this.state.data}
           />
         </div>
       </Widget>

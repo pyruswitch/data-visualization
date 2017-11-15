@@ -10,34 +10,17 @@ const columns = [
 class LatestTasks extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        { "content": "用户13800******申请工位", "name": "工位预定", "date": "24/08/2017" },
-        { "content": "用户13800******提交新的投诉建议", "name": "投诉建议", "date": "22/08/2017" },
-        { "content": "科技园B栋楼梯间报修任务", "name": "物业报修", "date": "22/08/2017" },
-        { "content": "科技园B栋公共设备报修任务", "name": "物业报修", "date": "21/08/2017" },
-        { "content": "用户13800******申请加入公司****", "name": "企业认证", "date": "18/08/2017" },
-        { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "17/08/2017" },
-        { "content": "用户13800******申请工位", "name": "工位预定", "date": "16/08/2017" },
-        { "content": "用户13800******提交新的投诉建议", "name": "投诉建议", "date": "15/08/2017" },
-        { "content": "科技园B栋楼梯间报修任务", "name": "物业报修", "date": "14/08/2017" },
-        { "content": "科技园B栋公共设备报修任务", "name": "物业报修", "date": "11/08/2017" },
-        { "content": "用户13800******申请加入公司****", "name": "企业认证", "date": "11/08/2017" },
-        { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "09/08/2017" },
-        { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "08/08/2017" }
-      ]
-    };
+    this.state = {data: []};
   }
 
-  // componentDidMount() {
-  //   callApi({
-  //     api: 'pengdingtask',
-  //     success: (data) => {
-  //       // const data = response.map((value, index) => ({ month: index + 1, value: value[1] }));
-  //       this.setState({ data });
-  //     }
-  //   });
-  // }
+  componentDidMount() {
+    callApi({
+      api: 'pengdingtask',
+      success: (data) => {
+        this.setState({ data });
+      }
+    });
+  }
 
   render() {
     return (
@@ -49,3 +32,20 @@ class LatestTasks extends Component {
 }
 
 export default LatestTasks;
+
+
+// [
+//   { "content": "用户13800******申请工位", "name": "工位预定", "date": "24/08/2017" },
+//   { "content": "用户13800******提交新的投诉建议", "name": "投诉建议", "date": "22/08/2017" },
+//   { "content": "科技园B栋楼梯间报修任务", "name": "物业报修", "date": "22/08/2017" },
+//   { "content": "科技园B栋公共设备报修任务", "name": "物业报修", "date": "21/08/2017" },
+//   { "content": "用户13800******申请加入公司****", "name": "企业认证", "date": "18/08/2017" },
+//   { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "17/08/2017" },
+//   { "content": "用户13800******申请工位", "name": "工位预定", "date": "16/08/2017" },
+//   { "content": "用户13800******提交新的投诉建议", "name": "投诉建议", "date": "15/08/2017" },
+//   { "content": "科技园B栋楼梯间报修任务", "name": "物业报修", "date": "14/08/2017" },
+//   { "content": "科技园B栋公共设备报修任务", "name": "物业报修", "date": "11/08/2017" },
+//   { "content": "用户13800******申请加入公司****", "name": "企业认证", "date": "11/08/2017" },
+//   { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "09/08/2017" },
+//   { "content": "用户13800******申请月卡充值", "name": "停车缴费", "date": "08/08/2017" }
+// ]

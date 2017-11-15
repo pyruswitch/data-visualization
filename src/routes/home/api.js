@@ -59,7 +59,7 @@ const apiMaps = {
 const callApi = ({ api, success, error }) => callApiBk({
   api: apiMaps[api],
   method: 'GET',
-  data: { ns: 999992 },
+  data: { ns: 1000000 },
   success: (response) => {
     success(response);
   }
