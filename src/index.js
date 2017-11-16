@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { isIE } from "utils";
 import Support from 'routes/support';
-import Home from 'routes/home';
+import StyleA from 'routes/style-a';
 
 import 'styles/index.less';
 
@@ -19,7 +19,7 @@ const App = () => {
       <Router>
         <div>
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/" component={StyleA} />
           </Switch>
         </div>
       </Router>
