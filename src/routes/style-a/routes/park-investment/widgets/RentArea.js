@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, AreaGraph } from 'components';
+import { Widget, LineChart } from 'components';
 import { Frame, Stat } from 'g2';
 import createG2 from 'g2-react';
 import callApi from 'api';
@@ -47,7 +47,7 @@ class RentArea extends Component {
   render() {
     return (
       <Widget className="rent-area" title='在租面积/招租面积'>
-        <AreaGraph
+        <LineChart
           colX={{
             range: [0, 1],
             formatter: (val) => {

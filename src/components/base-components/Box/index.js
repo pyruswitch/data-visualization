@@ -6,10 +6,8 @@ const Box = ({ title, number, unit }) => {
   const prefixCls = 'eh-visualization-box';
   return (
     <div className={prefixCls}>
-      <div>
-        <span>{title}</span>
-        <span>{number}<sub>{unit}</sub></span>
-      </div>
+      <span>{title}</span>
+      <span>{number}<sub>{unit}</sub></span>
     </div>
   );
 };

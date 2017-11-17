@@ -19,8 +19,8 @@ const LAYOUTCONF = [
   [{ x: 0, y: 9, w: 15, h: 9 }, <RentArea />],
   [{ x: 15, y: 3, w: 9, h: 21 }, <BusinessRoster />],
   [{ x: 0, y: 18, w: 5, h: 6 }, <Investment />],
-  [{ x: 5, y: 18, w: 5, h: 6 }, <OccupancyRate />],
-  [{ x: 10, y: 18, w: 5, h: 6 }, <IndustryAnalysis />]
+  [{ x: 5, y: 18, w: 5, h: 6 }, <IndustryAnalysis />],
+  [{ x: 10, y: 18, w: 5, h: 6 }, <OccupancyRate />],
 ];
 
 const ParkInvestment = () => (

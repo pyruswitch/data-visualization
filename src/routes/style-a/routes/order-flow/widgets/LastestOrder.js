@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget, CarouselTable } from 'components';
+import { Box, NumberCard, Widget, CarouselTable } from 'components';
 import callApi from 'api';
 
 const columns = [

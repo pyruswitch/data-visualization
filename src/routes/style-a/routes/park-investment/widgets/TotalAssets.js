@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget } from 'components';
+import { Box, NumberCard, Widget, Line } from 'components';
 import callApi from 'api';
 
 class TotalAssets extends Component {
@@ -21,8 +21,9 @@ class TotalAssets extends Component {
     return (
       <Widget className="total-assets" title='总产值'>
         <div className="animate-number">
-          <Number type='money' value={value} hideUnit={true} />
+          <NumberCard type='money' value={value} hideUnit={true} />
         </div>
+        <Line />
         <div className="box">
           <Box title='税收(万元)' number='47,521' />
           <Box title='人数' number='21,728' />

@@ -1,0 +1,97 @@
+@import "~themes/variable.less";
+.skew() {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; // background: #108DEC;
+    transform: skew(-45deg);
+}
+
+.eh-data-visualization-header-style-B {
+    width: 100%;
+    height: 13.33%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: @header-bg-color;
+    border-left: 1px solid @header-border-color;
+    border-top: 1px solid @header-border-color;
+    z-index: 900;
+    >.logo {
+        float: left;
+        height: 100%;
+        width: 20%;
+        position: relative;
+        &::before {
+            .skew;
+            transform-origin: 0 70%;
+            border-bottom: 1px solid @header-border-color;
+        }
+    }
+    >.content {
+        position: relative;
+        float: right;
+        width: 80%;
+        height: 100%;
+        .border {
+            width: 100%;
+            height: 40%;
+            border-right: 1px solid @header-border-color;
+        }
+        .login {
+            position: absolute;
+            right: 0;
+            font-size: @font-size-16;
+            color: @header-menu-font-color;
+            >span {
+                display: inline-block;
+                margin: 0 20px;
+            }
+        }
+        >ul {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60%;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            padding-left: @size-24;
+            &::before {
+                .skew;
+                border-top: 1px solid @header-border-color;
+                border-left: 1px solid @header-border-color;
+            }
+            li {
+                position: relative;
+                height: 100%;
+                display: inline-block;
+                height: 60%;
+                width: 10%;
+                display: flex;
+                align-items: center;
+                font-size: @font-size-20;
+                color: @header-menu-font-color;
+                span {
+                    font-weight: 300;
+                    width: 100%;
+                    text-align: center;
+                }
+                &::before {
+                    .skew;
+                    border: 1px solid @header-border-color;
+                    margin: 0 5px;
+                }
+            }
+            li.active {
+                color: @header-menu-active-font-color;
+                &::before {
+                    background: @header-menu-bg-color;
+                }
+            }
+        }
+    }
+}

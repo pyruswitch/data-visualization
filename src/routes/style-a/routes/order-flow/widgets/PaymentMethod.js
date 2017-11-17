@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget, DonutChart } from 'components';
+import { Box, NumberCard, Widget, DonutChart } from 'components';
 import callApi from 'api';
 
 class PaymentMethod extends Component {

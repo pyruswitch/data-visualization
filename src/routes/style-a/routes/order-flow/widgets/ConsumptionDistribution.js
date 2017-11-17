@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget, Histogram } from 'components';
+import { Box, NumberCard, Widget, Histogram } from 'components';
 import callApi from 'api';
 
 class ConsumptionDistribution extends Component {

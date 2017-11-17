@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, AreaGraph } from 'components';
+import { Widget, LineChart } from 'components';
 import { callApi } from 'utils';
 import api from 'api';
 import config from 'config';
@@ -27,7 +27,7 @@ class TrafficStatistics extends Component {
     const { number, data } = this.state;
     return (
       <Widget className="traffic-statistics" title='逐时人流量统计'>
-        <AreaGraph
+        <LineChart
           data={data}
           colX={{
             formatter: (dimValue) => (`${dimValue}月`)

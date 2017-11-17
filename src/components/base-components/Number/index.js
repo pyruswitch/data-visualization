@@ -66,7 +66,7 @@ class NumberCom extends React.Component {
   }
 
   render() {
-    const prefixCls = 'eh-data-visualization-number';
+    const prefixCls = 'com-number';
     const { type, value, hideUnit = true, style } = this.props;
     const str = formatMoney({ ...this.props });
     const digitalArr = this.strToSvg(str);

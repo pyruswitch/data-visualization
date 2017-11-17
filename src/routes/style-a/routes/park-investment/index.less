@@ -3,56 +3,25 @@
 
  .eh-data-park-investment {
      .box {
-         //  border: 1px solid;
          position: relative;
-         top: 52.82%;
+         top: 60.82%;
          margin: 0 auto;
-         >div {
-             &:first-of-type {
-                 float: left;
-             }
-             &:last-of-type {
-                 float: right;
-             }
-         }
      }
-     .number {
-         width: 83.37%;
-         position: absolute;
-         top: 23%;
-         padding-left: 8.32%;
-         >span {
-             font-size: @font-size-40;
-             color: rgba(3, 255, 255, 0.60); //  color: #03FFFF;
-             >span {
-                 font-weight: 500;
-                 font-size: @font-size-24;
-             }
-         }
+     .line {
+         position: relative;
+         top: 50%;
      }
      /**总资产*/
-     .total-assets {
-         padding-left: 8px;
+     .total-assets,
+     /**入驻企业数*/
+     .annual-rental-income,
+     /**年租金收入*/
+     .number-of-companies-settled {
          .animate-number {
              width: 100%;
              height: 32% !important;
              position: absolute;
-             top: 15%;
-         }
-         .box {
-             width: 47.74%;
-         }
-     }
-     /**入驻企业数*/
-     .number-of-companies-settled {
-         .box {
-             width: 83.37%;
-         }
-     }
-     /**年租金收入*/
-     .annual-rental-income {
-         .box {
-             width: 83.37%;
+             top: 12%; //  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
          }
      }
      /**企业名册*/

@@ -1,9 +1,16 @@
-// （屏幕高度 - （上下margin60 - 模块间距12）*2 - 模块间距*7)/7
+// （屏幕高度 - （上下margin60 - 模块间距12）*2 - 模块间距*7)/7，这个数值算错了
 const height = (window.innerHeight - 48 * 2 - 24 * 7) / 7;
+// 栅格每块的高度
+const H = (window.innerHeight - 12 * 2 - 24 * 24) / 24;
+// 栅格每块的宽度
+const W = (window.innerWidth - 12 * 2 - 24 * 24) / 24;
 const fill = '#7D98EA';
 const margin = [10, 20, 30, 50];
 const stroke = "#5f79c5";
+const size = [W, H];
+const widgetSize = (w, h) => [(w - 1) * 24 + w * W, (h - 1) * 24 + h * H];
 export default {
+  size,
   // 统一高度，根据UI稿子计算，如果第一行公式没看懂，请联系Aha
   height,
   // 默认的统一边距
@@ -40,5 +47,5 @@ export default {
     lineWidth: 1, // 设置线的宽度
     stroke //  设置线的颜色
   },
-
 };
+export { widgetSize };

@@ -3,7 +3,7 @@ import createG2 from 'g2-react';
 import G2, { Stat, Frame } from 'g2';
 import config from 'config';
 const { height, title, labels, line, margin } = config;
-const createAreaGraph = ({ colX, colY }) => createG2(chart => {
+const createLineChart = ({ colX, colY }) => createG2(chart => {
   chart.legend(false);
   chart.axis('name', {
     title: null,
@@ -26,8 +26,8 @@ const createAreaGraph = ({ colX, colY }) => createG2(chart => {
     formatter: colX.formatter,
     range: [0, 1]
   });
-  chart.area().position('name*value').color('type').shape('smooth');
-  chart.line().position('name*value').color('type').size(2).shape('smooth');
+  // chart.line().position('name*value').color('type');
+  chart.line().position('name*value').color('type');
   chart.render();
 });
 
@@ -38,7 +38,7 @@ export default ({ plotCfg, colX, colY, ...rest }) => {
     forceFit: true,
     plotCfg: { margin }
   }, rest);
-  const AreaGraph = createAreaGraph({ colX, colY });
-  return (<AreaGraph {...chartProps} />);
+  const LineChart = createLineChart({ colX, colY });
+  return (<LineChart {...chartProps} />);
 };
 

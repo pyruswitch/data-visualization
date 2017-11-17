@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Widget } from 'components';
+import { Box, Widget, NumberCard, Line } from 'components';
 import callApi from 'api';
 
 class AnnualRentalIncome extends Component {
@@ -40,12 +40,10 @@ class AnnualRentalIncome extends Component {
     const { leasedarea, unitrental, rentalamount } = this.state;
     return (
       <Widget className="annual-rental-income" title='年租金收入'>
-        <div className='number'>
-          <span>
-            <span>￥</span>
-            {Number(rentalamount).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}
-          </span>
+        <div className="animate-number">
+          <NumberCard type='money' value={123} hideUnit={true} />
         </div>
+        <Line />
         <div className="box">
           <Box title='在租面积' number={leasedarea} unit='㎡' />
           <Box title='单位租金' number={unitrental} unit='元/㎡' />

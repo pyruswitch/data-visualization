@@ -5,9 +5,12 @@ const prefixCls = 'eh-data-visualization';
 const Widget = ({ className = '', title, children }) => {
   return (
     <div className={`${prefixCls}-widget-style-B`}>
-      <div>
-        <h1>{title}</h1>
-      </div>
+      {
+        title &&
+        <div>
+          <h1>{title}</h1>
+        </div>
+      }
       <div className={`content ${className}`}>
         {children}
       </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget } from 'components';
+import { Box, NumberCard, Widget } from 'components';
 import callApi from 'api';
 
 class TotalNumberOfOrders extends Component {
@@ -22,7 +22,7 @@ class TotalNumberOfOrders extends Component {
     return (
       <Widget className="total-number-of-orders" title='订单总数'>
         <div>
-          <Number
+          <NumberCard
             type='number'
             value={this.state.data}
             hideUnit={false}

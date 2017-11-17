@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Histogram, Widget, Number } from 'components';
+import { Histogram, Widget, NumberCard } from 'components';
 import callApi from 'api';
 import Arrow from './uparrow.svg';
 
@@ -11,7 +11,7 @@ class TotalConsumption extends Component {
     return (
       <Widget className="total-consumption" title='总能耗'>
         <div>
-          <Number type='number' value={21878742} hideUnit={true} />
+          <NumberCard type='number' value={21878742} hideUnit={true} />
         </div>
         <span className="percent">
           <img src={Arrow} />

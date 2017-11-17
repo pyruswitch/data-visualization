@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Number, Widget } from 'components';
+import { Box, NumberCard, Widget, Line } from 'components';
 import callApi from 'api';
 
 
@@ -22,9 +22,10 @@ class NumberOfCompaniesSettled extends Component {
     const { expiration, numberOfContracts, total } = this.state;
     return (
       <Widget className='number-of-companies-settled' title='入驻企业数'>
-        <div className='number'>
-          <span>{total}</span>
+        <div className="animate-number">
+          <NumberCard type='money' value={123} hideUnit={true} />
         </div>
+        <Line />
         <div className="box">
           <Box title='今年签约数' number={numberOfContracts} />
           <Box title='今年到期数' number={expiration} />

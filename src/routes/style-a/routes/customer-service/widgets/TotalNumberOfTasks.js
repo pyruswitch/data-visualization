@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, Number, AreaGraph } from 'components';
+import { Widget, NumberCard, LineChart } from 'components';
 import callApi from 'api';
 import config from 'config';
 class TotalNumberOfTasks extends Component {
@@ -34,13 +34,13 @@ class TotalNumberOfTasks extends Component {
     return (
       <Widget className="total-number-of-tasks" title='任务总数'>
         <div className='number'>
-          <Number
+          <NumberCard
             value={number}
             type="number"
           />
         </div>
         <div className='chart'>
-          <AreaGraph
+          <LineChart
             data={chart}
             colX={{
               formatter: (dimValue) => (`${dimValue}月`)
