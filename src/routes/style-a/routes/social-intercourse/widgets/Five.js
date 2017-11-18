@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import ReactGridLayout from 'react-grid-layout';
 import { Widget, Title, NumberCard, Box, Line } from 'components';
+import champion from './../svg/champion.svg';
+import second from './../svg/second.svg';
+import third from './../svg/third.svg';
+import four from 'components/base-components/Number/StyleB/4.svg';
+import five from 'components/base-components/Number/StyleB/5.svg';
 import callApi from 'api';
 
 class Five extends Component {
@@ -48,37 +53,36 @@ class Five extends Component {
             <Title value="话题排行榜（top5）" />
             <div className='content'>
               <div className="top-line">
-                <span>icon</span>
+                <span><img src={champion} /></span>
                 <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span>icon</span>
+                <span><img src={second} /></span>
                 <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span>icon</span>
+                <span><img src={third} /></span>
                 <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span>icon</span>
+                <span />
                 <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span>icon</span>
+                <span />
                 <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
             </div>
-
           </div>
         </ReactGridLayout>
       </Widget>

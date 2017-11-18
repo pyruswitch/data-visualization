@@ -22,19 +22,25 @@
                     display: inline-block;
                     overflow: hidden;
                     &:nth-child(1) {
-                        border: 1px solid yellow;
                         width: 5%;
+                        img {
+                            width: 60%;
+                            height: 60%;
+                            margin: 0 auto;
+                            display: block;
+                            position: relative;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
                     }
                     &:nth-child(2) {
                         width: 70%;
                         white-space: nowrap;
                         text-overflow: ellipsis;
-                        border: 1px solid yellow;
                     }
                     &:nth-child(3) {
                         width: 10%;
                         height: 40px;
-                        border: 1px solid yellow;
                         text-align: center;
                         >span {
                             display: inline-block;
@@ -47,7 +53,6 @@
                         width: 15%;
                         text-align: right;
                         color: rgba(255, 255, 255, 0.43);
-                        border: 1px solid yellow;
                     }
                 }
             }
