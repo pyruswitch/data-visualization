@@ -68,12 +68,10 @@ class One extends Component {
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
             <Title value="性别比例" />
-            <div className="content">
-              <PieChart
-                height={size[1] / 2 - 50}
-                data={this.state.data}
-              />
-            </div>
+            <PieChart
+              height={size[1] / 2 - 50}
+              data={this.state.data}
+            />
           </div>
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
             <Title value="月活跃用户" />

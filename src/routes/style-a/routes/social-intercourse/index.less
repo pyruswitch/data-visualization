@@ -4,6 +4,7 @@
         .react-grid-item {
             padding-right: 24px;
             .content {
+                // padding: 0 24px 24px 24px;
                 display: flex;
                 flex-direction: column;
                 align-content: space-around;
@@ -12,9 +13,55 @@
                 justify-content: space-around;
                 padding-left: 24px;
             }
+            .top-line {
+                height: 40px;
+                font-size: @font-size-12;
+                >span {
+                    height: 40px;
+                    line-height: 40px;
+                    display: inline-block;
+                    overflow: hidden;
+                    &:nth-child(1) {
+                        border: 1px solid yellow;
+                        width: 5%;
+                    }
+                    &:nth-child(2) {
+                        width: 70%;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        border: 1px solid yellow;
+                    }
+                    &:nth-child(3) {
+                        width: 10%;
+                        height: 40px;
+                        border: 1px solid yellow;
+                        text-align: center;
+                        >span {
+                            display: inline-block;
+                            padding: 0 4px;
+                            line-height: 20px;
+                            background: rgba(48, 145, 219, 0.35);
+                        }
+                    }
+                    &:nth-child(4) {
+                        width: 15%;
+                        text-align: right;
+                        color: rgba(255, 255, 255, 0.43);
+                        border: 1px solid yellow;
+                    }
+                }
+            }
         }
     }
     .com-number {
         height: @size-40;
+    }
+    .eh-data-visualization-widget {
+        >div>.content {
+            height: e("calc(100% - 1.6vw)");
+            .table {
+                padding: 0 24px 24px 24px;
+            }
+        }
     }
 }

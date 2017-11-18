@@ -7,8 +7,8 @@ import './index.less';
 class CarouselTable extends Component {
   constructor(params) {
     super(params);
-    this.alreadyUpdate=false;
-    this.state={Tbody:styled.tbody``}
+    this.alreadyUpdate = false;
+    this.state = { Tbody: styled.tbody`` }
   }
 
   getTbody = () => {
@@ -26,9 +26,9 @@ class CarouselTable extends Component {
           }
       `;
       // 避免update死循环
-      this.alreadyUpdate=true;
+      this.alreadyUpdate = true;
       if (Number(height) * data.length > tableHeight)
-       this.setState({Tbody: styled.tbody`animation: ${frames} ${data.length}s infinite linear;`})
+        this.setState({ Tbody: styled.tbody`animation: ${frames} ${data.length}s infinite linear;` })
     } catch (error) {
       // do nothing
       console.log(error)
@@ -36,8 +36,8 @@ class CarouselTable extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-      if(this.alreadyUpdate===false)
-        this.Tbody = this.getTbody();
+    if (this.alreadyUpdate === false)
+      this.Tbody = this.getTbody();
   }
 
   render() {
@@ -46,7 +46,7 @@ class CarouselTable extends Component {
     return (
       <div
         ref={table => { this.table = table; }}
-        className="eh-data-carousel-table"
+        className="eh-data-carousel-table table"
       >
         <div>
           <table>
