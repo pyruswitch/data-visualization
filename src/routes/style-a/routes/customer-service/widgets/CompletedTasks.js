@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart } from 'components';
+import { Widget, PieChart } from 'components';
 import callApi from 'api';
 // {"errorCode": "200", "errorDescription": "OK", "response": [{"name": "总任务数", "value": 837}, {"name": "已完成任务数", "value": 227}]}
 class CompletedTasks extends Component {
@@ -33,7 +33,7 @@ class CompletedTasks extends Component {
     const { data, percent, colors } = this.state;
     return (
       <Widget className="completed-tasks" title='已完成'>
-        <DonutChart
+        <PieChart
           data={this.state.data}
           inner={0.8}
           colors={colors}

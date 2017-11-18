@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart } from 'components';
+import { Widget, PieChart } from 'components';
 import callApi from 'api';
 
 class IndustryAnalysis extends Component {
@@ -21,7 +21,7 @@ class IndustryAnalysis extends Component {
   render() {
     return (
       <Widget className="industry-analysis" title='行业分析'>
-        <DonutChart data={this.state.data} />
+        <PieChart data={this.state.data} />
       </Widget>
     );
   }

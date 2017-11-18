@@ -10,7 +10,7 @@ const { height, legend } = config;
  * innerHTML<HTMLString>: 圆环内的文字，需要自己定义css
  */
 
-const createDonutChart = ({ innerHTML, colors = ['#E92C81', '#36B3C3', '#B3B6B7', '#FAD200', '#6859EA', '#0B78E3', '#5DADE2', '#76D7C4'], inner = 0.5 }) => createG2(chart => {
+const createPieChart = ({ innerHTML, colors = ['#E92C81', '#36B3C3', '#B3B6B7', '#FAD200', '#6859EA', '#0B78E3', '#5DADE2', '#76D7C4'], inner = 0.5 }) => createG2(chart => {
   var Stat = G2.Stat;
   chart.coord('theta', {
     radius: 0.8,
@@ -41,13 +41,17 @@ const createDonutChart = ({ innerHTML, colors = ['#E92C81', '#36B3C3', '#B3B6B7'
 });
 
 
-export default ({ colors, inner, innerHTML, ...rest }) => {
+export default ({ height = config.height * 2 - 24, colors, inner, innerHTML, ...rest }) => {
+  // // console.log(height)
+  // height = height || height * 2 - 24;
+  // console.log();
+
   const chartProps = Object.assign({}, {
-    height: height * 2 - 24,
+    height,
     width: 600,
     forceFit: true,
     plotCfg: { margin: [0, 150, 0, 0] }
   }, rest);
-  const DonutChart = createDonutChart({ colors, inner, innerHTML });
-  return (<DonutChart {...chartProps} />);
+  const PieChart = createPieChart({ colors, inner, innerHTML });
+  return (<PieChart {...chartProps} />);
 };

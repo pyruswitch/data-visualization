@@ -13,8 +13,8 @@ import Layout from './base-components/Layout';
 import Line from './base-components/Line';
 import Title from './base-components/Title';
 /***************************** 图表组件 *****************************/
-// 空心圆环
-import DonutChart from './chart-components/DonutChart';
+// 饼图
+import PieChart from './chart-components/PieChart';
 // 柱状图
 import Histogram from './chart-components/Histogram';
 // 折线图
@@ -34,7 +34,7 @@ export {
   Header,
   NumberCard,
   Widget,
-  DonutChart,
+  PieChart,
   Histogram,
   LineChart,
   Layout,

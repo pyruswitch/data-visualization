@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart } from 'components';
+import { Widget, PieChart } from 'components';
 import callApi from 'api';
 
 class CompletionRate extends Component {
@@ -11,7 +11,7 @@ class CompletionRate extends Component {
   render() {
     return (
       <Widget className="completion-rate" title='任务总完成率'>
-        <DonutChart
+        <PieChart
           data={this.state.data}
           inner={0.8}
           colors={['#2f2778', '#924ae1']}

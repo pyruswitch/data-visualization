@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart } from 'components';
+import { Widget, PieChart } from 'components';
 import callApi from 'api';
 
 class TaskType extends Component {
@@ -23,7 +23,7 @@ class TaskType extends Component {
   render() {
     return (
       <Widget className="task-type" title='任务类型分布'>
-        <DonutChart
+        <PieChart
           data={this.state.data}
         /* inner={0.8} */
         /* innerHTML={`<div className="donut-chart-html"><span>83%</span><span>响应率</span></div>`} */

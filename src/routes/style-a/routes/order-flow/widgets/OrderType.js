@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, NumberCard, Widget, DonutChart } from 'components';
+import { Box, NumberCard, Widget, PieChart } from 'components';
 import callApi from 'api';
 
 class OrderType extends Component {
@@ -20,7 +20,7 @@ class OrderType extends Component {
   render() {
     return (
       <Widget className="order-type" title='订单类型'>
-        <DonutChart data={this.state.data} />
+        <PieChart data={this.state.data} />
       </Widget>
     );
   }

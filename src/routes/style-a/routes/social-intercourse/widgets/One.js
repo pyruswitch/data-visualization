@@ -1,13 +1,38 @@
 import React, { Component } from 'react';
 import ReactGridLayout from 'react-grid-layout';
-import { Widget, NumberCard, Title, Line, Box } from 'components';
+import { Widget, NumberCard, Title, Line, Box, PieChart } from 'components';
 import config from 'config';
 import callApi from 'api';
 
 class One extends Component {
   constructor(props) {
     super(props);
-    // this.state = { data: [] };
+    this.state = {
+      data: [
+        {
+          "type": "男性",
+          "value": 32
+        },
+        {
+          "type": "女性",
+          "value": 40
+        },
+        {
+          "type": "其他",
+          "value": 40
+        }
+      ].map(({ type, value }) => ({ name: type, value: Number(value) })),
+      data1: [
+        {
+          "type": "Android",
+          "value": 32
+        },
+        {
+          "type": "iOS",
+          "value": 40
+        }
+      ].map(({ type, value }) => ({ name: type, value: Number(value) }))
+    };
   }
 
   componentDidMount() {
@@ -22,8 +47,6 @@ class One extends Component {
 
   render() {
     const { size } = this.props;
-    console.log(size[0] * config.size[0]);
-    console.log(size[0], config.size);
     return (
       <Widget className="one" >
         <ReactGridLayout
@@ -38,13 +61,19 @@ class One extends Component {
               <NumberCard value={123} type="number" />
               <Line />
               <div>
-                <Box title='人数' number='21,728' />
-                <Box title='人数' number='21,728' />
+                <Box title='周新增用户' number='21,728' />
+                <Box title='日新增用户' number='21,728' />
               </div>
             </div>
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
             <Title value="性别比例" />
+            <div className="content">
+              <PieChart
+                height={size[1] / 2 - 50}
+                data={this.state.data}
+              />
+            </div>
           </div>
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
             <Title value="月活跃用户" />
@@ -52,13 +81,17 @@ class One extends Component {
               <NumberCard value={123} type="number" />
               <Line />
               <div>
-                <Box title='人数' number='21,728' />
-                <Box title='人数' number='21,728' />
+                <Box title='周活跃用户' number='21,728' />
+                <Box title='日活跃用户' number='21,728' />
               </div>
             </div>
           </div>
           <div key="d" data-grid={{ x: 6, y: 6, w: 6, h: 6, static: true }}>
             <Title value="设备终端" />
+            <PieChart
+              height={size[1] / 2 - 50}
+              data={this.state.data1}
+            />
           </div>
         </ReactGridLayout>
       </Widget>

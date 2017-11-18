@@ -4,9 +4,9 @@ const height = (window.innerHeight - 48 * 2 - 24 * 7) / 7;
 const H = (window.innerHeight - 12 * 2 - 24 * 24) / 24;
 // 栅格每块的宽度
 const W = (window.innerWidth - 12 * 2 - 24 * 24) / 24;
-const fill = '#7D98EA';
-const margin = [10, 20, 30, 50];
-const stroke = "#5f79c5";
+const fill = '#fff';
+const margin = [50, 50, 50, 50];
+const stroke = "rgba(255,255,255,0.10)";
 const size = [W, H];
 const widgetSize = (w, h) => [(w - 1) * 24 + w * W, (h - 1) * 24 + h * H];
 export default {
@@ -17,7 +17,7 @@ export default {
   margin,
   // title默认样式
   title: {
-    fontSize: '8',
+    fontSize: '12',
     textAlign: 'center',
     fill,
   },
@@ -27,7 +27,7 @@ export default {
     label: {
       textAlign: 'center',
       fill,
-      fontSize: '8',
+      fontSize: '12',
     }
   },
   // 图例默认样式
@@ -37,8 +37,8 @@ export default {
     wordSpaceing: 2,
     itemWrap: false,
     word: {
-      fill: '#999',
-      fontSize: 8
+      fill: 'rgba(255,255,255,0.75)',
+      fontSize: 12
     },
     spacingY: 4
   },

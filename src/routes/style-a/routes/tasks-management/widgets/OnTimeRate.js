@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart } from 'components';
+import { Widget, PieChart } from 'components';
 import callApi from 'api';
 
 class OnTimeRate extends Component {
@@ -11,7 +11,7 @@ class OnTimeRate extends Component {
   render() {
     return (
       <Widget className="on-time-rate" title='响应及时率'>
-        <DonutChart
+        <PieChart
           data={this.state.data}
           inner={0.8}
           colors={['#2f2778', '#924ae1']}
