@@ -58,7 +58,7 @@ class One extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 6, h: 6, static: true }}>
             <Title value="新注册用户" />
             <div className="content">
-              <NumberCard value={123} type="number" />
+              <NumberCard value={123} icon='person' type="number" />
               <Line />
               <div>
                 <Box title='周新增用户' number='21,728' />
@@ -76,7 +76,7 @@ class One extends Component {
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
             <Title value="月活跃用户" />
             <div className="content">
-              <NumberCard value={123} type="number" />
+              <NumberCard value={123} icon='person' type="number" />
               <Line />
               <div>
                 <Box title='周活跃用户' number='21,728' />

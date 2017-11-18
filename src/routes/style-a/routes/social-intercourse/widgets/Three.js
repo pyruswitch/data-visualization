@@ -47,7 +47,7 @@ class Three extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动报名总人次" />
             <div className="content">
-              <NumberCard value={123} type="number" />
+              <NumberCard value={123} icon='person' type="number" />
               <Line />
               <div>
                 <Box title='周新增用户' number='21,728' />

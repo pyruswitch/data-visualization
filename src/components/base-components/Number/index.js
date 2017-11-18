@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Number from './style';
+import Number, { icons } from './style';
 import Bg from './bg.svg';
 import classNames from 'classnames';
 import styled from 'styled-components';
+import person from './StyleB/person.svg';
 import './index.less';
+console.log(icons);
 
 // 金钱格式化
 const formatMoney = ({ value, type, fixed }) => {
@@ -67,13 +69,21 @@ class NumberCom extends React.Component {
 
   render() {
     const prefixCls = 'com-number';
-    const { type, value, hideUnit = true, style } = this.props;
+    const { type, value, hideUnit = true, style, icon } = this.props;
     const str = formatMoney({ ...this.props });
     const digitalArr = this.strToSvg(str);
 
     return (
       <div className={prefixCls} >
         <ul ref='numberList'>
+          {
+            icon &&
+            <li className='numerals' >
+              <div>
+                <img src={icons[icon]} />
+              </div>
+            </li>
+          }
           <li className={classNames('money', { hideMoney: type === 'number' })}>
             <div><img src={Number[style][12]} /></div>
           </li>
@@ -115,7 +125,8 @@ class NumberCom extends React.Component {
 NumberCom.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   type: PropTypes.oneOf(['money', 'number']).isRequired,
-  hideUnit: PropTypes.bool
+  hideUnit: PropTypes.bool,
+  icon: PropTypes.string
 };
 
 NumberCom.defaultProps = {
