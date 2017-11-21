@@ -20,7 +20,7 @@ class AverageResponseTime extends Component {
   render() {
     return (
       <Widget className="average-response-time">
-        <Title value="新注册用户" />
+        <Title value="平均响应时间" />
         <Histogram
           data={this.state.data}
           colX={{

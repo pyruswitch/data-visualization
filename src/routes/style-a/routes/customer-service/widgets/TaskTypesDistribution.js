@@ -21,7 +21,7 @@ class TaskTypesDistribution extends Component {
   render() {
     return (
       <Widget className="task-types-distribution">
-        <Title value="新注册用户" />
+        <Title value="任务类型分布" />
         <PieChart data={this.state.data} />
       </Widget>
     );

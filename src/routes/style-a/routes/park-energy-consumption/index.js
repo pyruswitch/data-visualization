@@ -30,11 +30,11 @@ class ParkEnergyConsumption extends Component {
 
   render() {
     const LAYOUTCONF = [
-      [{ x: 0, y: 3, w: 7, h: 8 }, <Water />],
-      [{ x: 7, y: 3, w: 10, h: 8 }, <Total />],
-      [{ x: 17, y: 3, w: 7, h: 8 }, <Electricity />],
-      [{ x: 0, y: 11, w: 12, h: 13 }, <WaterAnalysis />],
-      [{ x: 12, y: 11, w: 12, h: 13 }, <PowerAnalysis />]
+      [{ x: 0, y: 2, w: 7, h: 8 }, <Water />],
+      [{ x: 7, y: 2, w: 10, h: 8 }, <Total />],
+      [{ x: 17, y: 2, w: 7, h: 8 }, <Electricity />],
+      [{ x: 0, y: 10, w: 12, h: 14 }, <WaterAnalysis />],
+      [{ x: 12, y: 10, w: 12, h: 14 }, <PowerAnalysis />]
     ];
     return (
       <div className='eh-data-park-energy-consumption'>

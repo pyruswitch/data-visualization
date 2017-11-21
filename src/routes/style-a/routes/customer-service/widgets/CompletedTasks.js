@@ -33,7 +33,7 @@ class CompletedTasks extends Component {
     const { data, percent, colors } = this.state;
     return (
       <Widget className="completed-tasks">
-        <Title value='已完成' />
+        <Title value='已完成任务' />
         <PieChart
           data={this.state.data}
           inner={0.8}
