@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, NumberCard, LineChart } from 'components';
+import { Widget, NumberCard, LineChart, Title } from 'components';
 import callApi from 'api';
 import config from 'config';
 class TotalNumberOfTasks extends Component {
@@ -32,7 +32,8 @@ class TotalNumberOfTasks extends Component {
   render() {
     const { number, chart } = this.state;
     return (
-      <Widget className="total-number-of-tasks" title='任务总数'>
+      <Widget className="total-number-of-tasks">
+        <Title value='任务总数' />
         <div className='number'>
           <NumberCard
             value={number}

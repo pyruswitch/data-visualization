@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, CarouselTable } from 'components';
+import { Widget, CarouselTable, Title } from 'components';
 import callApi from 'api';
 const columns = [
   { title: '类型名称', width: 'col-3', key: 'name' },
@@ -24,7 +24,8 @@ class LatestTasks extends Component {
 
   render() {
     return (
-      <Widget className="latest-tasks" title='最新待办任务'>
+      <Widget className="latest-tasks">
+        <Title value='最新待办任务' />
         <CarouselTable columns={columns} data={this.state.data} />
       </Widget>
     );

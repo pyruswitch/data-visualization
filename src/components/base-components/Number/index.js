@@ -109,16 +109,20 @@ class NumberCom extends React.Component {
   }
 
   onChange() {
-    const { value } = this.props;
-    const number = String(minPlaces(value));
-    const ulEl = this.refs.numberList;
-    const dom = ulEl.querySelector('li.numerals>div');
+    try {
+      const { value } = this.props;
+      const number = String(minPlaces(value));
+      const ulEl = this.refs.numberList;
+      const dom = ulEl.querySelector('li.numerals>div');
 
-    const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];
+      const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];
 
-    Array.from(ulEl.querySelectorAll('li.numerals')).forEach((el, index) => {
-      el.setAttribute("style", `transform: translateY(-${height * number.charAt(index)}px);`);
-    });
+      Array.from(ulEl.querySelectorAll('li.numerals')).forEach((el, index) => {
+        el.setAttribute("style", `transform: translateY(-${height * number.charAt(index)}px);`);
+      });
+    } catch (error) {
+      console.log(error)
+    }
   }
 };
 

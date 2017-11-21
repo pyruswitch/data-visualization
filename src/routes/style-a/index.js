@@ -9,7 +9,6 @@ import './index.less';
 class StaticElementsLayout extends React.PureComponent {
   render() {
     const { match } = this.props;
-    console.log(match);
     return (
       <div className='eh-visualization'>
         <div>
@@ -26,8 +25,7 @@ class StaticElementsLayout extends React.PureComponent {
               // { path: 'intelligent-access-control', value: '智能门禁' },
               // { path: 'order-flow', value: '园区收入' },
               // { path: 'tasks-management', value: '任务管理' }
-            ]}
-          />
+            ]} />
           <Route exact path={`${match.path}/social-intercourse`} component={SocialIntercourse} />
           <Route exact path={`${match.path}/park-energy-consumption`} component={ParkEnergyConsumption} />
           <Route exact path={`${match.path}/intelligent-access-control`} component={IntelligentAccessControl} />

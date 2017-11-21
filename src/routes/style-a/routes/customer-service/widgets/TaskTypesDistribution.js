@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, PieChart } from 'components';
+import { Widget, PieChart, Title } from 'components';
 import callApi from 'api';
 
 class TaskTypesDistribution extends Component {
@@ -20,7 +20,8 @@ class TaskTypesDistribution extends Component {
 
   render() {
     return (
-      <Widget className="task-types-distribution" title='任务类型分布'>
+      <Widget className="task-types-distribution">
+        <Title value="新注册用户" />
         <PieChart data={this.state.data} />
       </Widget>
     );

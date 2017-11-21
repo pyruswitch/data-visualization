@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, Histogram } from 'components';
+import { Widget, Histogram, Title } from 'components';
 import callApi from 'api';
 
 class AverageResponseTime extends Component {
@@ -19,7 +19,8 @@ class AverageResponseTime extends Component {
 
   render() {
     return (
-      <Widget className="average-response-time" title='平均响应时间'>
+      <Widget className="average-response-time">
+        <Title value="新注册用户" />
         <Histogram
           data={this.state.data}
           colX={{

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, PieChart } from 'components';
+import { Widget, PieChart, Title } from 'components';
 import callApi from 'api';
 // {"errorCode": "200", "errorDescription": "OK", "response": [{"name": "总任务数", "value": 837}, {"name": "已完成任务数", "value": 227}]}
 class CompletedTasks extends Component {
@@ -32,7 +32,8 @@ class CompletedTasks extends Component {
   render() {
     const { data, percent, colors } = this.state;
     return (
-      <Widget className="completed-tasks" title='已完成'>
+      <Widget className="completed-tasks">
+        <Title value='已完成' />
         <PieChart
           data={this.state.data}
           inner={0.8}

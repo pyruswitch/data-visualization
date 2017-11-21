@@ -1,58 +1,73 @@
 import React, { PureComponent, Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import RGL, { WidthProvider } from 'react-grid-layout';
+import { Widget } from 'components';
+import config, { widgetSize } from 'config';
+import HomeSvg from './home.svg';
 import './index.less';
-const prefixCls = 'eh-data-visualization';
+const prefixCls = 'com-header';
+const ReactGridLayout = WidthProvider(RGL);
 
 class Header extends (PureComponent || Component) {
   constructor(props) {
     super(props);
+    this.state = {
+      breadcrumb: ''
+    };
     this.onClick = this.onClick.bind(this);
   }
 
-  onClick(path, active) {
+  onClick(path, active, value) {
+    this.setState({ breadcrumb: value });
+    console.log(this.props.menu);
     this.props.history.push(path);
   }
 
   render() {
-    // 获取到当前哈希值
-    try {
-      const HASH = location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0];
-      const { menu, history } = this.props;
-      return (
-        <div className={`${prefixCls}-header-style-B`}>
-          <div className='logo'></div>
-          <div className='content'>
-            <div className='border' />
-            <ul>
-              {
-                menu.map(({ value, path }, index) => {
-                  const p = .1 * index * 100;
-                  return (
-                    <li
-                      onClick={() => this.onClick(path, index)}
-                      key={index}
-                      className={path === HASH ? `active` : null}
-                    >
-                      <span>{value}</span>
-                    </li>
-                  );
-                })
-              }
-              <div className='login'>
-                <span onClick={() => this.props.history.push('/')}>首页</span>
-                <span onClick={() => this.props.history.push('/')}>退出</span>
-              </div>
-            </ul>
-          </div>
-        </div>
-      );
-    } catch (error) {
-      // this.props.history.push('/customer-service');
-      return (<div></div>);
-    }
+    const HASH = location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0];
+    const { menu, history } = this.props;
+    const [W, H] = widgetSize(24, 2);
+    return (
+      <ReactGridLayout className="com-header" rowHeight={config.size[1]} margin={[24, 24]} cols={24}>
+        {[
+          [{ x: 0, y: 0, w: 3, h: 2 }, <div className='logo' />],
+          [{ x: 3, y: 0, w: 3, h: 2 }, <div className='breadcrumb'>
+            <img
+              src={HomeSvg}
+              alt="home"
+              onClick={() => this.props.history.push('/')}
+            />
+            <span>智慧社交 》子菜单</span>
+          </div>],
+          [{ x: 8, y: 0, w: 14, h: 2 },
+          <div className='menu'>
+            {
+              menu.map(({ value, path }, index) => {
+                const p = .1 * index * 100;
+                return (
+                  <span
+                    onClick={() => this.onClick(path, index, value)}
+                    key={index}
+                    className={path === HASH ? `active` : null}
+                  >
+                    <span>{value}</span>
+                  </span>
+                );
+              })
+            }
+          </div>],
+          [{ x: 23, y: 0, w: 1, h: 2 }, <div className='logout' onClick={() => this.props.history.push('/')} />]
+        ].map((arr, index) => {
+          const data = Object.assign({ static: true }, arr[0]);
+          return (
+            <div key={index} data-grid={data}>
+              {arr[1]}
+            </div>
+          );
+        })}
+      </ReactGridLayout>
+    );
   }
 }
 
 export default withRouter(Header);
-
-

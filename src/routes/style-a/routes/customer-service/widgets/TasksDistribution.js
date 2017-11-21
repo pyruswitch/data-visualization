@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import G2 from 'g2';
-import { Widget, StackedBarChart } from 'components';
+import { Widget, StackedBarChart, Title } from 'components';
 import callApi from 'api';
 
 class TasksDistribution extends Component {
@@ -23,7 +23,8 @@ class TasksDistribution extends Component {
 
   render() {
     return (
-      <Widget className="tasks-distribution" title='任务分布'>
+      <Widget className="tasks-distribution" >
+        <Title value='任务分布' />
         <StackedBarChart data={this.state.data} />
       </Widget>
     );

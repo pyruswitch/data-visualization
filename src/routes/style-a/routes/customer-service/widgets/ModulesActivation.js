@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, RadarChart } from 'components';
+import { Widget, RadarChart, Title } from 'components';
 import G2, { Stat } from 'g2';
 import callApi from 'api';
 
@@ -23,7 +23,8 @@ class ModulesActivation extends Component {
 
   render() {
     return (
-      <Widget className="modules-activation" title='服务模块活跃度'>
+      <Widget className="modules-activation" >
+        <Title value='服务模块活跃度' />
         <RadarChart data={this.state.data} />
       </Widget>
     );
