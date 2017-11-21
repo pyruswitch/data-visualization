@@ -39,8 +39,8 @@ class Header extends (PureComponent || Component) {
                 })
               }
               <div className='login'>
-                <span>首页</span>
-                <span>退出</span>
+                <span onClick={() => this.props.history.push('/')}>首页</span>
+                <span onClick={() => this.props.history.push('/')}>退出</span>
               </div>
             </ul>
           </div>

@@ -9,9 +9,9 @@ import NumberCard from './base-components/Number';
 import Widget from './base-components/Widget';
 // 布局
 import Layout from './base-components/Layout';
-
 import Line from './base-components/Line';
 import Title from './base-components/Title';
+import Tabs from './base-components/Tabs';
 /***************************** 图表组件 *****************************/
 // 饼图
 import PieChart from './chart-components/PieChart';
@@ -39,5 +39,6 @@ export {
   LineChart,
   Layout,
   Line,
-  Title
+  Title,
+  Tabs
 };

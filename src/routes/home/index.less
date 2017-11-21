@@ -1,0 +1,43 @@
+@import "~themes/variable.less";
+.ehome-home {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./bg.svg");
+    background-size: 100% 100%;
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        width: 72%;
+        height: 65%;
+        >span {
+            font-size: 16px;
+            color: #E7E7FF;
+            letter-spacing: 0;
+            line-height: 28px;
+        }
+        .logo {
+            display: block;
+            width: 20%;
+            margin: 0 auto;
+        }
+        .title {
+            width: 100%;
+        }
+        >div {
+            width: 265px;
+            height: 80px;
+            margin: 0 auto;
+            text-align: center;
+            background: rgba(0, 0, 0, .43);
+            font-weight: 200;
+            font-size: 32px;
+            color: #FFFFFF;
+            line-height: 80px;
+        }
+    }
+}

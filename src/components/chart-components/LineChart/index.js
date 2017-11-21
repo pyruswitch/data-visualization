@@ -60,11 +60,10 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
   chart.render();
 });
 
-export default ({ plotCfg, colX, colY, ...rest }) => {
+export default ({ width = 500, plotCfg, colX, colY, ...rest }) => {
   const chartProps = Object.assign({}, {
     height: height * 2,
-    width: 500,
-    forceFit: true,
+    width,
     plotCfg: { margin }
   }, rest);
   const LineChart = createLineChart({ colX, colY });

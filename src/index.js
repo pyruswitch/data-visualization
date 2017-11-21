@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { isIE } from "utils";
 import Support from 'routes/support';
 import StyleA from 'routes/style-a';
+import Home from 'routes/home';
 
 import 'styles/index.less';
 
@@ -19,7 +20,8 @@ const App = () => {
       <Router>
         <div>
           <Switch>
-            <Route path="/" component={StyleA} />
+            <Route exact path="/" component={Home} />
+            <Route path="/sa" component={StyleA} />
           </Switch>
         </div>
       </Router>

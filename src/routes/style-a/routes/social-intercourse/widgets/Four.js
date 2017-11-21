@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, Title, CarouselTable } from 'components';
+import { Widget, Title, CarouselTable, Tabs } from 'components';
 import callApi from 'api';
 const columns = [
   { title: '活动标题', width: 'col-6', key: 'name' },
@@ -44,10 +44,15 @@ class Four extends Component {
   render() {
     return (
       <Widget className="four" >
-        <Title value="最新发布" />
-        <div className='content'>
-          <CarouselTable columns={columns} data={DATA} />
-        </div>
+        <Tabs title="最新发布">
+          {
+            ['活动', '帖子'].map((value, index) => (
+              <Tabs.TabPane tab={value} key={index}>
+                <CarouselTable columns={columns} data={DATA} />
+              </Tabs.TabPane>
+            ))
+          }
+        </Tabs>
       </Widget>
     );
   }

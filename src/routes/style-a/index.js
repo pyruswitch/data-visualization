@@ -9,6 +9,7 @@ import './index.less';
 class StaticElementsLayout extends React.PureComponent {
   render() {
     const { match } = this.props;
+    console.log(match);
     return (
       <div className='eh-visualization'>
         <div>
@@ -27,14 +28,14 @@ class StaticElementsLayout extends React.PureComponent {
               { path: 'tasks-management', value: '任务管理' }
             ]}
           />
-          <Route exact path='/social-intercourse' component={SocialIntercourse} />
-          <Route exact path='/park-energy-consumption' component={ParkEnergyConsumption} />
-          <Route exact path='/intelligent-access-control' component={IntelligentAccessControl} />
-          <Route exact path='/park-investment' component={ParkInvestment} />
-          <Route exact path='/customer-service' component={CustomerService} />
-          <Route exact path='/order-flow' component={OrderFlow} />
-          <Route exact path='/intelligent-parking' component={IntelligentParking} />
-          <Route exact path='/tasks-management' component={TasksManagement} />
+          <Route exact path={`${match.path}/social-intercourse`} component={SocialIntercourse} />
+          <Route exact path={`${match.path}/park-energy-consumption`} component={ParkEnergyConsumption} />
+          <Route exact path={`${match.path}/intelligent-access-control`} component={IntelligentAccessControl} />
+          <Route exact path={`${match.path}/park-investment`} component={ParkInvestment} />
+          <Route exact path={`${match.path}/customer-service`} component={CustomerService} />
+          <Route exact path={`${match.path}/order-flow`} component={OrderFlow} />
+          <Route exact path={`${match.path}/intelligent-parking`} component={IntelligentParking} />
+          <Route exact path={`${match.path}/tasks-management`} component={TasksManagement} />
         </div>
       </div>
     );
