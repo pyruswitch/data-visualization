@@ -31,25 +31,21 @@ class TotalNumberOfTasks extends Component {
 
   render() {
     const { number, chart } = this.state;
+    const { size } = this.props;
     return (
       <Widget className="total-number-of-tasks">
         <Title value='任务总数' />
-        <div className='number'>
-          <NumberCard
-            value={number}
-            type="number"
-          />
-        </div>
-        <div className='chart'>
+        <div className="widget-content">
+          <NumberCard value={number} type="number" />
           <LineChart
             data={chart}
             colX={{
               formatter: (dimValue) => (`${dimValue}月`)
             }}
-            height={config.height * 3 - 24}
+            height={size[1] - 90}
           />
         </div>
-      </Widget>
+      </Widget >
     );
   }
 }

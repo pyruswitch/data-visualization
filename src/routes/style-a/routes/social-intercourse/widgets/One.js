@@ -57,39 +57,39 @@ class One extends Component {
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 6, h: 6, static: true }}>
             <Title value="新注册用户" />
-            <div className="content">
+            <div className="widget-content flex">
               <NumberCard value={123} icon='person' type="number" />
               <Line />
-              <div>
-                <Box title='周新增用户' number='21,728' />
-                <Box title='日新增用户' number='21,728' />
-              </div>
+              <Box title='周新增用户' number='21,728' />
+              <Box title='日新增用户' number='21,728' />
             </div>
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
             <Title value="性别比例" />
-            <PieChart
-              height={size[1] / 2 - 50}
-              data={this.state.data}
-            />
+            <div className="widget-content chart">
+              <PieChart
+                height={size[1] / 2 - 50}
+                data={this.state.data}
+              />
+            </div>
           </div>
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
             <Title value="月活跃用户" />
-            <div className="content">
+            <div className="widget-content flex">
               <NumberCard value={123} icon='person' type="number" />
               <Line />
-              <div>
-                <Box title='周活跃用户' number='21,728' />
-                <Box title='日活跃用户' number='21,728' />
-              </div>
+              <Box title='周活跃用户' number='21,728' />
+              <Box title='日活跃用户' number='21,728' />
             </div>
           </div>
           <div key="d" data-grid={{ x: 6, y: 6, w: 6, h: 6, static: true }}>
             <Title value="设备终端" />
-            <PieChart
-              height={size[1] / 2 - 50}
-              data={this.state.data1}
-            />
+            <div className="widget-content chart">
+              <PieChart
+                height={size[1] / 2 - 50}
+                data={this.state.data1}
+              />
+            </div>
           </div>
         </ReactGridLayout>
       </Widget>

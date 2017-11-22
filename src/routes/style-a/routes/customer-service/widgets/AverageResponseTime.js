@@ -21,16 +21,18 @@ class AverageResponseTime extends Component {
     return (
       <Widget className="average-response-time">
         <Title value="平均响应时间" />
-        <Histogram
-          data={this.state.data}
-          colX={{
-            formatter: dimValue => `${dimValue}月`
-          }}
-          colY={{
-            type: 'linear',
-            alias: '单位:天'
-          }}
-        />
+        <div className='widget-content chart'>
+          <Histogram
+            data={this.state.data}
+            colX={{
+              formatter: dimValue => `${dimValue}月`
+            }}
+            colY={{
+              type: 'linear',
+              alias: '单位:天'
+            }}
+          />
+        </div>
       </Widget>
     );
   }

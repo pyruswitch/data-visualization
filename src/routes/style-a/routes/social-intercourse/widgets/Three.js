@@ -46,28 +46,30 @@ class Three extends Component {
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动报名总人次" />
-            <div className="content">
+            <div className="widget-content flex">
               <NumberCard value={123} icon='person' type="number" />
               <Line />
-              <div>
-                <Box title='周新增用户' number='21,728' />
-                <Box title='日新增用户' number='21,728' />
-              </div>
+              <Box title='周新增用户' number='21,728' />
+              <Box title='日新增用户' number='21,728' />
             </div>
           </div>
           <div key="b" data-grid={{ x: 4, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动标签分布" />
-            <PieChart
-              height={size[1] - 50}
-              data={this.state.data}
-            />
+            <div className='widget-content chart'>
+              <PieChart
+                height={size[1] - 50}
+                data={this.state.data}
+              />
+            </div>
           </div>
           <div key="c" data-grid={{ x: 8, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动热度分布" />
-            <PieChart
-              height={size[1] - 50}
-              data={this.state.data}
-            />
+            <div className='widget-content chart'>
+              <PieChart
+                height={size[1] - 50}
+                data={this.state.data}
+              />
+            </div>
           </div>
         </ReactGridLayout>
       </Widget>

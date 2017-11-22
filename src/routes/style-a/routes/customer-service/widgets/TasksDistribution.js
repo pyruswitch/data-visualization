@@ -25,7 +25,9 @@ class TasksDistribution extends Component {
     return (
       <Widget className="tasks-distribution" >
         <Title value='任务分布' />
-        <StackedBarChart data={this.state.data} />
+        <div className='widget-content chart'>
+          <StackedBarChart data={this.state.data} />
+        </div>
       </Widget>
     );
   }

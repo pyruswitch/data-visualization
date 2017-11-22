@@ -25,7 +25,9 @@ class ModulesActivation extends Component {
     return (
       <Widget className="modules-activation" >
         <Title value='服务模块活跃度' />
-        <RadarChart data={this.state.data} />
+        <div className='widget-content chart'>
+          <RadarChart data={this.state.data} />
+        </div>
       </Widget>
     );
   }

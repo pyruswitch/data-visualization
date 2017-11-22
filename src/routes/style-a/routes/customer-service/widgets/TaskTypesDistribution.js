@@ -5,7 +5,9 @@ import callApi from 'api';
 class TaskTypesDistribution extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = {
+      data: []
+    };
   }
 
   componentDidMount() {
@@ -19,10 +21,13 @@ class TaskTypesDistribution extends Component {
   }
 
   render() {
+    const { size } = this.props;
     return (
       <Widget className="task-types-distribution">
         <Title value="任务类型分布" />
-        <PieChart data={this.state.data} />
+        <div className='widget-content chart'>
+          <PieChart data={this.state.data} height={size[1] - 70} />
+        </div>
       </Widget>
     );
   }

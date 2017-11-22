@@ -34,13 +34,15 @@ class CompletedTasks extends Component {
     return (
       <Widget className="completed-tasks">
         <Title value='已完成任务' />
-        <PieChart
-          data={this.state.data}
-          inner={0.8}
-          colors={colors}
-          innerHTML={`<div><span>${(percent * 100).toFixed(0)}%</span><span>完成</span></div>`}
-          plotCfg={{ margin: [0, 0, 0, 0] }}
-        />
+        <div className='widget-content chart'>
+          <PieChart
+            data={this.state.data}
+            inner={0.8}
+            colors={colors}
+            innerHTML={`<div><span>${(percent * 100).toFixed(0)}%</span><span>完成</span></div>`}
+            plotCfg={{ margin: [0, 0, 0, 0] }}
+          />
+        </div>
       </Widget>
     );
   }

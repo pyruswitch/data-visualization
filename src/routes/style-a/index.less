@@ -10,4 +10,21 @@
         // border: 1px solid white;
         height: e("calc(100vh - 72px)");
     }
+    .widget-content {
+        height: e("calc(100% - 1.6vw)");
+    }
+    .widget-content.flex {
+        padding-left: 24px;
+        display: flex; // flex-direction: column;
+        align-content: space-around;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .widget-content.chart {
+        >div {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 }
