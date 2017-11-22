@@ -4,6 +4,7 @@
     height: 100%;
     ul {
         display: inline-block;
+        position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -17,10 +18,6 @@
                     margin: 0 auto;
                 }
             }
-        }
-        li.hideMoney,
-        li.hideUnit {
-            visibility: hidden;
         }
         li.symbol {
             height: 100%; // width: 15px;
@@ -41,13 +38,9 @@
                 // bottom: 0;
             }
         }
-        li.unit {
-            margin-left: 4px;
-        }
         li.numerals {
             transition: transform 0.9s ease-in .9s;
-            height: 100%;
-            width: 5.5%;
+            height: 100%; // width: 5.5%;
             >div {
                 img {
                     top: 50%;
@@ -56,16 +49,19 @@
                 }
             }
         }
+        li.unit {
+            position: absolute;
+            height: 100%;
+            width: 10%;
+            margin-left: 8px;
+            >span {
+                position: absolute; // overflow: hidden;
+                top: 50%;
+                color: #F9CF50;
+                transform: translateY(-50%);
+                display: inline-block; // height: 100%; // vertical-align: center;
+                font-size: @font-size-40;
+            }
+        }
     }
 }
-
-// background-size: 100% 100%;
-// background-image: url('./svg/bg.svg');
-// background-repeat: no-repeat;
-// img {
-//     top: 50%;
-//     width: 60%;
-//     height: 50%;
-//     transform: translateY(-50%);
-// }
-// transition: all 0.9s ease-in 0.9s; transform: translate3d(0px, -3004px, 0px);

@@ -37,7 +37,7 @@ class Header extends (PureComponent || Component) {
               alt="home"
               onClick={() => this.props.history.push('/')}
             />
-            <span>智慧社交 》子菜单</span>
+            <span>智慧社交</span>
           </div>],
           [{ x: 8, y: 0, w: 14, h: 2 },
           <div className='menu'>

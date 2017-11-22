@@ -9,7 +9,7 @@ import './index.less';
 console.log(icons);
 
 // 金钱格式化
-const formatMoney = ({ value, type, fixed }) => {
+const formatMoney = ({ value = 88888, type, fixed }) => {
   return minPlaces(value.toFixed(0)).replace(/(\d)(?=(\d{3})+$)/g, '$1,').toString();
 };
 
@@ -69,7 +69,7 @@ class NumberCom extends React.Component {
 
   render() {
     const prefixCls = 'com-number';
-    const { type, value, hideUnit = true, style, icon } = this.props;
+    const { type, value, style, icon, unit } = this.props;
     const str = formatMoney({ ...this.props });
     const digitalArr = this.strToSvg(str);
 
@@ -84,9 +84,12 @@ class NumberCom extends React.Component {
               </div>
             </li>
           }
-          <li className={classNames('money', { hideMoney: type === 'number' })}>
-            <div><img src={Number[style][12]} /></div>
-          </li>
+          {
+            type !== 'number' &&
+            <li className='money'>
+              <div><img src={Number[style][12]} /></div>
+            </li>
+          }
           {
             digitalArr.map(({ svg, type }, index) => {
               return (
@@ -100,11 +103,14 @@ class NumberCom extends React.Component {
               );
             })
           }
-          <li className={classNames('symbol', 'unit', { hideUnit })} >
-            <img src={Number[style][13]} />
-          </li>
+          {
+            unit &&
+            <li className='unit'>
+              <span>{unit}</span>
+            </li>
+          }
         </ul>
-      </div>
+      </div >
     );
   }
 
@@ -114,9 +120,7 @@ class NumberCom extends React.Component {
       const number = String(minPlaces(value));
       const ulEl = this.refs.numberList;
       const dom = ulEl.querySelector('li.numerals>div');
-
       const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];
-
       Array.from(ulEl.querySelectorAll('li.numerals')).forEach((el, index) => {
         el.setAttribute("style", `transform: translateY(-${height * number.charAt(index)}px);`);
       });
@@ -129,7 +133,7 @@ class NumberCom extends React.Component {
 NumberCom.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   type: PropTypes.oneOf(['money', 'number']).isRequired,
-  hideUnit: PropTypes.bool,
+  unit: PropTypes.string,
   icon: PropTypes.string
 };
 

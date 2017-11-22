@@ -1,70 +1,58 @@
 @import '~themes/variable.less';
 .eh-data-park-energy-consumption {
-    span.percent {
-        font-size: @font-size-16;
-        position: absolute;
-        color: rgba(3, 255, 255, 0.60);
-        bottom: 8%;
-        right: 4%;
-        img {
-            display: inline-block;
-            width: @font-size-12;
-            margin-right: 5px;
+    .widget-content {
+        padding: 0 24px;
+    }
+    .number {
+        // margin-bottom: 2px;
+        height: 60%;
+        position: relative;
+        >.com-number {
+            position: absolute;
+            top: 40%;
+            height: 40%;
         }
     }
-    /** 总能耗 */
-    .total-consumption {
+    .button {
+        height: 40%;
         >div {
-            position: relative;
-            height: 32%;
-            top: 28%;
-        }
-    }
-    /** 水能耗 和 电能耗 */
-    .water-consumption,
-    .electricity-consumption {
-        >div {
+            display: flex;
+            height: 50%;
+            width: 30%;
             position: relative;
             top: 50%;
-            transform: translateY(-75%);
-            color: rgba(3, 255, 255, 0.60);
-            text-align: center;
+            justify-content: center; // justify-items: center;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.65);
+            font-size: @font-size-18;
+            cursor: pointer;
+             :after {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+            img {
+                width: 15%;
+            }
             span {
-                &:first-of-type {
-                    font-size: @font-size-60;
-                    margin: 0 16px 0 8px;
-                    &::before {
-                        content: '123';
-                        color: rgba(0, 0, 0, 0);
-                        width: @font-size-32;
-                        display: inline-block;
-                        margin-right: 16px;
-                        background-image: url("./widgets/water.svg");
-                        background-repeat: no-repeat;
-                        background-size: 100% 100%;
-                    }
-                    &::after {
-                        content: "T";
-                        font-size: @font-size-24;
-                        display: inline-block;
-                        margin-left: 8px;
-                    }
-                }
+                display: inline-block;
+                padding: 0 8px;
             }
         }
     }
-    .electricity-consumption {
-        >div {
-            span {
-                &:first-of-type {
-                    &::before {
-                        background-image: url("./widgets/electricity.svg");
-                    }
-                    &::after {
-                        content: "KW·H";
-                    }
-                }
-            }
-        }
-    }
+}
+
+.ant-modal-body {
+    display: flex;
+}
+
+.com-card {
+    border: 1px solid red;
+    width: 20%;
+    height: 20%;
+    display: inline-block;
+    margin: 0 4px;
+    background: linear-gradient(-180deg, #0066B3 0%, rgba(0, 102, 179, 0.13) 100%);
 }

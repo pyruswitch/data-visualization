@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Widget, StackedBarChart } from 'components';
+import { Widget, StackedBarChart, Title } from 'components';
 import callApi from 'api';
 import config from 'config';
 const { height } = config;
@@ -26,11 +26,14 @@ class WaterAnalysis extends Component {
 
   render() {
     return (
-      <Widget className="water-analysis" title='月度用水量分析'>
-        <StackedBarChart
-          height={height * 3}
-          data={this.state.data}
-        />
+      <Widget className="water-analysis">
+        <Title value="月度用水量分析" />
+        <div className="widget-content chart">
+          <StackedBarChart
+            height={height * 3}
+            data={this.state.data}
+          />
+        </div>
       </Widget>
     );
   }

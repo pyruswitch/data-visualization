@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Histogram, Widget } from 'components';
+import { Histogram, Widget, Title, NumberCard, Line } from 'components';
+import icon from './icon.svg';
 import callApi from 'api';
-import Arrow from './uparrow.svg';
 
 class WaterConsumption extends Component {
   constructor(props) {
@@ -10,14 +10,20 @@ class WaterConsumption extends Component {
 
   render() {
     return (
-      <Widget className="water-consumption" title='水能耗'>
-        <div>
-          <span>3,822</span>
+      <Widget className="water-consumption">
+        <Title value="水能耗" />
+        <div className="widget-content">
+          <div className="number">
+            <NumberCard value={123} type='number' unit='T' />
+          </div>
+          <Line />
+          <div className="button">
+            <div onClick={() => this.props.openModal('水能耗数据')}>
+              <img src={icon} alt="" />
+              <span>实时读表</span>
+            </div>
+          </div>
         </div>
-        <span className="percent">
-          <img src={Arrow} />
-          15%
-        </span>
       </Widget>
     );
   }
