@@ -43,7 +43,7 @@ class Four extends Component {
 
   render() {
     return (
-      <Widget className="four" >
+      <Widget className="four">
         <Tabs title="最新发布">
           {
             ['活动', '帖子'].map((value, index) => (
