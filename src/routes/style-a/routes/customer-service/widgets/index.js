@@ -1,17 +1,8 @@
-import AverageResponseTime from './AverageResponseTime';
-import CompletedTasks from './CompletedTasks';
-import LatestTasks from './LatestTasks';
-import ModulesActivation from './ModulesActivation';
-import TasksDistribution from './TasksDistribution';
-import TaskTypesDistribution from './TaskTypesDistribution';
-import TotalNumberOfTasks from './TotalNumberOfTasks';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
+import Five from './Five';
+import Six from './Six';
 
-export {
-  TotalNumberOfTasks,
-  TaskTypesDistribution,
-  TasksDistribution,
-  ModulesActivation,
-  LatestTasks,
-  CompletedTasks,
-  AverageResponseTime
-};
+export { One, Two, Three, Four, Five, Six };

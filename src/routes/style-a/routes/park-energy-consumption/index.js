@@ -4,6 +4,7 @@ import { Widget, Layout } from 'components';
 import RGL, { WidthProvider } from 'react-grid-layout';
 import { Electricity, PowerAnalysis, Total, Water, WaterAnalysis } from './widgets';
 import callApi from 'api';
+import { widgetSize } from 'config';
 import './index.less';
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -32,8 +33,8 @@ class ParkEnergyConsumption extends Component {
       [{ x: 0, y: 2, w: 7, h: 8 }, <Water openModal={(title) => this.setModalVisible(true, title)} />],
       [{ x: 7, y: 2, w: 10, h: 8 }, <Total />],
       [{ x: 17, y: 2, w: 7, h: 8 }, <Electricity openModal={(title) => this.setModalVisible(true, title)} />],
-      [{ x: 0, y: 10, w: 12, h: 14 }, <WaterAnalysis />],
-      [{ x: 12, y: 10, w: 12, h: 14 }, <PowerAnalysis />]
+      [{ x: 0, y: 10, w: 12, h: 14 }, <WaterAnalysis size={widgetSize(12, 14)}/>],
+      [{ x: 12, y: 10, w: 12, h: 14 }, <PowerAnalysis size={widgetSize(12, 14)}/>]
     ];
     return (
       <div className='eh-data-park-energy-consumption'>

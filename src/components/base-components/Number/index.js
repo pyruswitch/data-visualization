@@ -133,7 +133,7 @@ NumberCom.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   type: PropTypes.oneOf(['money', 'number']).isRequired,
   unit: PropTypes.string,
-  icon: PropTypes.string,
+  icon: PropTypes.oneOf(['person', 'eye', 'post']),
   hasBg: PropTypes.bool
 };
 

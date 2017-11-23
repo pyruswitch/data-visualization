@@ -38,7 +38,7 @@ export default (props) => {
     height: height * 2 - 20,
     width: 500,
     forceFit: true,
-    plotCfg: { margin: [20, 0, 20, 0] }
+    plotCfg: { margin: [30, 0, 30, 0] }
   }, props);
 
   return (<RadarChart {...chartProps} />);
