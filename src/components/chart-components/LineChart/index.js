@@ -45,7 +45,7 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
     lineWidth: 4,
     fill: null
   }).position('name*value').color('type');
-  chart.point().position('name*value').color('#F9CF50').size(5).shape('circle');
+  chart.point().position('name*value').color('#F9CF50').shape('borderRadius').size(5).shape('circle');
   //初始化到最新一个点
   var lastPoint = chart.get('plotRange').br;
   chart.showTooltip(lastPoint);

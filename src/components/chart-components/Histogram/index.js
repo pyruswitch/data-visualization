@@ -3,6 +3,7 @@ import createG2 from 'g2-react';
 import G2, { Stat } from 'g2';
 import config from 'config';
 const { height, title, labels, line, legend } = config;
+
 const createHistogram = ({
   // 是否有图例，默认没有
   hasLegend = false,

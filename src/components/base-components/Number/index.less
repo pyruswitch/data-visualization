@@ -9,7 +9,7 @@
         height: 100%;
         overflow: hidden;
         >li {
-            display: inline-block; // margin: 0 2px;
+            display: inline-block;
             >div {
                 height: 100%;
                 img {
@@ -20,11 +20,11 @@
             }
         }
         li.symbol {
-            height: 100%; // width: 15px;
+            height: 100%;
             position: relative;
             width: 4%;
             img {
-                top: 60%; // transform: translateY(-10%);
+                top: 60%;
             }
         }
         li.money {
@@ -34,32 +34,32 @@
             img {
                 top: 50%;
                 height: 70%;
-                transform: translateY(-50%); // position: absolute;
-                // bottom: 0;
+                transform: translateY(-50%);
             }
         }
         li.numerals {
             transition: transform 0.9s ease-in .9s;
-            height: 100%; // width: 5.5%;
+            height: 100%;
             >div {
+                margin: 0 2px;
                 img {
                     top: 50%;
-                    height: 70%;
+                    height: 100%;
+                    padding: 4px 0;
                     transform: translateY(-50%);
                 }
             }
         }
         li.unit {
-            position: absolute;
             height: 100%;
             width: 10%;
             margin-left: 8px;
             >span {
-                position: absolute; // overflow: hidden;
+                position: absolute;
                 top: 50%;
                 color: #F9CF50;
                 transform: translateY(-50%);
-                display: inline-block; // height: 100%; // vertical-align: center;
+                display: inline-block;
                 font-size: @font-size-40;
             }
         }

@@ -1,5 +1,17 @@
 @import '~themes/variable.less';
 .eh-data-park-energy-consumption {
+    .water-consumption {
+        background: url("./widgets/water.svg");
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-position-x: 10%;
+    }
+    .electricity-consumption {
+        background: url("./widgets/electricity.svg");
+        background-repeat: no-repeat;
+        background-size: 15%;
+        background-position-x: 10%;
+    }
     .widget-content {
         padding: 0 24px;
     }
@@ -42,10 +54,44 @@
             }
         }
     }
+    .total-consumption {
+        >.widget-content>div {
+            height: 30%;
+            ul {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
 }
 
 .ant-modal-body {
-    display: flex;
+    // display: flex;
+    .react-grid-layout {
+        >div {
+            background: linear-gradient(-180deg, #0066B3 0%, rgba(0, 102, 179, 0.13) 100%);
+            padding: 24px;
+            span {
+                display: block;
+                width: 100%;
+                text-align: left;
+                &:nth-of-type(1) {
+                    display: inline-block;
+                    font-size: 14px;
+                    color: #FFFFFF;
+                    font-weight: 200;
+                }
+                &:nth-of-type(2) {
+                    font-size: 32px;
+                    color: #F9CF50;
+                }
+                &:nth-of-type(3) {
+                    font-size: 14px;
+                    color: rgba(249, 207, 80, 0.4);
+                }
+            }
+        }
+    }
 }
 
 .com-card {

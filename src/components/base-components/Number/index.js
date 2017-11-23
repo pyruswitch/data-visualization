@@ -6,7 +6,6 @@ import classNames from 'classnames';
 import styled from 'styled-components';
 import person from './StyleB/person.svg';
 import './index.less';
-console.log(icons);
 
 // 金钱格式化
 const formatMoney = ({ value = 88888, type, fixed }) => {
@@ -22,7 +21,7 @@ const minPlaces = (number) => {
 class NumberCom extends React.Component {
   componentWillMount() {
     // 所有的阿拉伯数字列表
-    const Div = this.props.style === 'A' ?
+    const Div = this.props.hasBg ?
       styled.div`
     background-size: 100% 100%;
     background-image: url('${Bg}');
@@ -69,7 +68,7 @@ class NumberCom extends React.Component {
 
   render() {
     const prefixCls = 'com-number';
-    const { type, value, style, icon, unit } = this.props;
+    const { type, value, style, icon, unit, hasBg } = this.props;
     const str = formatMoney({ ...this.props });
     const digitalArr = this.strToSvg(str);
 
@@ -134,11 +133,13 @@ NumberCom.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   type: PropTypes.oneOf(['money', 'number']).isRequired,
   unit: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  hasBg: PropTypes.bool
 };
 
 NumberCom.defaultProps = {
-  style: "B"
+  style: "B",
+  hasBg: false
 }
 
 export default NumberCom;

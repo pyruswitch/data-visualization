@@ -30,7 +30,7 @@ const StackedBarChart = createG2(chart => {
   chart.legend('status', {
     title: null
   });
-  chart.intervalStack().position('name*value').color('status', ['#FAD200 ', '#E90081', '#56B3BB']).size(9);
+  chart.intervalStack().position('name*value').color('status', ['#FAD200 ', '#E90081', '#56B3BB']).shape('borderRadius').size(9);
   chart.render();
 });
 

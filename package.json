@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/g2": "^3.0.0",
     "antd": "^2.13.7",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",

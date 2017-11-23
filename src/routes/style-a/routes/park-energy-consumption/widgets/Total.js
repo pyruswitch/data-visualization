@@ -10,6 +10,11 @@ class TotalConsumption extends Component {
     return (
       <Widget className="total-consumption" >
         <Title value='总能耗' />
+        <div className='widget-content chart'>
+          <div>
+            <NumberCard value={33131213} type='number' hasBg unit="TEC" />
+          </div>
+        </div>
       </Widget>);
   }
 }
