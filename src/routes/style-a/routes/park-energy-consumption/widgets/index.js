@@ -1,13 +1,7 @@
-import Electricity from './Electricity';
-import PowerAnalysis from './PowerAnalysis';
-import Total from './Total';
-import Water from './Water';
-import WaterAnalysis from './WaterAnalysis';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
+import Five from './Five';
 
-export {
-  Electricity,
-  PowerAnalysis,
-  Total,
-  Water,
-  WaterAnalysis
-};
+export { One, Two, Three, Four, Five };

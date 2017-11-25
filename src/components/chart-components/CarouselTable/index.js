@@ -28,12 +28,20 @@ class CarouselTable extends Component {
       // 避免update死循环
       this.alreadyUpdate = true;
       if (Number(height) * data.length > tableHeight)
-        this.setState({ Tbody: styled.tbody`animation: ${frames} ${data.length}s infinite linear;` })
+        this.setState({ Tbody: styled.tbody`animation: ${frames} ${data.length * 2}s infinite linear;` })
     } catch (error) {
       // do nothing
       console.log(error)
     }
   }
+
+  componentDidMount() {
+    console.log('did monut')
+    if (this.props.data.length > 0) {
+      this.Tbody = this.getTbody();
+    }
+  }
+
 
   componentDidUpdate(prevProps, prevState) {
     if (this.alreadyUpdate === false)

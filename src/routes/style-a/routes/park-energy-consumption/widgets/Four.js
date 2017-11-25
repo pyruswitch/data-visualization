@@ -1,10 +1,11 @@
+
 import React, { Component } from 'react';
-import { Widget, StackedBarChart, Title, LineChart } from 'components';
+import { Widget, LineChart, Title } from 'components';
 import callApi from 'api';
 import config from 'config';
 const { height } = config;
 
-class PowerAnalysis extends Component {
+class Four extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,7 +28,7 @@ class PowerAnalysis extends Component {
 
   componentDidMount() {
     // callApi({
-    //   api: 'buildmonthelectr',
+    //   api: 'buildmonthwatermeter',
     //   success: (response) => {
     //     const data = response.map(({ buildno, month, value }) => (
     //       { name: `${month}月`, value: Number(value), status: `${buildno}楼栋` }
@@ -38,10 +39,10 @@ class PowerAnalysis extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     return (
-      <Widget className="power-analysis">
-        <Title value="月度用电量分析" />
+      <Widget>
+        <Title value={title} />
         <div className="widget-content chart">
           <LineChart
             data={this.state.data}
@@ -57,7 +58,7 @@ class PowerAnalysis extends Component {
   }
 }
 
-export default PowerAnalysis;
+export default Four;
 
 // [
 //   { "name": "装修", "value": 15, "status": "待处理" },

@@ -8,30 +8,48 @@ class Two extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        { "value": 76, "date": "01" },
-        { "value": 149, "date": "02" },
-        { "value": 213, "date": "03" },
-        { "value": 48, "date": "04" },
-        { "value": 99, "date": "05" },
-        { "value": 87, "date": "06" },
-        { "value": 71, "date": "07" },
-        { "value": 6, "date": "08" },
-        { "value": 53, "date": "09" },
-        { "value": 35, "date": "10" }
-      ].map(({ date, value }) => ({ type: '2017', name: date, value })),
+      data0: [
+        { value: 0, name: "01" },
+        { value: 0, name: "02" },
+        { value: 0, name: "03" },
+        { value: 0, name: "04" },
+        { value: 0, name: "05" },
+        { value: 0, name: "06" },
+        { value: 0, name: "07" },
+        { value: 0, name: "08" },
+        { value: 0, name: "09" },
+        { value: 8697, name: "10" },
+        { value: 892, name: "11" },
+        { value: 0, name: "12" }
+      ],
       data1: [
-        { "value": 0, "date": "01" },
-        { "value": 149, "date": "02" },
-        { "value": 13, "date": "03" },
-        { "value": 8, "date": "04" },
-        { "value": 29, "date": "05" },
-        { "value": 87, "date": "06" },
-        { "value": 71, "date": "07" },
-        { "value": 6, "date": "08" },
-        { "value": 53, "date": "09" },
-        { "value": 35, "date": "10" }
-      ].map(({ date, value }) => ({ type: '2017', name: date, value }))
+        { value: 0, name: "01" },
+        { value: 0, name: "02" },
+        { value: 0, name: "03" },
+        { value: 0, name: "04" },
+        { value: 0, name: "05" },
+        { value: 0, name: "06" },
+        { value: 0, name: "07" },
+        { value: 0, name: "08" },
+        { value: 0, name: "09" },
+        { value: 7952, name: "10" },
+        { value: 692, name: "11" },
+        { value: 0, name: "12" }
+      ],
+      data2: [
+        { value: 0, name: "01" },
+        { value: 0, name: "02" },
+        { value: 0, name: "03" },
+        { value: 0, name: "04" },
+        { value: 0, name: "05" },
+        { value: 0, name: "06" },
+        { value: 0, name: "07" },
+        { value: 0, name: "08" },
+        { value: 0, name: "09" },
+        { value: 8697, name: "10" },
+        { value: 892, name: "11" },
+        { value: 0, name: "12" }
+      ],
     };
   }
 
@@ -56,7 +74,7 @@ class Two extends Component {
             ['新增用户', '活跃用户', '累计用户'].map((value, index) => (
               <Tabs.TabPane tab={value} key={index}>
                 <LineChart
-                  data={this.state.data}
+                  data={this.state[`data${index}`]}
                   colX={{
                     formatter: (dimValue) => (`${dimValue}月`)
                   }}

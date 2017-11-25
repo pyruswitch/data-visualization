@@ -14,7 +14,6 @@ const StackedBarChart = createG2(chart => {
   });
   chart.tooltip(false);
   chart.axis('value', {
-    title: null,
     grid: null,
     titleOffset: 30,
     tickLine: null,
@@ -30,7 +29,17 @@ const StackedBarChart = createG2(chart => {
   chart.legend('status', {
     title: null
   });
-  chart.intervalStack().position('name*value').color('status', ['#FAD200 ', '#E90081', '#56B3BB']).shape('borderRadius').size(9);
+  chart
+    .intervalStack()
+    .position('name*value')
+    .color('status', ['#FAD200 ', '#E90081', '#56B3BB'])
+    .shape('borderRadius')
+    .size('name', function () {
+      if (this.scales.length && this.scales[0].values.length <= 6) {
+        const clientWidth = document.body.clientWidth;
+        return 40 * clientWidth / 1366;
+      }
+    });
   chart.render();
 });
 

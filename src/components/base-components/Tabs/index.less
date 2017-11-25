@@ -1,5 +1,6 @@
 @import "~themes/variable.less";
 .com-tabs {
+    height: 100%;
     div {
         display: inline-block;
     }
@@ -44,8 +45,10 @@
         }
     }
     .content {
+        height: e("calc(100% - 1.6vw)");
         white-space: nowrap;
         >div {
+            height: 100%;
             display: inline-block;
         }
         transition: transform 0.5s ease-in;

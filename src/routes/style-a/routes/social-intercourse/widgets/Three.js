@@ -7,20 +7,18 @@ class Three extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          "type": "男性",
-          "value": 32
-        },
-        {
-          "type": "女性",
-          "value": 40
-        },
-        {
-          "type": "其他",
-          "value": 40
-        }
-      ].map(({ type, value }) => ({ name: type, value: Number(value) })),
+      data0: [
+        { name: "旅游", value: 3 },
+        { name: "创客", value: 1 },
+        { name: "篮球", value: 3 },
+        { name: "沙龙", value: 4 }
+      ],
+      data1: [
+        { name: "旅游", value: 700 },
+        { name: "创客", value: 800 },
+        { name: "篮球", value: 244 },
+        { name: "沙龙", value: 910 }
+      ]
     };
   }
 
@@ -47,10 +45,10 @@ class Three extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动报名总人次" />
             <div className="widget-content flex">
-              <NumberCard value={123} icon='person' type="number" />
+              <NumberCard value={2654} icon='person' type="number" />
               <Line />
-              <Box title='周新增用户' number='21,728' />
-              <Box title='日新增用户' number='21,728' />
+              <Box title='活动发布总数' number='11' />
+              <Box title='平均报名人次/场' number='32' />
             </div>
           </div>
           <div key="b" data-grid={{ x: 4, y: 0, w: 4, h: 1, static: true }}>
@@ -58,7 +56,7 @@ class Three extends Component {
             <div className='widget-content chart'>
               <PieChart
                 height={size[1] - 50}
-                data={this.state.data}
+                data={this.state.data0}
               />
             </div>
           </div>
@@ -67,7 +65,7 @@ class Three extends Component {
             <div className='widget-content chart'>
               <PieChart
                 height={size[1] - 50}
-                data={this.state.data}
+                data={this.state.data1}
               />
             </div>
           </div>

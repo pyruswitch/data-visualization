@@ -9,10 +9,10 @@ class Six extends Component {
     super(props);
     this.state = {
       data: [
-        { name: '已到期', value: 56.33 },
-        { name: '合同期', value: 24.03 },
-        { name: '申请入驻', value: 10.38 },
-        { name: '商务沟通', value: 4.77 }
+        { name: '已到期', value: 20 },
+        { name: '合同期', value: 8 },
+        { name: '申请入驻', value: 70 },
+        { name: '商务沟通', value: 2 }
       ]
     };
   }

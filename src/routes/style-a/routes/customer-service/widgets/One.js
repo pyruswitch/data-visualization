@@ -8,7 +8,7 @@ class One extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
+      data0: [
         { value: 76, name: "01" },
         { value: 149, name: "02" },
         { value: 213, name: "03" },
@@ -21,7 +21,8 @@ class One extends Component {
         { value: 35, name: "10" },
         { value: 35, name: "11" },
         { value: 35, name: "12" }
-      ]
+      ],
+      data1: [{ "name": "总任务数", "value": 837 }, { "name": "已完成任务数", "value": 4194 }]
     };
   }
 
@@ -50,7 +51,7 @@ class One extends Component {
             <Title value={title[1]} />
             <div className="widget-content chart">
               <LineChart
-                data={this.state.data}
+                data={this.state.data0}
                 colX={{
                   formatter: (dimValue) => (`${dimValue}月`)
                 }}
@@ -61,7 +62,13 @@ class One extends Component {
           </div>
           <div key="c" data-grid={{ x: 0, y: 2, w: 2, h: 3, static: true }}>
             <div className="chart">
-
+            <PieChart
+            data={this.state.data1}
+            inner={0.8}
+            colors={['#2f2778', '#924ae1']}
+            innerHTML={`<span>83%</span><span>本周完成率</span></div>`}
+            plotCfg={{ margin: [0, 0, 0, 0] }}
+          />
             </div>
           </div>
         </ReactGridLayout>

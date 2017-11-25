@@ -52,9 +52,19 @@ const createHistogram = ({
     });
     if (transpose === true) {
       chart.coord('rect').transpose();
-      chart.intervalDodge().position('name*value').color('type');
+      chart.intervalDodge().position('name*value').color('type').size('name', function () {
+        if (this.scales.length && this.scales[0].values.length <= 6) {
+          const clientWidth = document.body.clientWidth;
+          return 40 * clientWidth / 1366;
+        }
+      });
     } else {
-      chart.interval().position('name*value').color('name');
+      chart.interval().position('name*value').color('name').size('name', function () {
+        if (this.scales.length && this.scales[0].values.length <= 6) {
+          const clientWidth = document.body.clientWidth;
+          return 40 * clientWidth / 1366;
+        }
+      })
     }
     chart.render();
   });

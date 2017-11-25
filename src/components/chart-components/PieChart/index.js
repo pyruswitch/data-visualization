@@ -3,6 +3,7 @@ import createG2 from 'g2-react';
 import G2, { Stat } from 'g2';
 import config from 'config';
 const { height, legend } = config;
+import './index.less';
 /**
  * 空心圆环图
  * @param {inner,innerHTML,colors}
@@ -24,10 +25,14 @@ const createPieChart = ({ innerHTML, colors = ['#935DFA', '#F9CF50', '#22E756', 
     itemWrap: true,
     formatter: function (val) {
       const { data } = chart._attrs.data;
+      let total = 0;
+      data.forEach(e => {
+        total += e.value;
+      });
       for (var i = 0, len = data.length; i < len; i++) {
         var obj = data[i];
         if (obj.name === val) {
-          return val + ': ' + obj.value + '%';
+          return val + ': ' + (obj.value / total * 100).toFixed(0) + '%';
         }
       }
     }
@@ -39,7 +44,7 @@ const createPieChart = ({ innerHTML, colors = ['#935DFA', '#F9CF50', '#22E756', 
   if (typeof innerHTML === 'string') {
     var canvasDom = chart.get('frontCanvas').get('el');
     var node = document.createElement('div');
-    node.innerHTML = innerHTML;
+    node.innerHTML = `<div class='pie-innerHtml'><div>${innerHTML}</div></div>`;
     canvasDom.parentNode.appendChild(node);
   } else {
     // 设置默认选中

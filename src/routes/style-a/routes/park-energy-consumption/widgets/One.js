@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { Histogram, Widget, Title, NumberCard, Line } from 'components';
-import icon from './icon.svg';
+import icon from './svg/icon.svg';
+import Float from './components/Float';
 import callApi from 'api';
 
-class WaterConsumption extends Component {
+class One extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+    const { title } = this.props;
     return (
-      <Widget className="water-consumption">
-        <Title value="水能耗" />
+      <Widget>
+        <Title value={title} />
         <div className="widget-content">
           <div className="number">
-            <NumberCard value={123} type='number' unit='T' />
+            <NumberCard value={3458716} type='number' unit='T' />
           </div>
           <Line />
           <div className="button">
@@ -24,9 +26,10 @@ class WaterConsumption extends Component {
             </div>
           </div>
         </div>
+        <Float value={1} />
       </Widget>
     );
   }
 }
 
-export default WaterConsumption;
+export default One;

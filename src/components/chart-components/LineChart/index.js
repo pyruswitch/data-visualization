@@ -29,15 +29,15 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
       }
     }
   });
-  chart.guide().text(['01月', '280'], '新增人数', {
-    fill: '#fff',
-    textAlign: 'left',
-    fontSize: 12
-  });
-  chart.col('name', {
-    formatter: colX.formatter,
-    range: [0, 1]
-  });
+  // chart.guide().text(['01月'], '新增人数', {
+  //   fill: '#fff',
+  //   textAlign: 'left',
+  //   fontSize: 12
+  // });
+  // chart.col('name', {
+  //   formatter: colX.formatter,
+  //   range: [0, 1]
+  // });
 
   // chart.line().position('name*value').color('type');
   chart.line().style({

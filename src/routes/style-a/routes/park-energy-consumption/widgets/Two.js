@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Histogram, Widget, NumberCard, Title } from 'components';
 import callApi from 'api';
 
-class TotalConsumption extends Component {
+class Two extends Component {
   constructor(props) {
     super(props);
   }
   render() {
+    const { title } = this.props;
     return (
-      <Widget className="total-consumption" >
-        <Title value='总能耗' />
+      <Widget>
+        <Title value={title} />
         <div className='widget-content chart'>
           <div>
             <NumberCard value={33131213} type='number' hasBg unit="TEC" />
@@ -19,4 +20,4 @@ class TotalConsumption extends Component {
   }
 }
 
-export default TotalConsumption;
+export default Two;

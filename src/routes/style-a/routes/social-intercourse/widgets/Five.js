@@ -37,16 +37,16 @@ class Five extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 3, h: 6, static: true }}>
             <Title value="帖子发布总数" />
             <div className="widget-content flex">
-              <NumberCard value={123} icon='post' type="number" />
+              <NumberCard value={169} icon='post' type="number" />
               <Line />
-              <Box title='周新增用户' number='21,728' />
-              <Box title='日新增用户' number='21,728' />
+              <Box title='总回复数' number='2,357' />
+              <Box title='总点赞数' number='5,013' />
             </div>
           </div>
           <div key="b" data-grid={{ x: 0, y: 6, w: 3, h: 3, static: true }}>
             <Title value="总阅读量" />
             <div className="widget-content flex">
-              <NumberCard value={123} icon='eye' type="number" />
+              <NumberCard value={6985} icon='eye' type="number" />
             </div>
           </div>
           <div key="c" data-grid={{ x: 4, y: 0, w: 5, h: 9, static: true }}>

@@ -18,10 +18,10 @@ class One extends Component {
       <Widget>
         <Title value={title} />
         <div className="widget-content flex">
-          <NumberCard value={123} icon='person' type="number" />
+          <NumberCard value={5300000000} icon='person' type="number" />
           <Line />
-          <Box title='总税收' number='21,728' />
-          <Box title='总人数' number='21,728' />
+          <Box title='总税收' number='1,640,000,000' />
+          <Box title='总人数' number='1,561' />
         </div>
       </Widget>
     );
