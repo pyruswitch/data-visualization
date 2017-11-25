@@ -51,10 +51,10 @@ class Three extends Component {
 
 
   render() {
-    const { size } = this.props;
+    const { title, size } = this.props;
     return (
-      <Widget className="three" >
-        <Title value="任务类型分布" />
+      <Widget>
+        <Title value={title[0]} />
         <div className="widget-content chart">
           <PieChart data={this.state.data} height={size[1] - 70} />
         </div>

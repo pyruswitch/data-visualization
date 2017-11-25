@@ -21,10 +21,10 @@ class Five extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { title, size } = this.props;
     return (
-      <Widget className="five" >
-        <Title value="平均响应时间" />
+      <Widget>
+        <Title value={title[0]} />
         <div className="widget-content chart">
           <Histogram
             data={this.state.data}

@@ -30,7 +30,7 @@ class One extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     const { colors, percent } = this.state;
     return (
       <Widget className="one" >
@@ -41,13 +41,13 @@ class One extends Component {
           width={size[0]}
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 2, h: 2, static: true }}>
-            <Title value="任务总数" />
+            <Title value={title[0]} />
             <div className="widget-content chart">
               <NumberCard type="number" icon="person" />
             </div>
           </div>
           <div key="b" data-grid={{ x: 2, y: 0, w: 6, h: 5, static: true }}>
-            <Title value="整体趋势图" />
+            <Title value={title[1]} />
             <div className="widget-content chart">
               <LineChart
                 data={this.state.data}

@@ -30,29 +30,3 @@ class IndustryAnalysis extends Component {
 export default IndustryAnalysis;
 
 
-// [
-//   {
-//     "name": "软件行业",
-//     "value": 495
-//   },
-//   {
-//     "name": "电子行业",
-//     "value": 390
-//   },
-//   {
-//     "name": "房地产类",
-//     "value": 150
-//   },
-//   {
-//     "name": "健康与医疗",
-//     "value": 133
-//   },
-//   {
-//     "name": "服务行业",
-//     "value": 105
-//   },
-//   {
-//     "name": "其他",
-//     "value": 98
-//   }
-// ]

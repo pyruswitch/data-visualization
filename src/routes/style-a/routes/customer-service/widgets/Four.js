@@ -21,10 +21,10 @@ class Four extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { title, size } = this.props;
     return (
-      <Widget className="four" >
-        <Title value="服务模块活跃度" />
+      <Widget>
+        <Title value={title[0]} />
         <div className="widget-content chart">
           <RadarChart
             height={size[1] - 50}

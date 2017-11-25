@@ -35,10 +35,10 @@ class Six extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { title, size } = this.props;
     return (
-      <Widget className="six" >
-        <Title value="任务分布" />
+      <Widget>
+        <Title value={title[0]} />
         <div className="widget-content chart">
           <StackedBarChart
             height={size[1] - 50}

@@ -42,9 +42,10 @@ class Two extends Component {
   }
 
   render() {
+    const { title } = this.props;
     return (
-      <Widget className="two" >
-        <Title value="最新待办任务" />
+      <Widget>
+        <Title value={title[0]} />
         <div className="widget-content">
           <CarouselTable columns={columns} data={DATA} />
         </div>

@@ -8,7 +8,12 @@ class Six extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [
+        { name: '已到期', value: 56.33 },
+        { name: '合同期', value: 24.03 },
+        { name: '申请入驻', value: 10.38 },
+        { name: '商务沟通', value: 4.77 }
+      ]
     };
   }
 
@@ -19,7 +24,11 @@ class Six extends Component {
       <Widget>
         <Title value={title} />
         <div className="widget-content chart">
-          <PieChart data={this.state.data} height={size[1] - 70} />
+          <PieChart
+            width={size[0]}
+            height={size[1] - 50}
+            data={this.state.data}
+          />
         </div>
       </Widget>
     );
@@ -27,3 +36,5 @@ class Six extends Component {
 }
 
 export default Six;
+
+
