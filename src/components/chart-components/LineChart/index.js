@@ -34,10 +34,10 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
   //   textAlign: 'left',
   //   fontSize: 12
   // });
-  // chart.col('name', {
-  //   formatter: colX.formatter,
-  //   range: [0, 1]
-  // });
+  chart.col('name', {
+    formatter: colX.formatter,
+    range: [0, 1]
+  });
 
   // chart.line().position('name*value').color('type');
   chart.line().style({

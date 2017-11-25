@@ -19,12 +19,19 @@ class Header extends (PureComponent || Component) {
 
   onClick(path, active, value) {
     this.setState({ breadcrumb: value });
-    console.log(this.props.menu);
     this.props.history.push(path);
   }
 
+  componentDidMount(){
+    const HASH = this.getHash();
+    const activeMenu=this.props.menu.filter(({path})=>path===HASH);
+    this.setState({ breadcrumb: activeMenu[0].value });
+  }
+
+  getHash=()=>location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0]
+
   render() {
-    const HASH = location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0];
+    const HASH = this.getHash();
     const { menu, history } = this.props;
     const [W, H] = widgetSize(24, 2);
     return (
@@ -37,7 +44,7 @@ class Header extends (PureComponent || Component) {
               alt="home"
               onClick={() => this.props.history.push('/')}
             />
-            <span>智慧社交</span>
+            <span>{this.state.breadcrumb}</span>
           </div>],
           [{ x: 8, y: 0, w: 14, h: 2 },
           <div className='menu'>

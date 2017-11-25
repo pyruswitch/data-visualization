@@ -54,13 +54,13 @@ class Five extends Component {
             <div className='widget-content flex'>
               <div className="top-line">
                 <span><img src={champion} /></span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
+                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
                 <span><img src={second} /></span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
+                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
@@ -71,14 +71,14 @@ class Five extends Component {
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span />
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
+                <span>4</span>
+                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
               <div className="top-line">
-                <span />
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清…</span>
+                <span>5</span>
+                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
                 <span><span>紧急通知</span></span>
                 <span>阅读量:&nbsp;&nbsp;80K</span>
               </div>
