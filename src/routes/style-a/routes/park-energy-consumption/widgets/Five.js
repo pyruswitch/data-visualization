@@ -9,17 +9,17 @@ class Five extends Component {
     super(props);
     this.state = {
       data: [
-        { "value": 76, "name": "01" },
-        { "value": 149, "name": "02" },
+        { "value": 176, "name": "01" },
+        { "value": 129, "name": "02" },
         { "value": 213, "name": "03" },
-        { "value": 48, "name": "04" },
-        { "value": 99, "name": "05" },
-        { "value": 87, "name": "06" },
-        { "value": 71, "name": "07" },
-        { "value": 6, "name": "08" },
-        { "value": 53, "name": "09" },
-        { "value": 35, "name": "10" },
-        { "value": 35, "name": "11" },
+        { "value": 238, "name": "04" },
+        { "value": 299, "name": "05" },
+        { "value": 387, "name": "06" },
+        { "value": 471, "name": "07" },
+        { "value": 446, "name": "08" },
+        { "value": 453, "name": "09" },
+        { "value": 335, "name": "10" },
+        { "value": 315, "name": "11" },
         { "name": "12" },
       ]
     };

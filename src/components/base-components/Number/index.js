@@ -15,7 +15,6 @@ const formatMoney = ({ value = 88888, type, fixed }) => {
 // 翻牌器最小位数
 const minPlaces = (number) => {
   const len = String(number).replace(/[\.\￥]/g, '').length;
-  console.log(number)
   return len > 8 ? number : new Array(8 - len).fill(0).join('') + number;
 };
 
@@ -118,7 +117,6 @@ class NumberCom extends React.Component {
     try {
       const { value } = this.props;
       const number = String(minPlaces(value));
-      console.log('number', number)
       const ulEl = this.refs.numberList;
       const dom = ulEl.querySelector('li.numerals>div');
       const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];

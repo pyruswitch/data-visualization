@@ -12,9 +12,6 @@ class StaticElementsLayout extends React.PureComponent {
     return (
       <div className='eh-visualization'>
         <div>
-          <Helmet>
-            <title>深圳科技园数据舱</title>
-          </Helmet>
           <Header
             activeKey='0'
             menu={[

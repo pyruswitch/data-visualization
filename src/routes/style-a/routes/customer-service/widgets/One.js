@@ -44,7 +44,7 @@ class One extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 2, h: 2, static: true }}>
             <Title value={title[0]} />
             <div className="widget-content chart">
-              <NumberCard type="number" icon="person" />
+              <NumberCard type="number" value={837} icon="person" />
             </div>
           </div>
           <div key="b" data-grid={{ x: 2, y: 0, w: 6, h: 5, static: true }}>
@@ -62,13 +62,13 @@ class One extends Component {
           </div>
           <div key="c" data-grid={{ x: 0, y: 2, w: 2, h: 3, static: true }}>
             <div className="chart">
-            <PieChart
-            data={this.state.data1}
-            inner={0.8}
-            colors={['#2f2778', '#924ae1']}
-            innerHTML={`<span>83%</span><span>本周完成率</span></div>`}
-            plotCfg={{ margin: [0, 0, 0, 0] }}
-          />
+              <PieChart
+                data={this.state.data1}
+                inner={0.8}
+                colors={['#2f2778', '#924ae1']}
+                innerHTML={`<span>83%</span><span>本周完成率</span></div>`}
+                plotCfg={{ margin: [0, 0, 0, 0] }}
+              />
             </div>
           </div>
         </ReactGridLayout>

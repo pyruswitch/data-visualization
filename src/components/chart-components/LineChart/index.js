@@ -11,7 +11,6 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
     tickLine: null,
     labels,
     line
-
   });
   chart.axis('value', {
     title: null,

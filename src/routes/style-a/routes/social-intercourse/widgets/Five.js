@@ -4,9 +4,16 @@ import { Widget, Title, NumberCard, Box, Line } from 'components';
 import champion from './../svg/champion.svg';
 import second from './../svg/second.svg';
 import third from './../svg/third.svg';
-import four from 'components/base-components/Number/StyleB/4.svg';
-import five from 'components/base-components/Number/StyleB/5.svg';
 import callApi from 'api';
+const DATA = [
+  { type: '紧急通知', content: '园区将于本月16日进行水箱清洗作业', urgent: true, active: 2670 },
+  { type: '问卷调查', content: '你有多久没有好好读一本书了', urgent: false, active: 1890 },
+  { type: '话题讨论', content: '移动支付风暴来袭，你准备好了吗', urgent: false, active: 700 },
+  { type: '问卷调查', content: '双十一你“剁手”了吗', urgent: false, active: 400 },
+  { type: '意见征集', content: '最适合冬季的锻炼方式有哪些', urgent: false, active: 231 }
+];
+
+const types = [<img src={champion} />, <img src={second} />, <img src={third} />, 4, 5];
 
 class Five extends Component {
   constructor(props) {
@@ -52,36 +59,16 @@ class Five extends Component {
           <div key="c" data-grid={{ x: 4, y: 0, w: 5, h: 9, static: true }}>
             <Title value="话题排行榜（top5）" />
             <div className='widget-content flex'>
-              <div className="top-line">
-                <span><img src={champion} /></span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
-                <span><span>紧急通知</span></span>
-                <span>阅读量:&nbsp;&nbsp;80K</span>
-              </div>
-              <div className="top-line">
-                <span><img src={second} /></span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
-                <span><span>紧急通知</span></span>
-                <span>阅读量:&nbsp;&nbsp;80K</span>
-              </div>
-              <div className="top-line">
-                <span><img src={third} /></span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
-                <span><span>紧急通知</span></span>
-                <span>阅读量:&nbsp;&nbsp;80K</span>
-              </div>
-              <div className="top-line">
-                <span>4</span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
-                <span><span>紧急通知</span></span>
-                <span>阅读量:&nbsp;&nbsp;80K</span>
-              </div>
-              <div className="top-line">
-                <span>5</span>
-                <span>话题│一座竹楼掩映在绯红深处，青翠的竹林在雨后更显清绯红深处，青翠的竹林在雨后更显绯红深处，青翠的竹林在雨后更显清</span>
-                <span><span>紧急通知</span></span>
-                <span>阅读量:&nbsp;&nbsp;80K</span>
-              </div>
+              {
+                DATA.map(({ type, content, urgent, active }, index) => (
+                  <div className="top-line">
+                    <span>{types[index]}</span>
+                    <span>{`${type}│${content}`}</span>
+                    <span><span>{urgent && '紧急通知'}</span></span>
+                    <span>阅读量:&nbsp;&nbsp;{active}</span>
+                  </div>
+                ))
+              }
             </div>
           </div>
         </ReactGridLayout>

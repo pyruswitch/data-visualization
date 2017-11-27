@@ -16,11 +16,11 @@ class Three extends Component {
         <Title value={title} />
         <div className="widget-content">
           <div className="number">
-            <NumberCard value={123} type='number' unit='KW.H' />
+            <NumberCard value={54601} type='number' unit='KW.H' />
           </div>
           <Line />
           <div className="button">
-            <div onClick={() => this.props.openModal('电能耗数据')}>
+            <div onClick={() => this.props.openModal(1)}>
               <img src={icon} alt="" />
               <span>实时读表</span>
             </div>

@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.d41ede29.css",
   "main.css.map": "static/css/main.d41ede29.css.map",
-  "main.js": "static/js/main.e3fb8ffe.js",
-  "main.js.map": "static/js/main.e3fb8ffe.js.map",
+  "main.js": "static/js/main.6d83df92.js",
+  "main.js.map": "static/js/main.6d83df92.js.map",
   "static/media/0.svg": "static/media/0.d44641a8.svg",
   "static/media/1.svg": "static/media/1.7ef2d327.svg",
   "static/media/2.svg": "static/media/2.69cff406.svg",
@@ -24,14 +24,14 @@
   "static/media/icon.svg": "static/media/icon.d1ae4553.svg",
   "static/media/logo.svg": "static/media/logo.a1fcd98c.svg",
   "static/media/logout.svg": "static/media/logout.f1fd7e23.svg",
-  "static/media/menu-logo.svg": "static/media/menu-logo.e5b779c2.svg",
   "static/media/money.svg": "static/media/money.20734b28.svg",
   "static/media/person.svg": "static/media/person.fcb7f497.svg",
   "static/media/point.svg": "static/media/point.802d45e1.svg",
   "static/media/post.svg": "static/media/post.a8551cca.svg",
   "static/media/second.svg": "static/media/second.d0ae90b5.svg",
   "static/media/third.svg": "static/media/third.f21d4fc0.svg",
-  "static/media/title.svg": "static/media/title.f7231829.svg",
+  "static/media/title.svg": "static/media/title.465f43b4.svg",
   "static/media/up.svg": "static/media/up.78ade9e2.svg",
-  "static/media/water.svg": "static/media/water.432f3a46.svg"
+  "static/media/water.svg": "static/media/water.432f3a46.svg",
+  "static/media/zuolin.svg": "static/media/zuolin.6a0681ab.svg"
 }

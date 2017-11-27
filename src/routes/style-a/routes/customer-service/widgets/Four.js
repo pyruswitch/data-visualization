@@ -7,18 +7,27 @@ import callApi from 'api';
 class Four extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: [
+        { "value": "3", "name": "交流大厅" },
+        { "value": "4", "name": "停车充值" },
+        { "value": "4", "name": "创客空间" },
+        { "value": "1", "name": "园区企业" },
+        { "value": "48", "name": "园区入驻" },
+        { "value": "3", "name": "服务联盟" }
+      ].map(({ name, value }) => (Object.assign({}, { name: 'aha' }, { categories: name, value })))
+    };
   }
 
-  componentDidMount() {
-    callApi({
-      api: 'boardvita',
-      success: (response) => {
-        const data = response.map(({ name, value }) => (Object.assign({}, { name: 'aha' }, { categories: name, value })));
-        this.setState({ data });
-      }
-    });
-  }
+  // componentDidMount() {
+  //   callApi({
+  //     api: 'boardvita',
+  //     success: (response) => {
+  //       const data = response.map(({ name, value }) => (Object.assign({}, { name: 'aha' }, { categories: name, value })));
+  //       this.setState({ data });
+  //     }
+  //   });
+  // }
 
   render() {
     const { title, size } = this.props;

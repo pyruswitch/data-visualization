@@ -20,7 +20,7 @@ class One extends Component {
           </div>
           <Line />
           <div className="button">
-            <div onClick={() => this.props.openModal('水能耗数据')}>
+            <div onClick={() => this.props.openModal(0)}>
               <img src={icon} alt="" />
               <span>实时读表</span>
             </div>
