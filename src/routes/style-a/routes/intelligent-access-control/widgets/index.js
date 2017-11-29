@@ -1,11 +1,6 @@
-import TotalNumberOfUsers from './TotalNumberOfUsers';
-import TotalNumberOfVisitors from './TotalNumberOfVisitors';
-import TrafficMonitoring from './TrafficMonitoring';
-import TrafficStatistics from './TrafficStatistics';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
 
-export {
-  TrafficStatistics,
-  TrafficMonitoring,
-  TotalNumberOfVisitors,
-  TotalNumberOfUsers
-};
+export { One, Two, Three, Four };
