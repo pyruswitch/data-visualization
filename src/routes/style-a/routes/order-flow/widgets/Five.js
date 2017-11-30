@@ -28,13 +28,7 @@ class Five extends Component {
             data={this.state.data}
             height={size[1] - 50}
             width={size[0]}
-            colX={{
-              formatter: dimValue => `${dimValue}月`
-            }}
-            colY={{
-              type: 'linear',
-              alias: '单位:天'
-            }}
+            colY={{ type: 'linear', alias: '单位：元' }}
           />
         </div>
       </Widget>
