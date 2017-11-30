@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import createG2 from 'g2-react';
 import G2, { Stat } from 'g2';
 import config from 'config';
-const { height, legend } = config;
+const { height, legend, margin } = config;
 import './index.less';
 /**
  * 空心圆环图
@@ -50,21 +50,19 @@ const createPieChart = ({ innerHTML, colors = ['#935DFA', '#F9CF50', '#22E756', 
     // 设置默认选中
     var geom = chart.getGeoms()[0]; // 获取所有的图形
     var items = geom.getData(); // 获取图形对应的数据
-    geom.setSelected(items[1]); // 设置选中
+    // 超过三项时不默认选中，因为此时选中状态不好看，chart.data没获取到数据
+    if (chart._attrs.data.data.length < 4)
+      geom.setSelected(items[1]); // 设置选中
   }
 });
 
 
 export default ({ height = config.height * 2 - 24, colors, inner, innerHTML, ...rest }) => {
-  // // console.log(height)
-  // height = height || height * 2 - 24;
-  // console.log();
-
   const chartProps = Object.assign({}, {
     height,
     width: 600,
     forceFit: true,
-    plotCfg: { margin: [10, 150, 10, 0] }
+    plotCfg: { margin: [10, 100, 10, 0] }
   }, rest);
   const PieChart = createPieChart({ colors, inner, innerHTML });
   return (<PieChart {...chartProps} />);

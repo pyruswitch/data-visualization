@@ -17,13 +17,12 @@ class Six extends Component {
     };
   }
 
-
   render() {
     const { size, title } = this.props;
     return (
       <Widget>
         <Title value={title} />
-        <div className="widget-content chart">
+        <div className="widget-content chart" style={{ paddingBottom: 0 }}>
           <PieChart
             width={size[0]}
             height={size[1] - 50}

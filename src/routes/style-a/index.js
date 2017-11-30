@@ -20,7 +20,7 @@ class StaticElementsLayout extends React.PureComponent {
               { path: 'park-investment', value: '智慧物业' },
               { path: 'park-energy-consumption', value: '智慧能源' },
               // { path: 'intelligent-access-control', value: '智能门禁' },
-              // { path: 'order-flow', value: '园区收入' },
+              { path: 'order-flow', value: '园区收入' },
               // { path: 'tasks-management', value: '任务管理' }
             ]} />
           <Route exact path={`${match.path}/social-intercourse`} component={SocialIntercourse} />

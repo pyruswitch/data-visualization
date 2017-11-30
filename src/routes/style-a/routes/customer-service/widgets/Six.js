@@ -43,6 +43,7 @@ class Six extends Component {
           <StackedBarChart
             height={size[1] - 50}
             width={size[0]}
+            colY={{ alias: '单位：条' }}
             data={this.state.data}
           />
         </div>

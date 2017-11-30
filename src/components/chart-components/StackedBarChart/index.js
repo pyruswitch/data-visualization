@@ -4,7 +4,7 @@ import G2, { Stat } from 'g2';
 import config from 'config';
 const { height, labels, title, line, legend } = config;
 
-const StackedBarChart = createG2(chart => {
+const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
   var Stat = G2.Stat;
   chart.axis('name', {
     title: null,
@@ -24,6 +24,7 @@ const StackedBarChart = createG2(chart => {
   });
   chart.legend(legend);
   chart.col('value', {
+    alias: colY.alias
     // type: 'log'
   });
   chart.legend('status', {
@@ -43,13 +44,14 @@ const StackedBarChart = createG2(chart => {
   chart.render();
 });
 
-export default (props) => {
+export default ({ colX = {}, colY = {}, ...props }) => {
   const chartProps = Object.assign({}, {
     height: height * 2,
     width: 500,
     forceFit: true,
     plotCfg: { margin: [10, 70, 30, 50] }
   }, props);
+  const StackedBarChart = createStackedBarChart({ colX, colY });
 
-  return (<StackedBarChart {...chartProps} />);
+  return <StackedBarChart {...chartProps} />;
 };

@@ -5,7 +5,7 @@ const H = (window.innerHeight - 12 * 2 - 24 * 24) / 24;
 // 栅格每块的宽度
 const W = (window.innerWidth - 12 * 2 - 24 * 24) / 24;
 const fill = '#fff';
-const margin = [50, 50, 50, 50];
+const margin = [50, 50, 50, 60];
 const stroke = "rgba(255,255,255,0.10)";
 const size = [W, H];
 const widgetSize = (w, h) => [(w - 1) * 24 + w * W, (h - 1) * 24 + h * H];

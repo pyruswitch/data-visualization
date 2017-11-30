@@ -1,19 +1,8 @@
-import ConsumptionAmountStatistics from './ConsumptionAmountStatistics';
-import ConsumptionDistribution from './ConsumptionDistribution';
-import ConsumptionOrderStatistics from './ConsumptionOrderStatistics';
-import LastestOrder from './LastestOrder';
-import OrderType from './OrderType';
-import PaymentMethod from './PaymentMethod';
-import TotalNumberOfOrders from './TotalNumberOfOrders';
-import TotalSpending from './TotalSpending';
+import One from './One';
+import Two from './Two';
+import Three from './Three';
+import Four from './Four';
+import Five from './Five';
+import Six from './Six';
 
-export {
-  ConsumptionAmountStatistics,
-  ConsumptionDistribution,
-  ConsumptionOrderStatistics,
-  LastestOrder,
-  OrderType,
-  PaymentMethod,
-  TotalNumberOfOrders,
-  TotalSpending
-};
+export { One, Two, Three, Four, Five, Six };

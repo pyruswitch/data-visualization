@@ -53,7 +53,7 @@ class Three extends Component {
           </div>
           <div key="b" data-grid={{ x: 4, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动标签分布" />
-            <div className='widget-content chart'>
+            <div className='widget-content chart' style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] - 50}
                 data={this.state.data0}
@@ -62,7 +62,7 @@ class Three extends Component {
           </div>
           <div key="c" data-grid={{ x: 8, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动热度分布" />
-            <div className='widget-content chart'>
+            <div className='widget-content chart' style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] - 50}
                 data={this.state.data1}

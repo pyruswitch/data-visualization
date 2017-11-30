@@ -52,9 +52,8 @@ class One extends Component {
             <div className="widget-content chart">
               <LineChart
                 data={this.state.data0}
-                colX={{
-                  formatter: (dimValue) => (`${dimValue}月`)
-                }}
+                colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
+                colY={{ alias: '单位：条' }}
                 width={size[0]}
                 height={size[1] - 50}
               />

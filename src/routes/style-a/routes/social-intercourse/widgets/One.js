@@ -66,7 +66,7 @@ class One extends Component {
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
             <Title value="性别比例" />
-            <div className="widget-content chart">
+            <div className="widget-content chart" style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] / 2 - 50}
                 data={this.state.data}
@@ -84,7 +84,7 @@ class One extends Component {
           </div>
           <div key="d" data-grid={{ x: 6, y: 6, w: 6, h: 6, static: true }}>
             <Title value="设备终端" />
-            <div className="widget-content chart">
+            <div className="widget-content chart" style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] / 2 - 50}
                 data={this.state.data1}

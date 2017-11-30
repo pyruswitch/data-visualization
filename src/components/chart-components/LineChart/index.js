@@ -13,8 +13,8 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
     line
   });
   chart.axis('value', {
-    title: null,
-    titleOffset: 30,
+    title: title,
+    titleOffset: 50,
     tickLine: null,
     position: 'top',
     labels,
@@ -38,6 +38,9 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
     range: [0, 1]
   });
 
+  chart.col('value', {
+    alias: colY.alias
+  })
   // chart.line().position('name*value').color('type');
   chart.line().style({
     stroke: '#1DE9B6',
@@ -59,7 +62,7 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
   chart.render();
 });
 
-export default ({ width = 500, plotCfg, colX, colY, ...rest }) => {
+export default ({ width = 500, plotCfg, colX, colY = {}, ...rest }) => {
   const chartProps = Object.assign({}, {
     height: height * 2,
     width,

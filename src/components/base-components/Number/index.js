@@ -77,7 +77,7 @@ class NumberCom extends React.Component {
         <ul ref='numberList'>
           {
             icon &&
-            <li className='numerals' >
+            <li className='icon' >
               <div>
                 <img src={icons[icon]} />
               </div>
@@ -121,7 +121,7 @@ class NumberCom extends React.Component {
       const dom = ulEl.querySelector('li.numerals>div');
       const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];
       Array.from(ulEl.querySelectorAll('li.numerals')).forEach((el, index) => {
-        el.setAttribute("style", `transform: translateY(-${height * number.charAt(index - 1)}px);`);
+        el.setAttribute("style", `transform: translateY(-${height * number.charAt(index)}px);`);
       });
     } catch (error) {
       console.log(error)

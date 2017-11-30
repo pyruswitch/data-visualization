@@ -18,9 +18,9 @@ class Two extends Component {
         { value: 0, name: "07" },
         { value: 0, name: "08" },
         { value: 0, name: "09" },
-        { value: 8697, name: "10" },
-        { value: 892, name: "11" },
-        { value: 0, name: "12" }
+        { value: 7688, name: "10" },
+        { value: 1887, name: "11" },
+        { value: 261, name: "12" }
       ],
       data1: [
         { value: 0, name: "01" },
@@ -32,9 +32,9 @@ class Two extends Component {
         { value: 0, name: "07" },
         { value: 0, name: "08" },
         { value: 0, name: "09" },
-        { value: 7952, name: "10" },
-        { value: 692, name: "11" },
-        { value: 0, name: "12" }
+        { value: 2689, name: "10" },
+        { value: 2700, name: "11" },
+        { value: 1561, name: "12" }
       ],
       data2: [
         { value: 0, name: "01" },
@@ -46,9 +46,9 @@ class Two extends Component {
         { value: 0, name: "07" },
         { value: 0, name: "08" },
         { value: 0, name: "09" },
-        { value: 8697, name: "10" },
-        { value: 892, name: "11" },
-        { value: 0, name: "12" }
+        { value: 7688, name: "10" },
+        { value: 9575, name: "11" },
+        { value: 9836, name: "12" }
       ],
     };
   }
@@ -75,9 +75,8 @@ class Two extends Component {
               <Tabs.TabPane tab={value} key={index}>
                 <LineChart
                   data={this.state[`data${index}`]}
-                  colX={{
-                    formatter: (dimValue) => (`${dimValue}月`)
-                  }}
+                  colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
+                  colY={{ alias: '单位：人' }}
                   width={size[0]}
                   height={size[1] - 50}
                 />
