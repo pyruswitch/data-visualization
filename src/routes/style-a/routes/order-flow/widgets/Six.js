@@ -7,13 +7,12 @@ class Six extends Component {
     super(props);
     this.state = {
       data: [
-        { "name": "装修", "value": "7.51" },
-        { "name": "迁入申请", "value": "5.67" },
-        { "name": "工位预定", "value": "5.17" },
-        { "name": "月卡申请", "value": "3.12" },
-        { "name": "物业报修", "value": "4.22" },
-        { "name": "物品放行", "value": "1.12" },
-        { "name": "企业增值服务", "value": "6.66" }
+        { name: "租金", value: 46 },
+        { name: "电商", value: 20 },
+        { name: "停车费", value: 18 },
+        { name: "物业费", value: 7 },
+        { name: "会议室预定", value: 4 },
+        { name: "其他", value: 5 }
       ]
     };
   }
@@ -25,10 +24,11 @@ class Six extends Component {
         <Title value={title} />
         <div className="widget-content chart">
           <Histogram
+            noTitle
             data={this.state.data}
             height={size[1] - 50}
             width={size[0]}
-            colY={{ type: 'linear', alias: '百分比' }}
+            colY={{ formatter: dimValue => `${dimValue}%` }}
           />
         </div>
       </Widget>

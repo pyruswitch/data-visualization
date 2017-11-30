@@ -27,9 +27,7 @@ class Eight extends Component {
             height={size[1] - 50}
             width={size[0]}
             data={this.state.data}
-            colY={{
-              formatter: dimValue => `${dimValue}%`
-            }}
+            colY={{ formatter: dimValue => `${dimValue}%` }}
           />
         </div>
       </Widget>

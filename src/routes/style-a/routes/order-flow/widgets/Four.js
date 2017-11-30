@@ -8,7 +8,7 @@ class Four extends Component {
     this.state = {
       data: [
         { name: '微信', value: 20 },
-        { name: '支付宝', value: 8 }
+        { name: '支付宝', value: 19 }
       ]
     };
   }
