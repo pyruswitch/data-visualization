@@ -9,7 +9,7 @@ import './index.less';
 
 // 金钱格式化
 const formatMoney = ({ value = 88888, type, fixed }) => {
-  return minPlaces(value.toFixed(0)).replace(/(\d)(?=(\d{3})+$)/g, '$1,').toString();
+  return value.toFixed(0).replace(/(\d)(?=(\d{3})+$)/g, '$1,').toString();
 };
 
 // 翻牌器最小位数
@@ -116,7 +116,7 @@ class NumberCom extends React.Component {
   onChange() {
     try {
       const { value } = this.props;
-      const number = String(minPlaces(value));
+      const number = String(value);
       const ulEl = this.refs.numberList;
       const dom = ulEl.querySelector('li.numerals>div');
       const height = window.getComputedStyle(dom, null).height.match(/\d+.*\d+/)[0];
