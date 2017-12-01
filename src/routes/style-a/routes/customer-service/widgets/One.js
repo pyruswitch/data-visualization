@@ -64,6 +64,7 @@ class One extends Component {
               <PieChart
                 data={this.state.data1}
                 inner={0.8}
+                height={size[1] - 130}
                 colors={['#2f2778', '#924ae1']}
                 innerHTML={`<span>83%</span><span>本周完成率</span></div>`}
                 plotCfg={{ margin: [0, 0, 0, 0] }}

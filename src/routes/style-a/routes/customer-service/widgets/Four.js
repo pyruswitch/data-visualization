@@ -36,7 +36,7 @@ class Four extends Component {
         <Title value={title[0]} />
         <div className="widget-content chart">
           <RadarChart
-            height={size[1] - 50}
+            height={size[1] - 70}
             data={this.state.data}
           />
         </div>

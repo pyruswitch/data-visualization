@@ -14,10 +14,6 @@ class Three extends Component {
           "value": 32
         },
         {
-          "type": "其他",
-          "value": 32
-        },
-        {
           "type": "装修",
           "value": 32
         },
@@ -44,7 +40,11 @@ class Three extends Component {
         {
           "type": "企业增值服务",
           "value": 40
-        }
+        },
+        {
+          "type": "其他",
+          "value": 32
+        },
       ].map(({ type, value }) => ({ name: type, value: Number(value) }))
     };
   }
@@ -56,7 +56,7 @@ class Three extends Component {
       <Widget>
         <Title value={title[0]} />
         <div className="widget-content chart">
-          <PieChart data={this.state.data} height={size[1] - 70} />
+          <PieChart data={this.state.data} height={size[1] - 100} />
         </div>
       </Widget>
     );

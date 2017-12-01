@@ -60,9 +60,10 @@ class ParkEnergyConsumption extends Component {
   }
 
   setModalVisible(modalVisible, type) {
-    this.setState({ modalVisible });
-    if (type)
+    if (type !== undefined) {
       this.setState({ type });
+    }
+    this.setState({ modalVisible });
   }
 
   render() {
@@ -73,8 +74,6 @@ class ParkEnergyConsumption extends Component {
       [{ x: 0, y: 10, w: 12, h: 14 }, <Four title='月度用水量分析' size={widgetSize(12, 14)} />],
       [{ x: 12, y: 10, w: 12, h: 14 }, <Five title='月度用电量分析' size={widgetSize(12, 14)} />]
     ];
-    console.log(TYPES[this.state.type]['name'])
-    // console.log()
     return (
       <div className='eh-data-park-energy-consumption'>
         <Layout conf={LAYOUTCONF} />

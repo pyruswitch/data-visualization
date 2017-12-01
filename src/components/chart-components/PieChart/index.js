@@ -62,7 +62,7 @@ export default ({ height = config.height * 2 - 24, colors, inner, innerHTML, ...
     height,
     width: 600,
     forceFit: true,
-    plotCfg: { margin: [10, 100, 10, 0] }
+    plotCfg: { margin: [10, 110, 10, 0] }
   }, rest);
   const PieChart = createPieChart({ colors, inner, innerHTML });
   return (<PieChart {...chartProps} />);

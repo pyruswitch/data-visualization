@@ -21,7 +21,7 @@ class Four extends Component {
         <div className="widget-content chart">
           <PieChart
             width={size[0]}
-            height={size[1] - 90}
+            height={size[1] - 120}
             plotCfg={{ margin: [10, 100, 0, 0] }}
             data={this.state.data}
           />

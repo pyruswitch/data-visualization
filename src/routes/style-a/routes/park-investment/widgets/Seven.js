@@ -42,7 +42,7 @@ class Seven extends Component {
         <div className="widget-content chart" style={{ paddingBottom: 0 }}>
           <PieChart
             width={size[0]}
-            height={size[1] - 50}
+            height={size[1] - 70}
             data={this.state.data}
           />
         </div>
