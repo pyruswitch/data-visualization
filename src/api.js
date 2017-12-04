@@ -1,5 +1,20 @@
 import { callApi as callApiBk } from 'utils';
 const apiMaps = {
+  /***************************** 智慧社交 *****************************/
+  // 报名人数、活动总数、平均每场人数
+  activityenrollment: '/datav/activityenrollment',
+  // X 帖子发布情况
+  forumthreads: '/datav/forumthreads',
+  // X 帖子标签分布数
+  activitytype: '/datav/activitytype',
+  // X 帖子热度分布
+  activityattention: '/datav/activityattention',
+  // X 话题榜前五
+  trendingtopics: '/datav/trendingtopics',
+  // X 最新活动
+  newactivity: '/datav/newactivity',
+  // X 最新帖子
+  newforum: '/datav/newforum',
   /***************************** 园区收入 *****************************/
   // 订单列表
   parkorder: '/datav/parkorder',
@@ -17,7 +32,6 @@ const apiMaps = {
   orderamount: '/datav/orderamount',
   // 订单总量统计
   ordercount: '/datav/ordercount',
-
   /***************************** 园区招商 *****************************/
   // 总资产 没有接口
   // 企业名册
