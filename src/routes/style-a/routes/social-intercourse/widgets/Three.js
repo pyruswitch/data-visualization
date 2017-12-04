@@ -7,33 +7,45 @@ class Three extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data0: [
-        { name: "旅游", value: 3 },
-        { name: "创客", value: 1 },
-        { name: "篮球", value: 3 },
-        { name: "沙龙", value: 4 }
-      ],
-      data1: [
-        { name: "旅游", value: 700 },
-        { name: "创客", value: 800 },
-        { name: "篮球", value: 244 },
-        { name: "沙龙", value: 910 }
-      ]
+      // 活动发布总数
+      acttotal: 0,
+      // 平均报名人次/场
+      aveper: 0,
+      // 活动报名总人次
+      enroll: 0,
+      data0: [],
+      data1: []
     };
   }
 
   componentDidMount() {
-    // callApi({
-    //   api: 'companyespon',
-    //   success: (response) => {
-    //     this.setState({ data: response });
-    //     console.log(response);
-    //   }
-    // });
+    callApi({
+      api: 'activityenrollment',
+      success: ({ acttotal, aveper, enroll }) => {
+        this.setState({ acttotal, aveper, enroll });
+      }
+    });
+    callApi({
+      api: 'activitytype',
+      success: (response) => {
+        this.setState({
+          data0: response.map(({ name, value }) => ({ name, value: Number(value) }))
+        });
+      }
+    });
+    callApi({
+      api: 'activityattention',
+      success: (response) => {
+        this.setState({
+          data1: response.map(({ name, value }) => ({ name, value: Number(value) }))
+        });
+      }
+    });
   }
 
   render() {
     const { size } = this.props;
+    const { acttotal, aveper, enroll } = this.state;
     return (
       <Widget className="three">
         <ReactGridLayout
@@ -45,10 +57,10 @@ class Three extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 4, h: 1, static: true }}>
             <Title value="活动报名总人次" />
             <div className="widget-content flex">
-              <NumberCard value={2654} icon='person' type="number" />
+              <NumberCard value={Number(enroll)} icon='person' type="number" />
               <Line />
-              <Box title='活动发布总数' number='11' />
-              <Box title='平均报名人次/场' number='32' />
+              <Box title='活动发布总数' number={acttotal} />
+              <Box title='平均报名人次/场' number={aveper} />
             </div>
           </div>
           <div key="b" data-grid={{ x: 4, y: 0, w: 4, h: 1, static: true }}>
