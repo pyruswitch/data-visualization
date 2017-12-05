@@ -24,8 +24,8 @@ const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
   });
   chart.legend(legend);
   chart.col('value', {
-    alias: colY.alias
-    // type: 'log'
+    alias: colY.alias,
+    type: 'pow'
   });
   chart.legend('status', {
     title: null

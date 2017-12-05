@@ -7,46 +7,19 @@ import callApi from 'api';
 class Three extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        {
-          "type": "电脑维修",
-          "value": 32
-        },
-        {
-          "type": "装修",
-          "value": 32
-        },
-        {
-          "type": "迁入申请",
-          "value": 54
-        },
-        {
-          "type": "工位预定",
-          "value": 45
-        },
-        {
-          "type": "月卡申请",
-          "value": 92
-        },
-        {
-          "type": "物业报修",
-          "value": 40
-        },
-        {
-          "type": "物品放行",
-          "value": 40
-        },
-        {
-          "type": "企业增值服务",
-          "value": 40
-        },
-        {
-          "type": "其他",
-          "value": 32
-        },
-      ].map(({ type, value }) => ({ name: type, value: Number(value) }))
-    };
+    this.state = { data: [] };
+  }
+
+  componentDidMount() {
+    callApi({
+      api: 'tasktypecount',
+      success: (response) => {
+        this.setState({
+          data: response.map(({ name, value }) =>
+            ({ name, value: Number(value) }))
+        });
+      }
+    });
   }
 
 

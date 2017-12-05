@@ -34,6 +34,16 @@ class Six extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'taskstatus',
+      success: (data) => {
+        this.setState({ data });
+      }
+    });
+  }
+
+
   render() {
     const { title, size } = this.props;
     return (

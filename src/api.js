@@ -1,7 +1,7 @@
 import { callApi as callApiBk } from 'utils';
 const apiMaps = {
   /***************************** 智慧社交 *****************************/
-  // 报名人数、活动总数、平均每场人数
+  // X 报名人数、活动总数、平均每场人数
   activityenrollment: '/datav/activityenrollment',
   // X 帖子发布情况
   forumthreads: '/datav/forumthreads',
@@ -53,20 +53,20 @@ const apiMaps = {
   // 在租面积/待租面积
   montharea: '/datav/montharea',
 
-  /***************************** 客户服务 *****************************/
-  // 任务类型分布
+  /***************************** 智慧办公 *****************************/
+  // X 任务类型分布
   tasktypecount: '/datav/tasktypecount',
-  // 服务模块活跃度
+  // X 服务模块活跃度
   boardvita: '/datav/boardvita',
-  // 已完成任务、总任务数
+  // X 已完成任务、总任务数
   taskclose: '/datav/taskclose',
-  // 每日任务数
+  // X 每日任务数
   daytaskorder: '/datav/daytaskorder',
-  // 平均响应时间
+  // X平均响应时间
   tasktyperespon: '/datav/tasktyperespon',
-  // 代办任务
+  // X 代办任务
   pengdingtask: '/datav/pengdingtask',
-  // 任务状态分布
+  // X 任务状态分布
   taskstatus: '/datav/taskstatus',
   // 品质核查任务列表
   qualityinspetask: '/datav/qualityinspetask',
