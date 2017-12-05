@@ -23,6 +23,22 @@ class Three extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'monthcount',
+      success: () => {
+
+      }
+    });
+    callApi({
+      api: 'ordercount',
+      success: () => {
+
+      }
+    });
+  }
+
+
   render() {
     const { title, size } = this.props;
     return (

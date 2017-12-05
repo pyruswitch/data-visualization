@@ -23,6 +23,22 @@ class One extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'monthamount',
+      success: () => {
+
+      }
+    });
+    callApi({
+      api: 'orderamount',
+      success: () => {
+
+      }
+    });
+  }
+
+
   render() {
     const { title, size } = this.props;
     return (

@@ -7,30 +7,16 @@ import callApi from 'api';
 class Seven extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        {
-          name: "新材料",
-          value: 18
-        },
-        {
-          name: "新能源",
-          value: 13
-        },
-        {
-          name: "电子商务",
-          value: 35
-        },
-        {
-          name: "时尚产业",
-          value: 32
-        },
-        {
-          name: "其他",
-          value: 2
-        }
-      ]
-    };
+    this.state = { data: [] };
+  }
+
+  componentDidMount() {
+    callApi({
+      api: 'companytype',
+      success: (data) => {
+        this.setState({ data });
+      }
+    });
   }
 
 

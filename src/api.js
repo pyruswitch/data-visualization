@@ -34,15 +34,15 @@ const apiMaps = {
   ordercount: '/datav/ordercount',
   /***************************** 园区招商 *****************************/
   // 总资产 没有接口
-  // 企业名册
+  // X 企业名册
   companyespon: '/datav/Companyespon',
-  // 企业入驻情况 - 今年签约数和今年到期数为0
+  // X 企业入驻情况 - 今年签约数和今年到期数为0
   settledenter: '/datav/settledenter',
-  // 招商引资 - 数据为0
+  // X 招商引资 - 数据为0
   inviteBusiness: '/datav/InviteBusiness',
-  // 行业分析
+  // X 行业分析
   companytype: '/datav/Companytype',
-  // 入住率 - 没有问题
+  // X 入住率
   occupancyrate: '/datav/occupancyrate',
   // 单位租金 - 数据为0
   unitrental: '/datav/unitrental',

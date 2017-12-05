@@ -13,6 +13,16 @@ class Four extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'orderchannelcount',
+      success: () => {
+
+      }
+    });
+  }
+
+
   render() {
     const { title, size } = this.props;
     return (

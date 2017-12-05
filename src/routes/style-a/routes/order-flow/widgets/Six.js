@@ -17,6 +17,15 @@ class Six extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'ordertypecount',
+      success: () => {
+
+      }
+    });
+  }
+
   render() {
     const { title, size } = this.props;
     return (

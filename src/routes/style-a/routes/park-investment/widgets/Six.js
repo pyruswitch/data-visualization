@@ -7,15 +7,21 @@ import callApi from 'api';
 class Six extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        { name: '已到期', value: 20 },
-        { name: '合同期', value: 8 },
-        { name: '申请入驻', value: 70 },
-        { name: '商务沟通', value: 2 }
-      ]
-    };
+    this.state = { data: [] };
   }
+
+  componentDidMount() {
+    callApi({
+      api: 'inviteBusiness',
+      success: (response) => {
+        this.setState({
+          data: response.map(({ name, value }) => (
+            { name, value: Number(value) }))
+        });
+      }
+    });
+  }
+
 
   render() {
     const { size, title } = this.props;

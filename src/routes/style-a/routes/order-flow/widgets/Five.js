@@ -16,6 +16,15 @@ class Five extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'ordertypeamount',
+      success: () => {
+
+      }
+    });
+  }
+
   render() {
     const { title, size } = this.props;
     return (

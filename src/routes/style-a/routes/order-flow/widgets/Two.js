@@ -58,6 +58,16 @@ class Two extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'parkorder',
+      success: () => {
+
+      }
+    });
+  }
+
+
   render() {
     const { title } = this.props;
     return (

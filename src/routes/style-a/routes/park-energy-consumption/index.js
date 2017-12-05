@@ -57,6 +57,12 @@ class ParkEnergyConsumption extends Component {
       success: (response) => {
       }
     });
+    callApi({
+      api: 'buildmonthwatermeter',
+      success: () => {
+
+      }
+    })
   }
 
   setModalVisible(modalVisible, type) {
