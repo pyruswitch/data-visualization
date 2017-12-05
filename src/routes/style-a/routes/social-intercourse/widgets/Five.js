@@ -35,7 +35,7 @@ class Five extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     const { list, likecount, post, reply, viewcount } = this.state;
     return (
       <Widget className="five" >
@@ -46,7 +46,7 @@ class Five extends Component {
           width={size[0]}
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 3, h: 6, static: true }}>
-            <Title value="帖子发布总数" />
+            <Title value={title[0]} />
             <div className="widget-content flex">
               <NumberCard value={Number(post)} icon='post' type="number" />
               <Line />
@@ -55,13 +55,13 @@ class Five extends Component {
             </div>
           </div>
           <div key="b" data-grid={{ x: 0, y: 6, w: 3, h: 3, static: true }}>
-            <Title value="总阅读量" />
+            <Title value={title[2]} />
             <div className="widget-content flex">
               <NumberCard value={Number(viewcount)} icon='eye' type="number" />
             </div>
           </div>
           <div key="c" data-grid={{ x: 4, y: 0, w: 5, h: 9, static: true }}>
-            <Title value="话题排行榜（top5）" />
+            <Title value={title[1]} />
             <div className='widget-content flex'>
               {
                 list.map(({ type, name, urgent, value }, index) => (

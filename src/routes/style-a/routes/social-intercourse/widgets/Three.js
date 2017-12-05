@@ -44,7 +44,7 @@ class Three extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     const { acttotal, aveper, enroll } = this.state;
     return (
       <Widget className="three">
@@ -55,7 +55,7 @@ class Three extends Component {
           width={size[0]}
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 4, h: 1, static: true }}>
-            <Title value="活动报名总人次" />
+            <Title value={title[0]} />
             <div className="widget-content flex">
               <NumberCard value={Number(enroll)} icon='person' type="number" />
               <Line />
@@ -64,7 +64,7 @@ class Three extends Component {
             </div>
           </div>
           <div key="b" data-grid={{ x: 4, y: 0, w: 4, h: 1, static: true }}>
-            <Title value="活动标签分布" />
+            <Title value={title[1]} />
             <div className='widget-content chart' style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] - 50}
@@ -73,7 +73,7 @@ class Three extends Component {
             </div>
           </div>
           <div key="c" data-grid={{ x: 8, y: 0, w: 4, h: 1, static: true }}>
-            <Title value="活动热度分布" />
+            <Title value={title[2]} />
             <div className='widget-content chart' style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] - 50}

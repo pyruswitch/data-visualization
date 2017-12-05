@@ -46,7 +46,7 @@ class One extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     return (
       <Widget className="one" >
         <ReactGridLayout
@@ -56,7 +56,7 @@ class One extends Component {
           width={size[0]}
         >
           <div key="a" data-grid={{ x: 0, y: 0, w: 6, h: 6, static: true }}>
-            <Title value="新注册用户" />
+            <Title value={title[0]} />
             <div className="widget-content flex">
               <NumberCard value={8697} icon='person' type="number" />
               <Line />
@@ -65,7 +65,7 @@ class One extends Component {
             </div>
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
-            <Title value="性别比例" />
+            <Title value={title[1]} />
             <div className="widget-content chart" style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] / 2 - 50}
@@ -74,7 +74,7 @@ class One extends Component {
             </div>
           </div>
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
-            <Title value="月活跃用户" />
+            <Title value={title[2]} />
             <div className="widget-content flex">
               <NumberCard value={7952} icon='person' type="number" />
               <Line />
@@ -83,7 +83,7 @@ class One extends Component {
             </div>
           </div>
           <div key="d" data-grid={{ x: 6, y: 6, w: 6, h: 6, static: true }}>
-            <Title value="设备终端" />
+            <Title value={title[3]} />
             <div className="widget-content chart" style={{ paddingBottom: 0 }}>
               <PieChart
                 height={size[1] / 2 - 50}

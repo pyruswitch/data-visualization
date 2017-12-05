@@ -30,9 +30,10 @@ class Four extends Component {
   }
 
   render() {
+    const { title } = this.props;
     return (
-      <Widget className="four">
-        <Tabs title="最新发布">
+      <Widget style={{ paddingBottom: '24px' }}>
+        <Tabs title={title}>
           {
             ['活动', '帖子'].map((value, index) => (
               <Tabs.TabPane tab={value} key={index}>

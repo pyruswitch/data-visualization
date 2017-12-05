@@ -65,11 +65,11 @@ class Two extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, title } = this.props;
     // console.log(size);
     return (
       <Widget className="two" >
-        <Tabs title="整体趋势图">
+        <Tabs title={title}>
           {
             ['新增用户', '活跃用户', '累计用户'].map((value, index) => (
               <Tabs.TabPane tab={value} key={index}>
