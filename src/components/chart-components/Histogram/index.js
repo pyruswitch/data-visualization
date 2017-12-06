@@ -16,13 +16,10 @@ const createHistogram = ({
   // 是否反向，默认false
   transpose = false
 }) => createG2(chart => {
-    chart.col('name', {
-      type: 'cat',
-      formatter: colX.fotmatter
-    });
+    chart.col('name', colX);
 
     chart.axis('value', {
-      titleOffset: 30,
+      titleOffset: 50,
       grid: null,
       tickLine: null,
       position: 'top',
@@ -45,11 +42,7 @@ const createHistogram = ({
     else
       chart.legend(false);
 
-    chart.col('value', {
-      type: colY.type,
-      alias: colY.alias,
-      formatter: colY.formatter
-    });
+    chart.col('value', colY);
     if (transpose === true) {
       chart.coord('rect').transpose();
       chart.intervalDodge().position('name*value').color('type').size('name', function () {
@@ -74,7 +67,7 @@ export default ({ colX, colY, hasLegend, transpose, noTitle, ...rest }) => {
     forceFit: true,
     height: height * 2,
     width: 400,
-    plotCfg: { margin: [10, 20, 30, 50] }
+    plotCfg: { margin: [10, 20, 30, 60] }
   }, rest);
   const Histogram = createHistogram({ colX, colY, transpose, noTitle, hasLegend });
   return (

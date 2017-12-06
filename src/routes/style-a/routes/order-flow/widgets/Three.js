@@ -6,54 +6,44 @@ class Three extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data0: [
-        { value: 981, name: "01" },
-        { value: 1111, name: "02" },
-        { value: 826, name: "03" },
-        { value: 1356, name: "04" },
-        { value: 1868, name: "05" },
-        { value: 999, name: "06" },
-        { value: 1356, name: "07" },
-        { value: 1231, name: "08" },
-        { value: 684, name: "09" },
-        { value: 702, name: "10" },
-        { value: 890, name: "11" },
-        { value: 98, name: "12" }
-      ]
+      total: 0,
+      data: []
     };
   }
 
   componentDidMount() {
     callApi({
       api: 'monthcount',
-      success: () => {
-
+      success: (data) => {
+        this.setState({
+          data: data.map((value) => ({ name: value[0], value: Number(value[1]) }))
+        });
       }
     });
     callApi({
       api: 'ordercount',
-      success: () => {
-
+      success: (total) => {
+        this.setState({ total });
       }
     });
   }
 
-
   render() {
+    const { data, total } = this.state;
     const { title, size } = this.props;
     return (
       <Widget>
         <Title value={title} />
         <div className="widget-content chart">
           <LineChart
-            data={this.state.data0}
+            data={data}
             colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
-            colY={{ alias: '单位：单' }}
+            colY={{ alias: '园区每月订单量' }}
             width={size[0]}
             height={size[1] - 50}
           />
         </div>
-        <NumberCard value={120102} hasBg type='number' />
+        <NumberCard value={Number(total)} hasBg type='number' />
       </Widget>
     );
   }

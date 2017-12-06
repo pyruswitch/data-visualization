@@ -15,22 +15,32 @@ const apiMaps = {
   newactivity: '/datav/newactivity',
   // X 最新帖子
   newforum: '/datav/newforum',
+  // X 用户统计
+  communityuseract: '/datav/communityuseract',
+  // X 每日新增
+  daynewusertrend: '/datav/daynewusertrend',
+  // X 每日活跃
+  dayactusertrend: '/datav/dayactusertrend',
+  // X 每日累计
+  daytotalusertrend: '/datav/daytotalusertrend',
+  // X 用户性别
+  usergender: '/datav/usergender',
   /***************************** 园区收入 *****************************/
-  // 订单列表
+  // X 订单列表
   parkorder: '/datav/parkorder',
-  // 订单类型个数统计
+  // X 订单类型个数统计
   ordertypecount: '/datav/ordertypecount',
-  // 订单类型金额统计
+  // X 订单类型金额统计
   ordertypeamount: '/datav/ordertypeamount',
   // 订单支付渠道个数统计
   orderchannelcount: '/datav/orderchannelcount',
-  // 月份单量统计
+  // X 月份单量统计
   monthcount: '/datav/monthcount',
-  // 月份总额统计
+  // X 月份总额统计
   monthamount: '/datav/monthamount',
-  // 订单总额统计
+  // X 订单总额统计
   orderamount: '/datav/orderamount',
-  // 订单总量统计
+  // X 订单总量统计
   ordercount: '/datav/ordercount',
   /***************************** 园区招商 *****************************/
   // 总资产 没有接口
@@ -44,12 +54,8 @@ const apiMaps = {
   companytype: '/datav/Companytype',
   // X 入住率
   occupancyrate: '/datav/occupancyrate',
-  // 单位租金 - 数据为0
-  unitrental: '/datav/unitrental',
-  // 年租金收入 - 数据为0
+  // X 年租金收入
   rentalamount: '/datav/rentalamount',
-  // 在租面积 - 数据为0
-  leasedarea: '/datav/leasedarea',
   // 在租面积/待租面积
   montharea: '/datav/montharea',
 

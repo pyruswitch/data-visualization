@@ -16,24 +16,13 @@ class Three extends Component {
       unitrental: 0
     };
   }
-
+  // :
+  // {unitrental: 0, yearrental: 0, leasedarea: "222036.14"}
   componentDidMount() {
     callApi({
-      api: 'leasedarea',
-      success: ({ value }) => {
-        this.setState({ leasedarea: value });
-      }
-    });
-    callApi({
       api: 'rentalamount',
-      success: ({ value }) => {
-        this.setState({ rentalamount: value });
-      }
-    });
-    callApi({
-      api: 'unitrental',
-      success: ({ value }) => {
-        this.setState({ unitrental: value });
+      success: ({ unitrental, yearrental, leasedarea }) => {
+        this.setState({ unitrental, yearrental, leasedarea });
       }
     });
   }

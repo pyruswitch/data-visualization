@@ -37,6 +37,15 @@ class Five extends Component {
     };
   }
 
+  componentDidMount() {
+    callApi({
+      api: 'montharea',
+      success: () => {
+
+      }
+    });
+  }
+
   render() {
     const { size, title } = this.props;
     return (

@@ -3,7 +3,7 @@ import createG2 from 'g2-react';
 import G2, { Stat, Frame } from 'g2';
 import config from 'config';
 const { height, title, labels, line, margin } = config;
-const createLineChart = ({ colX, colY }) => createG2(chart => {
+const createLineChart = ({ colX = {}, colY = {} }) => createG2(chart => {
   chart.legend(false);
   chart.tooltip(false);
   chart.axis('name', {
@@ -26,21 +26,12 @@ const createLineChart = ({ colX, colY }) => createG2(chart => {
         lineWidth: 1,
         lineDash: [8, 8]
       }
-    }
-  });
-  // chart.guide().text(['01月'], '新增人数', {
-  //   fill: '#fff',
-  //   textAlign: 'left',
-  //   fontSize: 12
-  // });
-  chart.col('name', {
-    formatter: colX.formatter,
-    range: [0, 1]
+    },
   });
 
-  chart.col('value', {
-    alias: colY.alias
-  })
+  chart.col('name', colX)
+
+  chart.col('value', colY)
   // chart.line().position('name*value').color('type');
   chart.line().style({
     stroke: '#1DE9B6',

@@ -22,7 +22,6 @@ class Three extends Component {
     });
   }
 
-
   render() {
     const { title, size } = this.props;
     return (

@@ -5,23 +5,22 @@ import callApi from 'api';
 class Four extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: [
-        { name: '微信', value: 20 },
-        { name: '支付宝', value: 19 }
-      ]
-    };
+    this.state = { data: [] };
   }
 
   componentDidMount() {
     callApi({
       api: 'orderchannelcount',
-      success: () => {
-
+      success: ({ wechat, alipay }) => {
+        this.setState({
+          data: [
+            { name: '微信', value: wechat },
+            { name: '支付宝', value: alipay }
+          ]
+        });
       }
     });
   }
-
 
   render() {
     const { title, size } = this.props;

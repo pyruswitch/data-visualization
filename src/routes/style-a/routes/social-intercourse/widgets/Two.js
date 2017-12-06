@@ -8,60 +8,34 @@ class Two extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data0: [
-        { value: 0, name: "01" },
-        { value: 0, name: "02" },
-        { value: 0, name: "03" },
-        { value: 0, name: "04" },
-        { value: 0, name: "05" },
-        { value: 0, name: "06" },
-        { value: 0, name: "07" },
-        { value: 0, name: "08" },
-        { value: 0, name: "09" },
-        { value: 7688, name: "10" },
-        { value: 1887, name: "11" },
-        { value: 261, name: "12" }
-      ],
-      data1: [
-        { value: 0, name: "01" },
-        { value: 0, name: "02" },
-        { value: 0, name: "03" },
-        { value: 0, name: "04" },
-        { value: 0, name: "05" },
-        { value: 0, name: "06" },
-        { value: 0, name: "07" },
-        { value: 0, name: "08" },
-        { value: 0, name: "09" },
-        { value: 2689, name: "10" },
-        { value: 2700, name: "11" },
-        { value: 1561, name: "12" }
-      ],
-      data2: [
-        { value: 0, name: "01" },
-        { value: 0, name: "02" },
-        { value: 0, name: "03" },
-        { value: 0, name: "04" },
-        { value: 0, name: "05" },
-        { value: 0, name: "06" },
-        { value: 0, name: "07" },
-        { value: 0, name: "08" },
-        { value: 0, name: "09" },
-        { value: 7688, name: "10" },
-        { value: 9575, name: "11" },
-        { value: 9836, name: "12" }
-      ],
+      // 日新增用户
+      data0: [],
+      // 日活跃用户
+      data1: [],
+      // 累计用户
+      data2: [],
     };
   }
 
   componentDidMount() {
-    // callApi({
-    //   api: 'companyespon',
-    //   success: (response) => {
-    //     this.setState({ data: response });
-    //     console.log(response);
-    //   }
-    // });
-    // transform: translateY(-${height * number.charAt(index)}px);
+    callApi({
+      api: 'daynewusertrend',
+      success: (data0) => {
+        this.setState({ data0 });
+      }
+    });
+    callApi({
+      api: 'dayactusertrend',
+      success: (data1) => {
+        this.setState({ data1 });
+      }
+    });
+    callApi({
+      api: 'daytotalusertrend',
+      success: (data2) => {
+        this.setState({ data2 });
+      }
+    });
   }
 
   render() {
@@ -75,8 +49,13 @@ class Two extends Component {
               <Tabs.TabPane tab={value} key={index}>
                 <LineChart
                   data={this.state[`data${index}`]}
-                  colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
-                  colY={{ alias: '单位：人' }}
+                  colX={{ type: 'time' }}
+                  colY={{
+                    alias: `每日${value}人数`,
+                    type: 'log',
+                    min: 0,
+                    max: 200
+                  }}
                   width={size[0]}
                   height={size[1] - 50}
                 />

@@ -8,20 +8,19 @@ class One extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        {
-          "type": "男性",
-          "value": 390
-        },
-        {
-          "type": "女性",
-          "value": 580
-        },
-        {
-          "type": "其他",
-          "value": 30
-        }
-      ].map(({ type, value }) => ({ name: type, value: Number(value) })),
+      data: [],
+      // 总用户数
+      totaluser: 0,
+      // 日活跃用户
+      activeuser: 0,
+      // 周活跃用户
+      sevenactiveuser: 0,
+      // 月活跃用户
+      thirtyactiveuser: 0,
+      // 月新增用户
+      thirtynewuser: 0,
+      // 周新增用户
+      sevenneweuser: 0,
       data1: [
         {
           "type": "Android",
@@ -36,16 +35,48 @@ class One extends Component {
   }
 
   componentDidMount() {
-    // callApi({
-    //   api: 'companyespon',
-    //   success: (response) => {
-    //     this.setState({ data: response });
-    //     console.log(response);
-    //   }
-    // });
+    callApi({
+      api: 'usergender',
+      success: ({ female, male }) => {
+        this.setState({
+          data: [
+            { name: '男性', value: male },
+            { name: '女性', value: female }
+          ]
+        });
+      }
+    });
+    callApi({
+      api: 'communityuseract',
+      success: ({
+        totaluser,
+        activeuser,
+        sevenactiveuser,
+        thirtyactiveuser,
+        thirtynewuser,
+        sevenneweuser
+      }) => {
+        this.setState({
+          totaluser,
+          activeuser,
+          sevenactiveuser,
+          thirtyactiveuser,
+          thirtynewuser,
+          sevenneweuser
+        });
+      }
+    });
   }
 
   render() {
+    const {
+      totaluser,
+      activeuser,
+      sevenactiveuser,
+      thirtyactiveuser,
+      thirtynewuser,
+      sevenneweuser
+    } = this.state;
     const { size, title } = this.props;
     return (
       <Widget className="one" >
@@ -58,10 +89,10 @@ class One extends Component {
           <div key="a" data-grid={{ x: 0, y: 0, w: 6, h: 6, static: true }}>
             <Title value={title[0]} />
             <div className="widget-content flex">
-              <NumberCard value={8697} icon='person' type="number" />
+              <NumberCard value={Number(totaluser)} icon='person' type="number" />
               <Line />
-              <Box title='周新增用户' number='1,043' />
-              <Box title='日新增用户' number='176' />
+              <Box title='周新增用户' number={sevenneweuser} />
+              <Box title='月新增用户' number={thirtynewuser} />
             </div>
           </div>
           <div key="b" data-grid={{ x: 6, y: 0, w: 6, h: 6, static: true }}>
@@ -76,10 +107,10 @@ class One extends Component {
           <div key="c" data-grid={{ x: 0, y: 6, w: 6, h: 6, static: true }}>
             <Title value={title[2]} />
             <div className="widget-content flex">
-              <NumberCard value={7952} icon='person' type="number" />
+              <NumberCard value={Number(thirtyactiveuser)} icon='person' type="number" />
               <Line />
-              <Box title='周活跃用户' number='1,864' />
-              <Box title='日活跃用户' number='1,354' />
+              <Box title='周活跃用户' number={sevenactiveuser} />
+              <Box title='日活跃用户' number={activeuser} />
             </div>
           </div>
           <div key="d" data-grid={{ x: 6, y: 6, w: 6, h: 6, static: true }}>
