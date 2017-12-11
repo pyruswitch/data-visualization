@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { isIE } from "utils";
 import Support from 'routes/support';
 import StyleA from 'routes/style-a';
+// import StyleB from 'routes/style-b';
 import Home from 'routes/home';
 
 import 'styles/index.less';

@@ -5,7 +5,7 @@ import {
   TrafficStatistics,
   TrafficMonitoring,
   TotalParkingSpaces
-} from './components';
+} from './widgets';
 import './index.less';
 
 const LAYOUTCONF = [

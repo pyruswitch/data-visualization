@@ -25,7 +25,8 @@ import CarouselTable from './chart-components/CarouselTable';
 import RadarChart from './chart-components/RadarChart';
 // 层叠柱状图
 import StackedBarChart from './chart-components/StackedBarChart';
-
+// 区域图
+import StackedAreaGraph from './chart-components/StackedAreaGraph';
 export {
   StackedBarChart,
   RadarChart,
@@ -40,5 +41,6 @@ export {
   Layout,
   Line,
   Title,
-  Tabs
+  Tabs,
+  StackedAreaGraph
 };

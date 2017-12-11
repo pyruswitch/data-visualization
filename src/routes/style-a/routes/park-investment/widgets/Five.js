@@ -1,64 +1,62 @@
 import React, { Component } from 'react';
 import ReactGridLayout from 'react-grid-layout';
-import { Widget, NumberCard, Title, Line, Box, LineChart } from 'components';
+import { StackedAreaGraph, Widget, NumberCard, Title, Line, Box, LineChart } from 'components';
 import config from 'config';
+import G2, { Stat } from 'g2';
+import createG2 from 'g2-react';
 import callApi from 'api';
 
 class Five extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      data: [
-        { value: 242100, name: "01", type: "在租面积" },
-        { value: 242800, name: "02", type: "在租面积" },
-        { value: 243321, name: "03", type: "在租面积" },
-        { value: 245300, name: "04", type: "在租面积" },
-        { value: 248700, name: "05", type: "在租面积" },
-        { value: 250000, name: "06", type: "在租面积" },
-        { value: 252288, name: "07", type: "在租面积" },
-        { value: 255020, name: "08", type: "在租面积" },
-        { value: 258000, name: "09", type: "在租面积" },
-        { value: 261220, name: "10", type: "在租面积" },
-        { value: 266000, name: "11", type: "在租面积" },
-        { value: 266000, name: "12", type: "在租面积" },
-        { value: 37900, name: "01", type: "招租面积" },
-        { value: 37200, name: "02", type: "招租面积" },
-        { value: 36679, name: "03", type: "招租面积" },
-        { value: 34700, name: "04", type: "招租面积" },
-        { value: 31300, name: "05", type: "招租面积" },
-        { value: 30000, name: "06", type: "招租面积" },
-        { value: 27712, name: "07", type: "招租面积" },
-        { value: 24980, name: "08", type: "招租面积" },
-        { value: 22000, name: "09", type: "招租面积" },
-        { value: 18780, name: "10", type: "招租面积" },
-        { value: 14000, name: "11", type: "招租面积" },
-        { value: 14000, name: "12", type: "招租面积" }
-      ]
+      data: [],
+      forceFit: true,
+      width: 500,
+      height: 450,
+      plotCfg: {
+        margin: [20, 100, 60]
+      },
     };
   }
 
   componentDidMount() {
+
     callApi({
       api: 'montharea',
-      success: () => {
-
+      success: (response) => {
+        var Frame = G2.Frame;
+        var frame = new Frame(response);
+        const typeMap = { leasedarea: '在租面积', rentarea: '招租面积' }
+        response = response.map(({ leasedarea, rentarea, ...rest }) => (
+          { leasedarea, rentarea, totalArea: leasedarea + rentarea, ...rest })
+        );
+        frame = Frame.combineColumns(frame, ['leasedarea', 'rentarea'], 'value', 'type', ['month', 'totalArea']);
+        // 这里不知道该怎么用frame或配置显示中文，只能这么转成json
+        this.setState({
+          data: frame.toJSON().map(({ type, ...rest }) => ({
+            type: typeMap[type], ...rest
+          }))
+        });
       }
     });
   }
 
   render() {
+    console.log(this.state.data);
     const { size, title } = this.props;
     return (
       <Widget>
         <Title value={title} />
         <div className="widget-content chart">
-          <LineChart
+          <StackedAreaGraph
             data={this.state.data}
-            colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
-            colY={{ alias: '单位：平方米' }}
-            width={size[0]}
+            width={this.state.width}
             height={size[1] - 50}
-          />
+            colY={{ alias: '招租趋势图（平方米）' }}
+            plotCfg={this.state.plotCfg}
+            forceFit={this.state.forceFit} />
         </div>
       </Widget>
     );

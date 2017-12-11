@@ -33,7 +33,7 @@ const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
   chart
     .intervalStack()
     .position('name*value')
-    .color('status', ['#FAD200 ', '#E90081', '#56B3BB'])
+    .color('status', ['#FAD200', '#E90081', '#56B3BB'])
     .shape('borderRadius')
     .size('name', function () {
       if (this.scales.length && this.scales[0].values.length <= 6) {

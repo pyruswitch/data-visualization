@@ -56,7 +56,7 @@ const apiMaps = {
   occupancyrate: '/datav/occupancyrate',
   // X 年租金收入
   rentalamount: '/datav/rentalamount',
-  // 在租面积/待租面积
+  // X 在租面积/待租面积
   montharea: '/datav/montharea',
 
   /***************************** 智慧办公 *****************************/
