@@ -4,6 +4,8 @@ import RGL, { WidthProvider } from 'react-grid-layout';
 import { Widget } from 'components';
 import config, { widgetSize } from 'config';
 import HomeSvg from './home.svg';
+import Menu, { SubMenu, MenuItem } from 'rc-menu';
+import 'rc-menu/assets/index.css';
 import './index.less';
 const prefixCls = 'com-header';
 const ReactGridLayout = WidthProvider(RGL);
@@ -22,13 +24,17 @@ class Header extends (PureComponent || Component) {
     this.props.history.push(path);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const HASH = this.getHash();
-    const activeMenu=this.props.menu.filter(({path})=>path===HASH);
-    this.setState({ breadcrumb: activeMenu[0].value });
+    const activeMenu = this.props.menu.filter(({ path }) => path === HASH);
+    try {
+      this.setState({ breadcrumb: activeMenu[0].value });
+    } catch (error) {
+
+    }
   }
 
-  getHash=()=>location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0]
+  getHash = () => location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0]
 
   render() {
     const HASH = this.getHash();
@@ -47,22 +53,24 @@ class Header extends (PureComponent || Component) {
             <span>{this.state.breadcrumb}</span>
           </div>],
           [{ x: 8, y: 0, w: 14, h: 2 },
-          <div className='menu'>
+          <Menu mode='horizontal' onSelect={(a) => {console.log(a); this.props.history.push(a.key) }}>
             {
-              menu.map(({ value, path }, index) => {
-                const p = .1 * index * 100;
-                return (
-                  <span
-                    onClick={() => this.onClick(path, index, value)}
-                    key={index}
-                    className={path === HASH ? `active` : null}
-                  >
-                    <span>{value}</span>
-                  </span>
-                );
+              menu.map(({ value, path, submenu = [] }, index) => {
+                if (submenu.length > 0) {
+                  return (
+                    <SubMenu title={<span>{value}</span>} key={index}>
+                      {
+                        submenu.map(({ value, path }) => <MenuItem key={path}>{value}</MenuItem>)
+                      }
+                    </SubMenu>
+                  )
+                }
+                else
+                  return <MenuItem key={path}>{value}</MenuItem>
               })
             }
-          </div>],
+
+          </Menu>],
           [{ x: 23, y: 0, w: 1, h: 2 }, <div className='logout' onClick={() => this.props.history.push('/')} />]
         ].map((arr, index) => {
           const data = Object.assign({ static: true }, arr[0]);
@@ -71,10 +79,12 @@ class Header extends (PureComponent || Component) {
               {arr[1]}
             </div>
           );
-        })}
+        })
+        }
       </ReactGridLayout>
     );
   }
 }
 
 export default withRouter(Header);
+

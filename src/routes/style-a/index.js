@@ -15,13 +15,32 @@ class StaticElementsLayout extends React.PureComponent {
           <Header
             activeKey='0'
             menu={[
-              { path: 'social-intercourse', value: '智慧社交' },
-              { path: 'customer-service', value: '智慧办公' },
-              { path: 'park-investment', value: '智慧物业' },
-              { path: 'park-energy-consumption', value: '智慧能源' },
-              { path: 'intelligent-access-control', value: '智能门禁' },
-              { path: 'order-flow', value: '园区收入' },
-              // { path: 'tasks-management', value: '任务管理' }
+              {
+                value: '智慧生活',
+                submenu:
+                  [
+                    { value: '园区社交', path: 'social-intercourse' }
+                  ]
+              },
+              {
+                value: '智慧运营',
+                submenu:
+                  [
+                    { value: '客户服务', path: 'customer-service' }
+                  ]
+              },
+              {
+                value: '智慧物业', submenu:
+                  [
+                    { value: '招商租赁', path: 'park-investment' },
+                    { value: '园区收入', path: 'order-flow' },
+                    { value: '智能停车', path: 'intelligent-parking' },
+                    { value: '智能门禁', path: 'intelligent-access-control' }
+                  ]
+              },
+              {
+                value: '智慧能源', path: 'park-energy-consumption'
+              }
             ]} />
           <Route exact path={`${match.path}/social-intercourse`} component={SocialIntercourse} />
           <Route exact path={`${match.path}/park-energy-consumption`} component={ParkEnergyConsumption} />
