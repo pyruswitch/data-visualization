@@ -14,8 +14,8 @@ class Four extends Component {
       success: ({ wechat, alipay }) => {
         this.setState({
           data: [
-            { name: '微信', value: wechat },
-            { name: '支付宝', value: alipay }
+            { name: '微信', value: Number(wechat) },
+            { name: '支付宝', value: Number(alipay) }
           ]
         });
       }

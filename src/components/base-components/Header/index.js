@@ -34,7 +34,9 @@ class Header extends (PureComponent || Component) {
     }
   }
 
-  getHash = () => location.hash.match(/\w+-{1}\w+(-\w+){0,}$/)[0]
+  getHash = () => {
+    return location.hash.split('?')[0].match(/\w+-{1}\w+(-\w+){0,}$/)[0]
+  }
 
   render() {
     const HASH = this.getHash();
@@ -53,7 +55,7 @@ class Header extends (PureComponent || Component) {
             <span>{this.state.breadcrumb}</span>
           </div>],
           [{ x: 8, y: 0, w: 14, h: 2 },
-          <Menu mode='horizontal' onSelect={(a) => {console.log(a); this.props.history.push(a.key) }}>
+          <Menu mode='horizontal' onSelect={(a) => { console.log(a); this.props.history.push(a.key) }}>
             {
               menu.map(({ value, path, submenu = [] }, index) => {
                 if (submenu.length > 0) {

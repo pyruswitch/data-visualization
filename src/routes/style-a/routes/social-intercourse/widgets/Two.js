@@ -54,7 +54,7 @@ class Two extends Component {
                     alias: `每日${value}人数`,
                     type: 'log',
                     min: 0,
-                    max: 200
+                    max: 3000
                   }}
                   width={size[0]}
                   height={size[1] - 50}

@@ -17,7 +17,7 @@ export default {
   margin,
   // title默认样式
   title: {
-    fontSize: '12',
+    fontSize: '9',
     textAlign: 'center',
     fill,
   },
@@ -27,7 +27,7 @@ export default {
     label: {
       textAlign: 'center',
       fill,
-      fontSize: '12',
+      fontSize: '9',
     }
   },
   // 图例默认样式
@@ -38,7 +38,7 @@ export default {
     itemWrap: false,
     word: {
       fill: 'rgba(255,255,255,0.75)',
-      fontSize: 12
+      fontSize: 8
     },
     spacingY: 4
   },

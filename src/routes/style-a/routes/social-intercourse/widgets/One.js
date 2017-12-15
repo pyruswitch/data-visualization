@@ -40,8 +40,8 @@ class One extends Component {
       success: ({ female, male }) => {
         this.setState({
           data: [
-            { name: '男性', value: male },
-            { name: '女性', value: female }
+            { name: '男性', value: Number(male) },
+            { name: '女性', value: Number(female) }
           ]
         });
       }

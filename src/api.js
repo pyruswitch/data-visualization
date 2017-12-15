@@ -1,4 +1,4 @@
-import { callApi as callApiBk } from 'utils';
+import { callApi as callApiBk, getUrlParams } from 'utils';
 const apiMaps = {
   /***************************** 智慧社交 *****************************/
   // X 报名人数、活动总数、平均每场人数
@@ -97,11 +97,11 @@ const apiMaps = {
   // 每月楼栋电能耗分布
   buildmonthelectr: '/datav/buildmonthelectr'
 };
-
+const { ns } = getUrlParams(location.href);
 const callApi = ({ api, success, error }) => callApiBk({
   api: apiMaps[api],
   method: 'GET',
-  data: { ns: 1000000 },
+  data: { ns },
   success: (response) => {
     success(response);
   }

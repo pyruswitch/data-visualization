@@ -28,7 +28,11 @@ class Three extends Component {
       <Widget>
         <Title value={title[0]} />
         <div className="widget-content chart">
-          <PieChart data={this.state.data} height={size[1] - 100} />
+          <PieChart
+            plotCfg={{ margin: [10, 170, 10, 0] }}
+            data={this.state.data}
+            height={size[1] - 100}
+          />
         </div>
       </Widget>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Widget, DonutChart, Box, Title, NumberCard, Line,PieChart } from 'components';
+import { Widget, DonutChart, Box, Title, NumberCard, Line, PieChart } from 'components';
 import ReactGridLayout from 'react-grid-layout';
 import { callApi } from 'utils';
 import api from 'api';
@@ -37,19 +37,19 @@ class One extends Component {
           width={size[0]}
         >
           <div key="a" style={{ border: '1px solid red' }} className='chart' data-grid={{ x: 0, y: 0, w: 3, h: 12, static: true }}>
-          <PieChart
-            data={[{ "name": "总任务数", "value": 123 }, { "name": "已完成任务数", "value": 123 }]}
-            inner={0.8}
-            height={size[1] - 130}
-            colors={['#2f2778', '#924ae1']}
-            innerHTML={`<span>${(123 / 453).toFixed(2) * 100}%</span><span>总车位</span></div>`}
-            plotCfg={{ margin: [0, 0, 0, 0] }}
-          />
+            <PieChart
+              data={[{ "name": "总任务数", "value": 123 }, { "name": "已完成任务数", "value": 123 }]}
+              inner={0.8}
+              height={size[1] - 130}
+              colors={['#2f2778', '#924ae1']}
+              innerHTML={`<span>${(123 / 453).toFixed(2) * 100}%</span><span>总车位</span></div>`}
+              plotCfg={{ margin: [0, 0, 0, 0] }}
+            />
           </div>
-          <div key="b" style={{ border: '1px solid red' }} data-grid={{ x:3, y: 0, w: 9, h: 12, static: true }}>
+          <div key="b" style={{ border: '1px solid red' }} data-grid={{ x: 3, y: 0, w: 9, h: 12, static: true }}>
             <Title value={title} />
             <div className="widget-content chart" style={{ paddingBottom: 0 }}>
-          </div>
+            </div>
           </div>
         </ReactGridLayout>
       </Widget>

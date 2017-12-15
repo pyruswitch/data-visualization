@@ -112,5 +112,5 @@
     "extends": "react-app"
   },
   "homepage": "./",
-  "proxy": "http://10.1.110.28:3000"
+  "proxy": "http://10.1.10.228:3001"
 }
