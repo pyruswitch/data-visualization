@@ -7,13 +7,18 @@ class Two extends Component {
     super(props);
   }
   render() {
-    const { title } = this.props;
+    const { title, data } = this.props;
     return (
       <Widget>
         <Title value={title} />
         <div className='widget-content chart'>
           <div>
-            <NumberCard value={33131213} type='number' hasBg unit="TEC" />
+            <NumberCard
+              hasBg
+              value={Number(data[0])}
+              type='number'
+              unit="TEC"
+            />
           </div>
         </div>
       </Widget>);

@@ -50,12 +50,14 @@ class Header extends (PureComponent || Component) {
             <img
               src={HomeSvg}
               alt="home"
-              onClick={() => this.props.history.push('/')}
             />
             <span>{this.state.breadcrumb}</span>
           </div>],
           [{ x: 8, y: 0, w: 14, h: 2 },
-          <Menu mode='horizontal' onSelect={(a) => { console.log(a); this.props.history.push(a.key) }}>
+          <Menu mode='horizontal' onSelect={(path) => {
+            this.setState({ breadcrumb: path.item.props.children });
+            this.props.history.push(path.key)
+          }}>
             {
               menu.map(({ value, path, submenu = [] }, index) => {
                 if (submenu.length > 0) {
@@ -71,9 +73,8 @@ class Header extends (PureComponent || Component) {
                   return <MenuItem key={path}>{value}</MenuItem>
               })
             }
-
           </Menu>],
-          [{ x: 23, y: 0, w: 1, h: 2 }, <div className='logout' onClick={() => this.props.history.push('/')} />]
+          // [{ x: 23, y: 0, w: 1, h: 2 }, <div className='logout' onClick={() => this.props.history.push('/')} />]
         ].map((arr, index) => {
           const data = Object.assign({ static: true }, arr[0]);
           return (

@@ -76,7 +76,6 @@ const apiMaps = {
   taskstatus: '/datav/taskstatus',
   // 品质核查任务列表
   qualityinspetask: '/datav/qualityinspetask',
-
   /***************************** 任务管理 *****************************/
   // 物业巡检任务列表
   equipmentinspetask: '/datav/equipmentinspetask',
@@ -88,14 +87,17 @@ const apiMaps = {
   todayquality: '/datav/todayquality',
   // 任务类型分布：（物业巡检任务数、品质核查任务数、总完成率）
   inspectiontasktype: '/datav/inspectiontasktype',
-
   /***************************** 园区能耗 *****************************/
   // 水、电、总能耗
   totalenergy: '/datav/totalenergy',
   // 每月楼栋水能耗分布
   buildmonthwatermeter: '/datav/buildmonthwatermeter',
   // 每月楼栋电能耗分布
-  buildmonthelectr: '/datav/buildmonthelectr'
+  buildmonthelectr: '/datav/buildmonthelectr',
+  // 水表实时读数
+  watermetercureading: '/datav/watermetercureading',
+  // 电表实时读数
+  electrmetercureading: '/datav/electrmetercureading'
 };
 const { ns } = getUrlParams(location.href);
 const callApi = ({ api, success, error }) => callApiBk({

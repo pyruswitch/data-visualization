@@ -9,33 +9,17 @@ class Four extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [
-        { "value": 76, "name": "01" },
-        { "value": 49, "name": "02" },
-        { "value": 53, "name": "03" },
-        { "value": 48, "name": "04" },
-        { "value": 99, "name": "05" },
-        { "value": 87, "name": "06" },
-        { "value": 71, "name": "07" },
-        { "value": 86, "name": "08" },
-        { "value": 53, "name": "09" },
-        { "value": 95, "name": "10" },
-        { "value": 70, "name": "11" },
-        { "name": "12" },
-      ]
+      data: []
     };
   }
 
   componentDidMount() {
-    // callApi({
-    //   api: 'buildmonthwatermeter',
-    //   success: (response) => {
-    //     const data = response.map(({ buildno, month, value }) => (
-    //       { name: `${month}月`, value: Number(value), status: `${buildno}楼栋` }
-    //     ));
-    //     this.setState({ data });
-    //   }
-    // });
+    callApi({
+      api: 'buildmonthwatermeter',
+      success: (data) => {
+        this.setState({ data });
+      }
+    });
   }
 
   render() {
@@ -46,7 +30,6 @@ class Four extends Component {
         <div className="widget-content chart">
           <LineChart
             data={this.state.data}
-            colX={{ formatter: (dimValue) => (`${dimValue}月`) }}
             colY={{ alias: '单位：T' }}
             width={size[0]}
             height={size[1] - 150}

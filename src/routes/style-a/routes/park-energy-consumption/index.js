@@ -48,35 +48,79 @@ class ParkEnergyConsumption extends Component {
 
   state = {
     modalVisible: false,
-    type: 0
+    type: 0,
+    data: [
+      { name: "总能耗", value: 0 },
+      { name: "总能耗同比", value: 0 },
+      { name: "水表", value: 0 },
+      { name: "水表同比", value: 0 },
+      { name: "电表", value: 0 },
+      { name: "电表同比", value: 0 }
+    ],
+    readingData: []
   }
 
   componentDidMount() {
     callApi({
       api: 'totalenergy',
-      success: (response) => {
+      success: (data) => {
+        this.setState({ data })
       }
     });
-    callApi({
-      api: 'buildmonthwatermeter',
-      success: () => {
-
-      }
-    })
   }
 
   setModalVisible(modalVisible, type) {
     if (type !== undefined) {
       this.setState({ type });
+      if (type === 0)
+        this.getWatermeterCureading();
+      else
+        this.getElectrmeterCureading();
     }
     this.setState({ modalVisible });
   }
 
+  getWatermeterCureading = () => {
+    callApi({
+      api: 'watermetercureading',
+      success: (readingData) => {
+        this.setState({ readingData });
+      }
+    })
+  }
+
+  getElectrmeterCureading = () => {
+    callApi({
+      api: 'electrmetercureading',
+      success: (readingData) => {
+        this.setState({ readingData });
+      }
+    })
+  }
+
   render() {
+    const { data, readingData } = this.state;
     const LAYOUTCONF = [
-      [{ x: 0, y: 2, w: 7, h: 8 }, <One title='水能耗' openModal={(type) => this.setModalVisible(true, type)} />],
-      [{ x: 7, y: 2, w: 10, h: 8 }, <Two title='总能耗' />],
-      [{ x: 17, y: 2, w: 7, h: 8 }, <Three title='电能耗' openModal={(type) => this.setModalVisible(true, type)} />],
+      [{ x: 0, y: 2, w: 7, h: 8 },
+      <One
+        title='水能耗'
+        data={[data[2].value, data[3].value]}
+        openModal={(type) => this.setModalVisible(true, type)}
+      />
+      ],
+      [{ x: 7, y: 2, w: 10, h: 8 },
+      <Two
+        title='总能耗'
+        data={[data[0].value, data[1].value]}
+      />
+      ],
+      [{ x: 17, y: 2, w: 7, h: 8 },
+      <Three
+        title='电能耗'
+        data={[data[4].value, data[5].value]}
+        openModal={(type) => this.setModalVisible(true, type)}
+      />
+      ],
       [{ x: 0, y: 10, w: 12, h: 14 }, <Four title='月度用水量分析' size={widgetSize(12, 14)} />],
       [{ x: 12, y: 10, w: 12, h: 14 }, <Five title='月度用电量分析' size={widgetSize(12, 14)} />]
     ];
@@ -91,13 +135,11 @@ class ParkEnergyConsumption extends Component {
         >
           <ReactGridLayout rowHeight={document.body.clientHeight / 16} margin={[24, 24]} cols={4}>
             {
-              WATER.map(({ name, value }, index) => {
-                // console.log(index % 4, Number((index / 4).toFixed(0)) * 2)
-
+              readingData.map(({ name, date }, index) => {
                 return (
                   <div key={index} data-grid={{ x: index % 4, y: Math.floor(index / 4) * 2, w: 1, h: 2, static: true }}>
                     <span>{name}</span>
-                    <span>{value}</span>
+                    <span>{date}</span>
                     <span>{TYPES[this.state.type]['unit']}</span>
                   </div>
                 )

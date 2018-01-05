@@ -64,7 +64,7 @@ class Five extends Component {
             <Title value={title[1]} />
             <div className='widget-content flex'>
               {
-                list.map(({ type, name, urgent, value }, index) => (
+                list.slice(0, 5).map(({ type, name, urgent, value }, index) => (
                   <div className="top-line">
                     <span>{types[index]}</span>
                     <span>{`${name}`}</span>

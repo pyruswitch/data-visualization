@@ -8,13 +8,14 @@ const BASEHIGHT = (window.innerHeight - 48 * 2 - 24 * 7) / 7;
 const Frame = G2.Frame;
 const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
   chart.col('month', {
-    type: 'time',
+    // type: 'time',
     labels,
     line
   });
   chart.col('value', Object.assign(colY, {
+    type: 'log',
     min: 0,
-    nice: false
+    nice: true
   }));
 
   // chart.col('totalArea', {

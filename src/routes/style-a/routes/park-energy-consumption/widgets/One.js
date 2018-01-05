@@ -10,13 +10,13 @@ class One extends Component {
   }
 
   render() {
-    const { title } = this.props;
+    const { title, data } = this.props;
     return (
       <Widget>
         <Title value={title} />
         <div className="widget-content">
           <div className="number">
-            <NumberCard value={3458716} type='number' unit='T' />
+            <NumberCard value={Number(data[0])} type='number' unit='T' />
           </div>
           <Line />
           <div className="button">
@@ -26,7 +26,7 @@ class One extends Component {
             </div>
           </div>
         </div>
-        <Float value={1} />
+        <Float value={Number(data[1]) * 100} />
       </Widget>
     );
   }
