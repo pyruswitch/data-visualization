@@ -4,8 +4,8 @@ import callApi from 'api';
 const columns = [
   { title: '帖子标题', width: 'col-5', key: 'name' },
   { title: '标签', width: 'col-2', key: 'type' },
-  { title: '发布时间', width: 'col-4', key: 'time' },
-  { title: '阅读量', width: 'col-1', key: 'value' }
+  { title: '发布时间', width: 'col-3', key: 'time' },
+  { title: '阅读量', width: 'col-2', key: 'value' }
 ];
 
 class Four extends Component {

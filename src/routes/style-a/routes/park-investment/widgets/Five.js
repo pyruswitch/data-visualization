@@ -33,17 +33,14 @@ class Five extends Component {
           return ({
             leasedarea: Number(leasedarea),
             rentarea: Number(rentarea),
-            totalArea: Number(leasedarea) + Number(rentarea),
             ...rest
           })
         });
-        frame = Frame.combineColumns(frame, ['leasedarea', 'rentarea'], 'value', 'type', ['month', 'totalArea']);
+        frame = Frame.combineColumns(frame, ['leasedarea', 'rentarea'], 'value', 'type', ['month']);
         // 这里不知道该怎么用frame或配置显示中文，只能这么转成json
         console.log(frame.toJSON())
         this.setState({
-          data: frame.toJSON().map(({ type, ...rest }) => ({
-            type: typeMap[type], ...rest
-          }))
+          data: frame.toJSON().map(({ type, value, month }) => ({ type: typeMap[type], value: +value, month }))
         });
       }
     });

@@ -13,7 +13,7 @@ const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
     line
   });
   chart.col('value', Object.assign(colY, {
-    type: 'log',
+    type: 'linear',
     min: 0,
     nice: true
   }));
@@ -40,9 +40,9 @@ const createStackedBarChart = ({ colX, colY }) => createG2(chart => {
 
   // chart.tooltip(false);
 
-  chart.areaStack().position('month*value').color('type', ['#d8d8ff', '#6060ff']).opacity(0.8).shape('smooth');
-
-  // chart.line().position('month*totalArea').size(2).color('#000').shape('smooth');
+  chart.areaStack().position('month*value').color('type', ['#d8d8ff', '#6060ff'])
+    .opacity(0.8).shape('smooth');
+  // chart.line().position(Stat.summary.percent('month*totalArea')).size(2).color('#000').shape('smooth');
   chart.legend('type', false);
   chart.render();
 });
