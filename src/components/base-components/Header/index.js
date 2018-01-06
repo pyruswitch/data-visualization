@@ -1,14 +1,22 @@
 import React, { PureComponent, Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import RGL, { WidthProvider } from 'react-grid-layout';
+import Menu, { SubMenu, MenuItem } from 'rc-menu';
 import { Widget } from 'components';
 import config, { widgetSize } from 'config';
+import { getUrlParams } from 'utils';
 import HomeSvg from './home.svg';
-import Menu, { SubMenu, MenuItem } from 'rc-menu';
+import ELive from './elive.svg';
+import Zuolin from './zuolin.svg';
 import 'rc-menu/assets/index.css';
 import './index.less';
+
 const prefixCls = 'com-header';
 const ReactGridLayout = WidthProvider(RGL);
+const { ns } = getUrlParams(location.href);
+const logos = {
+  999955: ELive
+}
 
 class Header extends (PureComponent || Component) {
   constructor(props) {
@@ -45,7 +53,7 @@ class Header extends (PureComponent || Component) {
     return (
       <ReactGridLayout className="com-header" rowHeight={config.size[1]} margin={[24, 24]} cols={24}>
         {[
-          [{ x: 0, y: 0, w: 3, h: 2 }, <div className='logo' />],
+          [{ x: 0, y: 0, w: 3, h: 2 }, <img src={logos[ns] || Zuolin} className='logo' />],
           [{ x: 3, y: 0, w: 3, h: 2 }, <div className='breadcrumb'>
             <img
               src={HomeSvg}
