@@ -71,4 +71,7 @@ $ npm run build
 |- 智慧能源
 ```
 
-
+### 测试地址
+http://datav-beta.zuolin.com/data-visualization/index.html?ns=999969#/sa/social-intercourse
+许娟  16:43:14
+http://datav.lab.everhomes.com/data-visualization/index.html?ns=999969#/sa/social-intercourse

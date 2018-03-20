@@ -99,7 +99,7 @@ const apiMaps = {
   // 电表实时读数
   electrmetercureading: '/datav/electrmetercureading'
 };
-const { ns } = getUrlParams(location.href);
+const { ns=999969 } = getUrlParams(location.href);
 const callApi = ({ api, success, error }) => callApiBk({
   api: apiMaps[api],
   method: 'GET',
