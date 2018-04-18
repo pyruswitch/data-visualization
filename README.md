@@ -8,6 +8,6 @@ Linux、Python(3.5.4)、Redis、Mysql
 3. git clone http://10.1.1.217/eh-front-end/data-visualization.git
 4. cd /data-visualization
 5. pip install -r requirements.txt
-6. python staticdata.py
-7. python datavwebapp.py
+6. python3 staticdata.py
+7. nohup python3 datavwebapp.py >> datavwebapp.log & 2>&1
 

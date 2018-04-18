@@ -5,6 +5,7 @@ import RGL, { WidthProvider } from 'react-grid-layout';
 import { Three, Five, Two, One, Four } from './widgets';
 import callApi from 'api';
 import { widgetSize } from 'config';
+// import "antd/dist/antd.less";
 import './index.less';
 const ReactGridLayout = WidthProvider(RGL);
 const WATER = [
