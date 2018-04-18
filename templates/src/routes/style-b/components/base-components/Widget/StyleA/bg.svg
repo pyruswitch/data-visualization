@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg  preserveAspectRatio="none"  width="285px" height="30px" viewBox="0 0 285 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>样式模块_标题</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="61.9303385%" x2="98.1310607%" y2="61.9303405%" id="linearGradient-1">
+            <stop stop-color="#03FFFF" offset="0%"></stop>
+            <stop stop-color="#143C71" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="99 0 185 0 197 15 185 30 99 30 87 15"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="样式模块_标题">
+            <g>
+                <rect id="Rectangle-3" fill="url(#linearGradient-1)" x="195" y="15" width="90" height="1"></rect>
+                <rect id="Rectangle-3" fill="url(#linearGradient-1)" transform="translate(45.000000, 15.500000) scale(-1, 1) translate(-45.000000, -15.500000) " x="0" y="15" width="90" height="1"></rect>
+                <g id="Rectangle-2">
+                    <use fill="#05144B" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    <path stroke="#03FFFF" stroke-width="1" d="M99.2403124,0.5 L87.6403124,15 L99.2403124,29.5 L184.759688,29.5 L196.359688,15 L184.759688,0.5 L99.2403124,0.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

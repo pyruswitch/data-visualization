@@ -1,0 +1,29 @@
+@import './../../../variable.less';
+.eh-visualization-box {
+    position: relative;
+    display: inline-block;
+    >div {
+        width: 100%;
+        text-align: center;
+        >span {
+            color: #7D98EA;
+            font-weight: bold;
+            display: inline-block;
+            width: 100%;
+            font-size: @font-size-24;
+            &:first-of-type {
+                font-size: @font-size-16;
+                margin-bottom: 10px;
+            }
+            &:last-of-type {
+                color: rgba(3, 255, 255, 0.60);
+            }
+            >sub {
+                margin-left: 4px;
+                font-size: 8px;
+                color: rgba(3, 255, 255, 0.60);
+                position: inherit;
+            }
+        }
+    }
+}

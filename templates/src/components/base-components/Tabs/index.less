@@ -1,0 +1,60 @@
+@import "~themes/variable.less";
+.com-tabs {
+    height: 100%;
+    width: 100%;
+    div {
+        display: inline-block;
+        width: 100%;
+    }
+    .header {
+        width: 100%;
+        height: @size-32;
+        position: relative;
+        .title {
+            line-height: @size-32;
+            font-size: @font-size-14;
+            color: #FFFFFF;
+            padding-left: 24px;
+            font-weight: 200;
+        }
+        .nav {
+            width: 25%;
+            position: absolute;
+            right: 0;
+            text-align: right;
+            font-size: @font-size-12;
+            >span {
+                cursor: pointer;
+                display: inline-block;
+                padding: 0 8px;
+                line-height: @size-32;
+            }
+            .active {
+                position: relative;
+                &::after {
+                    content: '';
+                    border-bottom: 2px solid #1DE9B6; // position: absolute;
+                    width: 100%; // top: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    display: inline-block;
+                }
+            }
+            .line {
+                border: 1px solid red;
+                height: 1px;
+                width: 100%;
+            }
+        }
+    }
+    .content {
+        height: e("calc(100% - 1.6vw)");
+        white-space: nowrap;
+        >div {
+            height: 100%;
+            display: inline-block;
+        }
+        transition: transform 0.5s ease-in;
+    }
+}
