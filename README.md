@@ -11,3 +11,4 @@ Linux、Python(3.5.4)、Redis、Mysql
 6. python3 staticdata.py
 7. nohup python3 datavwebapp.py >> datavwebapp.log & 2>&1
 
+hello
