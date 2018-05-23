@@ -31,7 +31,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-          if ns in ("999969","999955"):
+          if ns in ("999969","999955","999946"):
 
              allorderdata=staticdata.parkorder(ns)
              allorderdata=allorderdata
@@ -49,7 +49,7 @@ def create_app():
     def ordertypecount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
 
                ordertypecount=staticdata.ordertypecount(ns)
                ordertypecount=ordertypecount
@@ -66,7 +66,7 @@ def create_app():
     def ordertypeamount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
 
                ordertypeamount=staticdata.ordertypeamount(ns)
                ordertypeamount=ordertypeamount
@@ -83,7 +83,7 @@ def create_app():
     def orderchannelcount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
 
                orderchannelcount=staticdata.orderchannelcount(ns)
                orderchannelcount=orderchannelcount
@@ -100,7 +100,7 @@ def create_app():
     def monthamount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                monthamount=staticdata.monthamount(ns)
                monthamount=monthamount
             else:
@@ -116,7 +116,7 @@ def create_app():
     def monthcount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                monthcount=staticdata.monthcount(ns)
                monthcount=monthcount
             else:
@@ -132,7 +132,7 @@ def create_app():
     def orderamount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                orderamount=staticdata.orderamount(ns)
                orderamount=orderamount
             else:
@@ -148,7 +148,7 @@ def create_app():
     def ordercount():
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                ordercount=staticdata.ordercount(ns)
                ordercount=ordercount
             else:
@@ -165,7 +165,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                tasktypecount=staticdata.tasktypecount(ns)
                tasktypecount=tasktypecount
             else:
@@ -182,7 +182,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                boardvita=staticdata.boardvita(ns)
                boardvita=boardvita
             else:
@@ -199,7 +199,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                taskclose=staticdata.taskclose(ns)
                taskclose=taskclose
             else:
@@ -216,7 +216,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                daytaskorder=staticdata.daytaskorder(ns)
                daytaskorder=daytaskorder
             else:
@@ -233,7 +233,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                tasktyperespon=staticdata.tasktyperespon(ns)
                tasktyperespon=tasktyperespon
             else:
@@ -250,7 +250,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                pengdingtask=staticdata.pengdingtask(ns)
                pengdingtask=pengdingtask
             else:
@@ -267,7 +267,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                taskstatus=staticdata.taskstatus(ns)
                taskstatus=taskstatus
             else:
@@ -284,7 +284,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                totalassets=staticdata.totalassets(ns)
                totalassets=totalassets
             else:
@@ -301,7 +301,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                Companyespon=staticdata.Companyespon(ns)
                Companyespon=Companyespon
             else:
@@ -318,7 +318,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                settledenter=staticdata.settledenter(ns)
                settledenter=settledenter
             else:
@@ -336,7 +336,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                InviteBusiness=staticdata.InviteBusiness(ns)
                InviteBusiness=InviteBusiness
             else:
@@ -353,7 +353,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                Companytype=staticdata.Companytype(ns)
                Companytype=Companytype
             else:
@@ -371,7 +371,7 @@ def create_app():
         ns =request.values.get("ns")
 
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                occupancyrate=staticdata.occupancyrate(ns)
                occupancyrate=occupancyrate
             else:
@@ -389,7 +389,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                rentalamount=staticdata.rentalamount(ns)
                rentalamount=rentalamount
             else:
@@ -439,7 +439,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                montharea=staticdata.montharea(ns)
                montharea=montharea
             else:
@@ -457,7 +457,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                totalenergy=staticdata.totalenergy(ns)
                totalenergy=totalenergy
             else:
@@ -474,7 +474,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                buildmonthwatermeter=staticdata.buildmonthwatermeter(ns)
                buildmonthwatermeter=buildmonthwatermeter
             else:
@@ -491,7 +491,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                buildmonthelectr=staticdata.buildmonthelectr(ns)
                buildmonthelectr=buildmonthelectr
             else:
@@ -508,7 +508,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                watermetercureading=staticdata.watermetercureading(ns)
                watermetercureading=watermetercureading
             else:
@@ -525,7 +525,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                electrmetercureading=staticdata.electrmetercureading(ns)
                electrmetercureading=electrmetercureading
             else:
@@ -611,7 +611,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                activityenrollment=staticdata.activityenrollment(ns)
                activityenrollment=activityenrollment
             else:
@@ -628,7 +628,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                forumthreads=staticdata.forumthreads(ns)
                forumthreads=forumthreads
             else:
@@ -645,7 +645,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                activitytype=staticdata.activitytype(ns)
                activitytype=activitytype
             else:
@@ -662,7 +662,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                activityattention=staticdata.activityattention(ns)
                activityattention=activityattention
             else:
@@ -679,7 +679,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                trendingtopics=staticdata.trendingtopics(ns)
                trendingtopics=trendingtopics
             else:
@@ -696,7 +696,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-            if ns in ("999969","999955"):
+            if ns in ("999969","999955","999946"):
                newactivity=staticdata.newactivity(ns)
                newactivity=newactivity
             else:
@@ -713,7 +713,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    newforum=staticdata.newforum(ns)
                    newforum=newforum
                 else:
@@ -731,7 +731,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    communityuseract=staticdata.communityuseract(ns)
                    communityuseract=communityuseract
                 else:
@@ -749,7 +749,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    daynewusertrend=staticdata.daynewusertrend(ns)
                    daynewusertrend=daynewusertrend
                 else:
@@ -767,7 +767,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    dayactusertrend=staticdata.dayactusertrend(ns)
                    dayactusertrend=dayactusertrend
                 else:
@@ -785,7 +785,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    daytotalusertrend=staticdata.daytotalusertrend(ns)
                    daytotalusertrend=daytotalusertrend
                 else:
@@ -803,7 +803,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    usergender=staticdata.usergender(ns)
                    usergender=usergender
                 else:
@@ -821,7 +821,7 @@ def create_app():
 
         ns =request.values.get("ns")
         try:
-                if ns in ("999969","999955"):
+                if ns in ("999969","999955","999946"):
                    ostype=staticdata.ostype(ns)
                    ostype=ostype
                 else:

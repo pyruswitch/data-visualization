@@ -578,7 +578,7 @@ def electrmetercureading(ns):
 
 if __name__ == '__main__':
      r=redis.Redis(host='127.0.0.1',port=6379,decode_responses=True)
-     path= r'./workbook.xlsx'
+     #path= r'./workbook.xlsx'
      importstaticdata()
-     ns="999955"
-     print(electrmetercureading(ns))
+     #ns="999946"
+     #print(electrmetercureading(ns))
