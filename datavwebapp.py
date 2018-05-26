@@ -834,6 +834,96 @@ def create_app():
         except Exception:
            dict={"response": "Exception"}
            return dict
+    @app.route('/evh/datav/shopsalesranking', methods=['GET', 'POST'])#商家销量
+    def ostype():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   ostype=staticdata.shopsalesranking(ns)
+                   ostype=ostype
+                else:
+                   ostype=datavbizdb.shopsalesranking(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/totalvolumetrade', methods=['GET', 'POST'])#总交易额
+    def ostype():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   ostype=staticdata.totalvolumetrade(ns)
+                   ostype=ostype
+                else:
+                   ostype=datavbizdb.totalvolumetrade(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/volumetradetrend', methods=['GET', 'POST'])#交易额趋势
+    def ostype():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   ostype=staticdata.volumetradetrend(ns)
+                   ostype=ostype
+                else:
+                   ostype=datavbizdb.volumetradetrend(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/consumertrend', methods=['GET', 'POST'])#消费用户趋势
+    def ostype():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   ostype=staticdata.consumertrend(ns)
+                   ostype=ostype
+                else:
+                   ostype=datavbizdb.consumertrend(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/tradeproportion', methods=['GET', 'POST'])#成交比例
+    def ostype():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   ostype=staticdata.tradeproportion(ns)
+                   ostype=ostype
+                else:
+                   ostype=datavbizdb.tradeproportion(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
     return app
 
 
