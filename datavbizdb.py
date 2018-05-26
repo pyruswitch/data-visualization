@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
 __author__ = 'vincent'
-
 import mysql.connector
 import operator
 import collections
@@ -1499,10 +1497,190 @@ WHERE
         useractdict["Android"]=useract[0][1]
     return useractdict
 
+def shopsalesranking(ns):#商家销量
+    select_sql='''
+SELECT
+c.`shop_name`,SUM(a.`quantity`)
+FROM
+`tbl_order_item` a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+LEFT JOIN
+`tbl_order`d  ON d.`order_no`=a.`order_no`
+LEFT JOIN
+`tbl_shop_info` c
+ON c.`shop_no`=a.`shop_no`
+WHERE
+DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= DATE(d.`payment_time`)
+AND b.`namespace_id`={}
+GROUP BY c.`shop_name`
+ORDER BY SUM(a.`quantity`) DESC
+LIMIT 10
+
+    '''.format(ns)
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    shopsalerank=dbsql(select_sql,account)
+    shopsalerankdict={}
+    shopsaleranklist=[]
+    dicti=1
+    if shopsalerank==[]:
+        shopsalerankdict["value"]=0
+        shopsalerankdict["name"]=0
+        shopsaleranklist.append(shopsaleranklist)
+    else:
+        for value in shopsalerank:
+            shopsalerankdict[dicti]={}
+            shopsalerankdict[dicti]["name"]=str(value[0])
+            shopsalerankdict[dicti]["value"]=str(value[1])
+            shopsaleranklist.append(shopsalerankdict[dicti])
+            dicti=dicti+1
+    return shopsaleranklist
+
+def totalvolumetrade(ns):#总交易额
+    select_sql='''
+SELECT
+ROUND(SUM(IF (YEAR(a.`payment_time`)=YEAR(NOW()),a.`paid_total`,0)),2)AS"今年",ROUND(SUM(IF (YEAR(a.`payment_time`)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR)),a.`paid_total`,0)),2)AS "去年"
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+WHERE
+ b.`namespace_id`={}
+ AND DATE_FORMAT(a.`payment_time`,"%m-%d")< DATE_FORMAT(NOW(),"%m-%d")
+    '''.format(ns)
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306"}
+    totalvolumetrade=dbsql(select_sql,account)
+    totalvolumetradedict={}
+
+    if totalvolumetrade==[]:
+        totalvolumetradedict["totaltrade"]=0
+        totalvolumetradedict["yearongrowth"]=0
+    else:
+
+        totalvolumetradedict["totaltrade"]=totalvolumetrade[0][0]
+        if totalvolumetrade[0][1]==0:
+            totalvolumetradedict["yearongrowth"]=1
+        else:
+          totalvolumetradedict["yearongrowth"]=round(((totalvolumetrade[0][0])-(totalvolumetrade[0][1]))/(totalvolumetrade[0][1]),2)
+    return totalvolumetradedict
+
+def volumetradetrend(ns):#交易额趋势
+    select_sql='''
+SELECT
+DATE_FORMAT(a.`payment_time`,"%m/%d"),ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(NOW()),a.`paid_total`,0)),2)AS "今年",ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR)),a.`paid_total`,0)),2)AS "去年"
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+WHERE
+ b.`namespace_id`={}
+ AND DATE_FORMAT(a.`payment_time`,"%m-%d")< DATE_FORMAT(NOW(),"%m-%d")
+ GROUP BY DATE_FORMAT(a.`payment_time`,"%m-%d") DESC
+
+    '''.format(ns)
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    volumetradetrend=dbsql(select_sql,account)
+    volumetradetrenddict={}
+    volumetradetrendlist=[]
+    dicti=1
+    if volumetradetrend==[]:
+        volumetradetrenddict["date"]=0
+        volumetradetrenddict["thisyear"]=0
+        volumetradetrenddict["lastyear"]=0
+        volumetradetrendlist.append(volumetradetrenddict)
+    else:
+        for value in volumetradetrend:
+            volumetradetrenddict[dicti]={}
+            volumetradetrenddict[dicti]["date"]=str(value[0])
+            volumetradetrenddict[dicti]["thisyear"]=str(value[1])
+            volumetradetrenddict[dicti]["lastyear"]=str(value[2])
+            volumetradetrendlist.append(volumetradetrenddict[dicti])
+            dicti=dicti+1
+    return volumetradetrendlist
+
+def consumertrend(ns):#消费用户趋势
+    select_sql='''
+SELECT
+DATE_FORMAT(a.`payment_time`,"%m/%d"),COUNT(a.`buyer_no`)
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+WHERE
+ b.`namespace_id`={}
+ AND YEAR(a.`payment_time`)=YEAR(NOW())
+ GROUP BY DATE_FORMAT(a.`payment_time`,"%m-%d") DESC
+
+    '''.format(ns)
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    consumertrend=dbsql(select_sql,account)
+    consumertrenddict={}
+    consumertrendlist=[]
+    dicti=1
+    totalnum=0
+    if consumertrend==[]:
+        consumertrenddict["name"]=0
+        consumertrenddict["value"]=0
+        consumertrendlist.append(consumertrenddict)
+    else:
+        for value in consumertrend:
+            consumertrenddict[dicti]={}
+            consumertrenddict[dicti]["name"]=str(value[0])
+            consumertrenddict[dicti]["value"]=str(value[1])
+            consumertrendlist.append(consumertrenddict[dicti])
+            dicti=dicti+1
+
+    return consumertrendlist
+
+def tradeproportion(ns):#成交比例
+    select_sql='''
+ SELECT
+COUNT(IF(a.`basic_state`=1,a.`order_no`,NULL))AS"unpaid",COUNT(IF(a.`basic_state`!=1,a.`order_no`,NULL))AS"paid"
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+
+WHERE
+ b.`namespace_id`={}
+AND YEAR(a.`create_time`)=YEAR(NOW())
+    '''.format(ns)
+    select_sql_sale='''
+
+ SELECT
+SUM(IF(a.`basic_state`!=1,c.`quantity`,0))
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b ON b.`mall_id`=a.`mall_id`
+LEFT JOIN `tbl_order_item` c ON c.`order_no`=a.`order_no`
+WHERE
+ b.`namespace_id`={}
+AND YEAR(a.`create_time`)=YEAR(NOW())
+    '''.format(ns)
+
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306"}
+    tradeproportion=dbsql(select_sql,account)
+    salevolume=dbsql(select_sql_sale,account)
+    tradeproportiondict={}
+
+
+    if tradeproportion==[]:
+        tradeproportiondict["tradepro"]=0
+        tradeproportiondict["salevolume"]=0
+    else:
+
+        tradeproportiondict["tradepro"]=round(tradeproportion[0][1]/(tradeproportion[0][0]+tradeproportion[0][1]),2)
+        tradeproportiondict["salevolume"]=int(salevolume[0][0])
+    return tradeproportiondict
+
+
 
 
 if __name__ == '__main__':
     #list1,list2,list3,list4,list5,list6=incomedata()
     #print(list1,'\n',list2,'\n',list3,'\n',list4,'\n',list5,'\n',list6)
-    list1=usergender(2)
+    list1=tradeproportion(999990)
     print(list1)
