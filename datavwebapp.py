@@ -835,16 +835,16 @@ def create_app():
            dict={"response": "Exception"}
            return dict
     @app.route('/evh/datav/shopsalesranking', methods=['GET', 'POST'])#商家销量
-    def ostype():
+    def shopsalesranking():
 
         ns =request.values.get("ns")
         try:
                 if ns in ("999969","999955","999946"):
-                   ostype=staticdata.shopsalesranking(ns)
-                   ostype=ostype
+                   shopsalesranking=staticdata.shopsalesranking(ns)
+                   shopsalesranking=shopsalesranking
                 else:
-                   ostype=datavbizdb.shopsalesranking(ns)
-                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+                   shopsalesranking=datavbizdb.shopsalesranking(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":shopsalesranking}
 
                 dict=json.dumps(dict,ensure_ascii=False)
                 return dict
@@ -853,16 +853,16 @@ def create_app():
            dict={"response": "Exception"}
            return dict
     @app.route('/evh/datav/totalvolumetrade', methods=['GET', 'POST'])#总交易额
-    def ostype():
+    def totalvolumetrade():
 
         ns =request.values.get("ns")
         try:
                 if ns in ("999969","999955","999946"):
-                   ostype=staticdata.totalvolumetrade(ns)
-                   ostype=ostype
+                   totalvolumetrade=staticdata.totalvolumetrade(ns)
+                   totalvolumetrade=totalvolumetrade
                 else:
-                   ostype=datavbizdb.totalvolumetrade(ns)
-                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+                   totalvolumetrade=datavbizdb.totalvolumetrade(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":totalvolumetrade}
 
                 dict=json.dumps(dict,ensure_ascii=False)
                 return dict
@@ -871,16 +871,16 @@ def create_app():
            dict={"response": "Exception"}
            return dict
     @app.route('/evh/datav/volumetradetrend', methods=['GET', 'POST'])#交易额趋势
-    def ostype():
+    def volumetradetrend():
 
         ns =request.values.get("ns")
         try:
                 if ns in ("999969","999955","999946"):
-                   ostype=staticdata.volumetradetrend(ns)
-                   ostype=ostype
+                   volumetradetrend=staticdata.volumetradetrend(ns)
+                   volumetradetrend=volumetradetrend
                 else:
-                   ostype=datavbizdb.volumetradetrend(ns)
-                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+                   volumetradetrend=datavbizdb.volumetradetrend(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":volumetradetrend}
 
                 dict=json.dumps(dict,ensure_ascii=False)
                 return dict
@@ -889,16 +889,16 @@ def create_app():
            dict={"response": "Exception"}
            return dict
     @app.route('/evh/datav/consumertrend', methods=['GET', 'POST'])#消费用户趋势
-    def ostype():
+    def consumertrend():
 
         ns =request.values.get("ns")
         try:
                 if ns in ("999969","999955","999946"):
-                   ostype=staticdata.consumertrend(ns)
-                   ostype=ostype
+                   consumertrend=staticdata.consumertrend(ns)
+                   consumertrend=consumertrend
                 else:
-                   ostype=datavbizdb.consumertrend(ns)
-                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+                   consumertrend=datavbizdb.consumertrend(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":consumertrend}
 
                 dict=json.dumps(dict,ensure_ascii=False)
                 return dict
@@ -907,16 +907,106 @@ def create_app():
            dict={"response": "Exception"}
            return dict
     @app.route('/evh/datav/tradeproportion', methods=['GET', 'POST'])#成交比例
-    def ostype():
+    def tradeproportion():
 
         ns =request.values.get("ns")
         try:
                 if ns in ("999969","999955","999946"):
-                   ostype=staticdata.tradeproportion(ns)
-                   ostype=ostype
+                   tradeproportion=staticdata.tradeproportion(ns)
+                   tradeproportion=tradeproportion
                 else:
-                   ostype=datavbizdb.tradeproportion(ns)
-                dict={"errorCode": "200","errorDescription": "OK","response":ostype}
+                   tradeproportion=datavbizdb.tradeproportion(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":tradeproportion}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/categoryrank', methods=['GET', 'POST'])#品类销量
+    def categoryrank():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   categoryrank=staticdata.categoryrank(ns)
+                   categoryrank=categoryrank
+                else:
+                   categoryrank=datavbizdb.categoryrank(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":categoryrank}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/paychannelstat', methods=['GET', 'POST'])#渠道订单统计
+    def paychannelstat():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   paychannelstat=staticdata.paychannelstat(ns)
+                   paychannelstat=paychannelstat
+                else:
+                   paychannelstat=datavbizdb.paychannelstat(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":paychannelstat}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/salesdiscount', methods=['GET', 'POST'])#营销活动参与度
+    def salesdiscount():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   salesdiscount=staticdata.salesdiscount(ns)
+                   salesdiscount=salesdiscount
+                else:
+                   salesdiscount=datavbizdb.salesdiscount(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":salesdiscount}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/totaldiscount', methods=['GET', 'POST'])#营销活动优惠总额
+    def totaldiscount():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   totaldiscount=staticdata.totaldiscount(ns)
+                   totaldiscount=totaldiscount
+                else:
+                   totaldiscount=datavbizdb.totaldiscount(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":totaldiscount}
+
+                dict=json.dumps(dict,ensure_ascii=False)
+                return dict
+
+        except Exception:
+           dict={"response": "Exception"}
+           return dict
+    @app.route('/evh/datav/repurchaserate', methods=['GET', 'POST'])#复购率
+    def repurchaserate():
+
+        ns =request.values.get("ns")
+        try:
+                if ns in ("999969","999955","999946"):
+                   repurchaserate=staticdata.repurchaserate(ns)
+                   repurchaserate=repurchaserate
+                else:
+                   repurchaserate=datavbizdb.repurchaserate(ns)
+                dict={"errorCode": "200","errorDescription": "OK","response":repurchaserate}
 
                 dict=json.dumps(dict,ensure_ascii=False)
                 return dict

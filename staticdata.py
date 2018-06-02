@@ -77,6 +77,11 @@ def importstaticdata():
               excdict["rentarea"]=sheet.cell(row=row,column=8).value
               excdict["leasedarea"]=sheet.cell(row=row,column=7).value
               wbdict[ns][page][module].append(excdict)
+           elif module =="交易额趋势":
+              excdict["thisyear"]=sheet.cell(row=row,column=6).value
+              excdict["lastyear"]=sheet.cell(row=row,column=8).value
+              excdict["date"]=sheet.cell(row=row,column=7).value
+              wbdict[ns][page][module].append(excdict)
            else:
                if fieldsec==None:
 

@@ -1526,7 +1526,7 @@ LIMIT 10
     if shopsalerank==[]:
         shopsalerankdict["value"]=0
         shopsalerankdict["name"]=0
-        shopsaleranklist.append(shopsaleranklist)
+        shopsaleranklist.append(shopsalerankdict)
     else:
         for value in shopsalerank:
             shopsalerankdict[dicti]={}
@@ -1568,7 +1568,7 @@ WHERE
 def volumetradetrend(ns):#交易额趋势
     select_sql='''
 SELECT
-DATE_FORMAT(a.`payment_time`,"%m/%d"),ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(NOW()),a.`paid_total`,0)),2)AS "今年",ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR)),a.`paid_total`,0)),2)AS "去年"
+DATE_FORMAT(a.`payment_time`,"%m"),ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(NOW()),a.`paid_total`,0)),2)AS "今年",ROUND(SUM(IF(YEAR(a.`payment_time`)=YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR)),a.`paid_total`,0)),2)AS "去年"
 FROM
 `tbl_order`a
 LEFT JOIN
@@ -1576,7 +1576,7 @@ LEFT JOIN
 WHERE
  b.`namespace_id`={}
  AND DATE_FORMAT(a.`payment_time`,"%m-%d")< DATE_FORMAT(NOW(),"%m-%d")
- GROUP BY DATE_FORMAT(a.`payment_time`,"%m-%d") DESC
+ GROUP BY DATE_FORMAT(a.`payment_time`,"%m") DESC
 
     '''.format(ns)
     account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
@@ -1602,7 +1602,7 @@ WHERE
 def consumertrend(ns):#消费用户趋势
     select_sql='''
 SELECT
-DATE_FORMAT(a.`payment_time`,"%m/%d"),COUNT(a.`buyer_no`)
+DATE_FORMAT(a.`payment_time`,"%m"),COUNT(a.`buyer_no`)
 FROM
 `tbl_order`a
 LEFT JOIN
@@ -1610,7 +1610,7 @@ LEFT JOIN
 WHERE
  b.`namespace_id`={}
  AND YEAR(a.`payment_time`)=YEAR(NOW())
- GROUP BY DATE_FORMAT(a.`payment_time`,"%m-%d") DESC
+ GROUP BY DATE_FORMAT(a.`payment_time`,"%m") DESC
 
     '''.format(ns)
     account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
@@ -1676,6 +1676,184 @@ AND YEAR(a.`create_time`)=YEAR(NOW())
         tradeproportiondict["salevolume"]=int(salevolume[0][0])
     return tradeproportiondict
 
+def categoryrank(ns):#品类销量
+    select_sql='''
+SELECT
+c.`cat_name`,SUM(a.`quantity`)
+FROM
+`tbl_order_item`a
+LEFT JOIN
+`tbl_model`b
+ON a.`prod_no`=b.`model_no`
+LEFT JOIN
+`tbl_commodity`c
+ON c.`commo_no`=b.`commo_no`
+LEFT JOIN
+`tbl_order`d
+ON d.`order_no`=a.`order_no`
+LEFT JOIN
+`tbl_mall_contact`e
+ON e.`mall_id`=a.`mall_id`
+WHERE
+d.`basic_state`!=1
+AND DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= DATE(d.`payment_time`)
+AND e.`namespace_id`={}
+GROUP BY c.`cat_name`
+ORDER BY SUM(a.`quantity`) DESC
+LIMIT 10
+    '''.format(ns)
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    categoryrank=dbsql(select_sql,account)
+    categoryrankdict={}
+    categoryranklist=[]
+    dicti=1
+    if categoryrank==[]:
+        categoryrankdict["value"]=0
+        categoryrankdict["name"]=0
+        categoryranklist.append(categoryranklist)
+    else:
+        for value in categoryrank:
+            categoryrankdict[dicti]={}
+            categoryrankdict[dicti]["name"]=str(value[0])
+            categoryrankdict[dicti]["value"]=str(value[1])
+            categoryranklist.append(categoryrankdict[dicti])
+            dicti=dicti+1
+    return categoryranklist
+
+def paychannelstat(ns):#渠道订单统计
+    select_sql='''
+SELECT
+COUNT(a.`order_no`)AS "总数",COUNT(IF(a.`payment_bank`="wechat",a.`order_no`,NULL))AS"wechat",COUNT(IF(a.`payment_bank`="alipay",a.`order_no`,NULL))AS"alipay"
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b
+ON a.`mall_id`=b.`mall_id`
+WHERE
+b.`namespace_id`={}
+AND a.`basic_state`!=1
+    '''.format(ns)
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    paychannelstat=dbsql(select_sql,account)
+    paychannelstatdict={}
+
+    if paychannelstat==[]:
+        paychannelstatdict["total"]=0
+        paychannelstatdict["wechat"]=0
+        paychannelstatdict["alipay"]=0
+    else:
+
+        paychannelstatdict["total"]=paychannelstat[0][0]
+        paychannelstatdict["wechat"]=paychannelstat[0][1]
+        paychannelstatdict["alipay"]=paychannelstat[0][2]
+    return paychannelstatdict
+
+def salesdiscount(ns):#营销活动参与度
+    select_sql='''
+SELECT
+ COUNT(IF(a.`discount_total`!="",a.`discount_total`,NULL)),COUNT(IF(a.`activity_benefit_amount`!="",a.`activity_benefit_amount`,NULL))
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b
+ON b.`mall_id`=a.`mall_id`
+WHERE
+
+YEAR(a.`payment_time`)=YEAR(NOW())
+AND a.`basic_state`!=1
+AND b.`namespace_id`={}
+    '''.format(ns)
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    salesdiscount=dbsql(select_sql,account)
+    salesdiscountdict={}
+
+    if salesdiscount==[]:
+        salesdiscountdict["total"]=0
+        salesdiscountdict["promotion"]=0
+        salesdiscountdict["activity"]=0
+    else:
+
+        salesdiscountdict["total"]=int(salesdiscount[0][0])+int(salesdiscount[0][1])
+        salesdiscountdict["promotion"]=int(salesdiscount[0][0])
+        salesdiscountdict["activity"]=int(salesdiscount[0][1])
+    return salesdiscountdict
+
+def totaldiscount(ns):#营销活动优惠总额
+    select_sql='''
+ SELECT
+ SUM(a.`discount_total`),SUM(a.`activity_benefit_amount`)
+
+FROM
+`tbl_order`a
+LEFT JOIN
+`tbl_mall_contact`b
+ON b.`mall_id`=a.`mall_id`
+WHERE
+YEAR(a.`payment_time`)=YEAR(NOW())
+AND a.`basic_state`!=1
+AND b.`namespace_id`={}
+    '''.format(ns)
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    totaldiscount=dbsql(select_sql,account)
+    totaldiscountdict={}
+
+    if totaldiscount==[]:
+        totaldiscountdict["total"]=0
+        totaldiscountdict["promotion"]=0
+        totaldiscountdict["activity"]=0
+    else:
+
+        totaldiscountdict["total"]=float(totaldiscount[0][0])+float(totaldiscount[0][1])
+        totaldiscountdict["promotion"]=float(totaldiscount[0][0])
+        totaldiscountdict["activity"]=float(totaldiscount[0][1])
+    return totaldiscountdict
+
+def repurchaserate(ns):#复购率
+    select_sql='''
+SELECT
+ COUNT(a.`buyer_no`)
+ FROM
+ `tbl_order`a
+ LEFT JOIN
+ `tbl_mall_contact`b
+ ON a.`mall_id`=b.`mall_id`
+ WHERE
+ DATE_SUB(CURDATE(), INTERVAL 30 DAY) <= DATE(a.`payment_time`)
+ AND a.`basic_state`!=1
+ AND b.`namespace_id`={}
+ GROUP BY a.`buyer_no`
+ ORDER BY COUNT(a.`buyer_no`)DESC
+    '''.format(ns)
+
+    account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
+    repurchase=dbsql(select_sql,account)
+    repurchase_list=[t[0]for t in repurchase]
+    repurchaseratedict={}
+    twice_list = [i for i in repurchase_list if i > 1]
+    three_list=[i for i in repurchase_list if i > 2]
+    four_list=[i for i in repurchase_list if i > 3]
+    five_list=[i for i in repurchase_list if i > 4]
+    six_list=[i for i in repurchase_list if i > 5]
+    seven_list=[i for i in repurchase_list if i > 6]
+    if repurchase==[]:
+        repurchaseratedict["once"]=0
+        repurchaseratedict["twice"]=0
+        repurchaseratedict["three"]=0
+        repurchaseratedict["four"]=0
+        repurchaseratedict["five"]=0
+        repurchaseratedict["six"]=0
+    else:
+        repurchaseratedict["once"]=round(len(twice_list)/len(repurchase_list),2)
+        repurchaseratedict["twice"]=round(len(three_list)/len(repurchase_list),2)
+        repurchaseratedict["three"]=round(len(four_list)/len(repurchase_list),2)
+        repurchaseratedict["four"]=round(len(five_list)/len(repurchase_list),2)
+        repurchaseratedict["five"]=round(len(six_list)/len(repurchase_list),2)
+        repurchaseratedict["six"]=round(len(seven_list)/len(repurchase_list),2)
+        repurchaseratedict["average"]=round(len(twice_list)/len(repurchase_list),2)
+    return repurchaseratedict
 
 
 
@@ -1683,5 +1861,5 @@ AND YEAR(a.`create_time`)=YEAR(NOW())
 if __name__ == '__main__':
     #list1,list2,list3,list4,list5,list6=incomedata()
     #print(list1,'\n',list2,'\n',list3,'\n',list4,'\n',list5,'\n',list6)
-    list1=tradeproportion(999990)
+    list1=repurchaserate(999990)
     print(list1)
