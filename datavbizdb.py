@@ -1518,6 +1518,7 @@ ORDER BY SUM(a.`quantity`) DESC
 LIMIT 10
 
     '''.format(ns)
+
     account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
     shopsalerank=dbsql(select_sql,account)
     shopsalerankdict={}
