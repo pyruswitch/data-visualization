@@ -1777,8 +1777,8 @@ AND b.`namespace_id`={}
     else:
 
         salesdiscountdict["total"]=int(salesdiscount[0][0])+int(salesdiscount[0][1])
-        salesdiscountdict["promotion"]=int(salesdiscount[0][0])
-        salesdiscountdict["activity"]=int(salesdiscount[0][1])
+        salesdiscountdict["promotion"]=round((salesdiscount[0][0])/salesdiscountdict["total"],2)
+        salesdiscountdict["activity"]=round((salesdiscount[0][1])/salesdiscountdict["total"],2)
     return salesdiscountdict
 
 def totaldiscount(ns):#营销活动优惠总额
@@ -1808,8 +1808,8 @@ AND b.`namespace_id`={}
     else:
 
         totaldiscountdict["total"]=float(totaldiscount[0][0])+float(totaldiscount[0][1])
-        totaldiscountdict["promotion"]=float(totaldiscount[0][0])
-        totaldiscountdict["activity"]=float(totaldiscount[0][1])
+        totaldiscountdict["promotion"]=round(float(totaldiscount[0][0])/totaldiscountdict["total"],2)
+        totaldiscountdict["activity"]=round(float(totaldiscount[0][1])/totaldiscountdict["total"],2)
     return totaldiscountdict
 
 def repurchaserate(ns):#复购率
@@ -1862,5 +1862,5 @@ SELECT
 if __name__ == '__main__':
     #list1,list2,list3,list4,list5,list6=incomedata()
     #print(list1,'\n',list2,'\n',list3,'\n',list4,'\n',list5,'\n',list6)
-    list1=volumetradetrend(999990)
+    list1=totaldiscount(999990)
     print(list1)
