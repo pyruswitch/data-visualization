@@ -1577,7 +1577,7 @@ LEFT JOIN
 WHERE
  b.`namespace_id`={}
  AND DATE_FORMAT(a.`payment_time`,"%m-%d")< DATE_FORMAT(NOW(),"%m-%d")
- GROUP BY DATE_FORMAT(a.`payment_time`,"%m") DESC
+ GROUP BY DATE_FORMAT(a.`payment_time`,"%m")
 
     '''.format(ns)
     account={"user":"ning.wei16","pwd":"wn3333","host":"bizdb.zuolin.com","db":"ehbiz","port":"18306",}
@@ -1862,5 +1862,5 @@ SELECT
 if __name__ == '__main__':
     #list1,list2,list3,list4,list5,list6=incomedata()
     #print(list1,'\n',list2,'\n',list3,'\n',list4,'\n',list5,'\n',list6)
-    list1=repurchaserate(999990)
+    list1=volumetradetrend(999990)
     print(list1)
